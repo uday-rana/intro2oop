@@ -666,85 +666,94 @@ Here, while the objects are of the same type, the processing of their data is do
 
 ## Keywords
 
-The 84 keywords of the C++11 standard are listed below. We cannot use any of these keywords as identifiers. Those in bold are also C keywords. The italicized keywords are alternative tokens for operators.
+The 84 keywords of the C++11 standard are listed below. We cannot use any of these keywords as identifiers. Some of them are also C keywords. Some of them are alternative tokens for operators.
 
--   `alignas`
--   `alignof`
--   _`and`_
--   `and_eq`
--   `asm`
--   **`auto`**
--   _`bitand`_
--   _`bitor`_
--   `bool`
--   **`break`**
--   **`case`**
--   _`catch`_
--   **`char`**
--   `char16_t`
--   `char32_t`
--   `class`
--   _`compl`_
--   `const`
--   `constexpr`
--   `const_cast`
--   **`continue`**
--   `decltype`
--   **`default`**
--   `delete`
--   **`do`**
--   **`double`**
--   `dynamic_cast`
--   **`else`**
--   **`enum`**
--   `explicit`
--   `export`
--   **`extern`**
--   `false`
--   **`float`**
--   **`for`**
--   `friend`
--   **`goto`**
--   **`if`**
--   `inline`
--   **`int`**
--   **`long`**
--   `mutable`
--   `namespace`
--   `new`
--   _`not`_
--   _`not_eq`_
--   `noexcept`
--   `nullptr`
--   `operator`
--   **`return`**
--   **`short`**
--   **`signed`**
--   **`sizeof`**
--   **`static`**
--   `static_assert`
--   `static_cast`
--   **`struct`**
--   **`switch`**
--   `template`
--   `this`
--   `thread_local`
--   `throw`
--   `true`
--   `try`
--   **`typedef`**
--   `typeid`
--   `typename`
--   **`union`**
--   **`unsigned`**
--   `using`
--   `virtual`
--   **`void`**
--   **`volatile`**
--   `wchar_t`
--   **`while`**
--   _`xor`_
--   _`xor_eq`_
+| C++ Keyword | Also C Keyword? | Alternative Token For Operator? |
+| --- | --- | --- |
+| alignas | ❌ | ❌ |
+| alignof | ❌ | ❌ |
+| and | ❌ | ✔ |
+| and_eq | ❌ | ✔ |
+| asm | ❌ | ❌ |
+| auto | ✔ | ❌ |
+| bitand | ❌ | ✔ |
+| bitor | ❌ | ✔ |
+| bool | ❌ | ❌ |
+| break | ✔ | ❌ |
+| case | ✔ | ❌ |
+| catch | ❌ | ❌ |
+| char | ✔ | ❌ |
+| char_16t | ❌ | ❌ | 
+| char32_t | ❌ | ❌ |
+| class | ❌ | ❌ |
+| compl | ❌ | ✔ |
+| const | ✔ | ❌ |
+| constexpr | ❌ | ❌ |
+| const_cast | ❌ | ❌ |
+| continue | ✔ | ❌ |
+| decltype | ❌ | ❌ |
+| default | ✔ | ❌ |
+| delete | ❌ | ❌ |
+| do | ✔ | ❌ |
+| double | ✔ | ❌ |
+| dynamic_cast | ❌ | ❌ |
+| else | ✔ | ❌ |
+| enum | ✔ | ❌ |
+| explicit | ❌ | ❌ |
+| export | ❌ | ❌ |
+| extern | ✔ | ❌ |
+| false | ❌ | ❌ |
+| float | ✔ | ❌ |
+| for | ✔ | ❌ |
+| friend | ❌ | ❌ |
+| goto | ✔ | ❌ |
+| if | ✔ | ❌ |
+| inline | ❌ | ❌ |
+| int | ✔ | ❌ |
+| long | ✔ | ❌ |
+| mutable | ❌ | ❌ |
+| namespace | ❌ | ❌ |
+| new | ❌ | ❌ |
+| not | ❌ | ✔ |
+| not_eq | ❌ | ✔ |
+| noexcept | ❌ | ❌ |
+| nullptr | ❌ | ❌ |
+| operator | ❌ | ❌ |
+| or | ❌ | ✔ | 
+| or_eq | ❌ | ✔ |
+| private | ❌ | ❌ |
+| protected | ❌ | ❌ |
+| public | ❌ | ❌ |
+| register | ✔ | ❌ |
+| reinterpret_cast | ❌ | ❌ |
+| return | ✔ | ❌ |
+| short | ✔ | ❌ |
+| signed | ✔ | ❌ |
+| sizeof | ✔ | ❌ |
+| static | ✔ | ❌ |
+| static_assert | ❌ | ❌ |
+| static_cast | ❌ | ❌ |
+| struct | ✔ | ❌ |
+| switch | ✔ | ❌ |
+| template | ❌ | ❌ |
+| this | ❌ | ❌ |
+| thread_local | ❌ | ❌ |
+| throw | ❌ | ❌ |
+| true | ❌ | ❌ |
+| try | ❌ | ❌ |
+| typedef | ✔ | ❌ |
+| typeid | ❌ | ❌ |
+| typename | ❌ | ❌ |
+| union | ✔ | ❌ |
+| unsigned | ✔ | ❌ |
+| using | ❌ | ❌ |
+| virtual | ❌ | ❌ |
+| void | ✔ | ❌ |
+| volatile | ✔ | ❌ |
+| wchar_t | ❌ | ❌ |
+| while | ✔ | ❌ |
+| xor | ❌ | ✔ |
+| xor_eq | ❌ | ✔ |
 
 C++ compilers will successfully compile any C program that does not use any of these keywords as identifiers provided that that program satisfies C++'s type safety requirements. We call such a C program a clean C program.
 

@@ -131,4 +131,4 @@ Encapsulation, inheritance and polymorphism are the cornerstones of any object-o
 ## Exercises
 
 -   Read Wikipedia on [Encapsulation](http://en.wikipedia.org/wiki/Information_hiding)
--   Review the Subject [Outline](http://www.senecacollege.ca/ssos/findwithoutsemester/oop244/sict)
+-   Review the [Subject Outline](http://www.senecacollege.ca/ssos/findwithoutsemester/oop244/sict)

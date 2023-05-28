@@ -69,8 +69,8 @@ The transaction module defines a structure and functions for a single transactio
 
 The related functions are global functions
 
--   **enter():** Accepts transaction data from the standard input device
--   **display()**: Displays transaction data on the standard output device
+-   **`enter()`:** Accepts transaction data from the standard input device
+-   **`display()`:** Displays transaction data on the standard output device
 
 #### Transaction.h
 
