@@ -15,7 +15,7 @@ A well-designed module is a highly cohesive unit that couples loosely to other m
 
 Consider the schematic of the Transaction application shown below. The `main` module accesses the `Transaction` module. The `Transaction` module accesses the `iostream` module. The `Transaction` module defines the transaction functions used by the application. The `iostream` module defines the `cout` and `cin` objects used by the application.
 
-![Modularity](https://lctoye.github.io/OOP244-Notes/pages/images/modularity.png)
+![Modularity](/img/modularity.png)
 
 To translate the source code of any module the compiler only needs certain external information. This information includes the names used within the module but defined outside the module. To enable this in C++, we store the source code for each module in two separate files:
 
@@ -34,11 +34,11 @@ The implementation file for the `Transaction` module includes the header files f
 
 An implementation file can include several header files but **DOES NOT** include any other implementation file. Note the absence of any direct connections between the implementation files.
 
-![Header](https://lctoye.github.io/OOP244-Notes/pages/images/header.png)
+![Header](/img/header.png)
 
 We compile each implementation (`*.cpp`) file separately and only once. We do not compile header (`*.h`) files.
 
-![Header](https://lctoye.github.io/OOP244-Notes/pages/images/compile_modules.png)
+![Compile Modules](/img/compile_modules.png)
 
 A compiled version of `iostream`'s implementation file is part of the system library.
 
@@ -50,7 +50,7 @@ Comprehensive compilation consists of three independent but sequential stages (a
 2. **Compiler:** Compiles each translation unit separately and creates a corresponding binary version
 3. **Linker:** Assembles the various binary units along with the system binaries to create one complete executable binary
 
-![Compile and link](https://lctoye.github.io/OOP244-Notes/pages/images/compile_link.png)
+![Compile and link](/img/compile_link.png)
 
 ## A Modular Example
 

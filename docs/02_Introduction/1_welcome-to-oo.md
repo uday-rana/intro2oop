@@ -22,13 +22,13 @@ Consider a course enrollment system for a program in a college or university. Ea
 
 The following structure diagram identifies the activities.
 
-![Algorithmic](https://lctoye.github.io/OOP244-Notes/pages/images/algorithmic.png)
+![Algorithmic](/img/algorithmic.png)
 
 If we switch our attention to the objects involved, we find a Course and a Hybrid Course. Focusing on a Course, we observe that it has a Course Code. We lookup the Code in the institution's Calendar to determine when that Course is offered.
 
 We say that a Course has a Code and uses a Grading Scheme and that a Hybrid Course is a kind of Course. The diagram below shows these relationships between the objects in this problem domain. The connectors identify the types of relationships. The closed circle connector identifies a has-a relationship, the open circle connector identifies a uses-a relationship and the arrow connector identifies an is-a-kind-of relationship.
 
-![Class Relationships](https://lctoye.github.io/OOP244-Notes/pages/images/class_relationships.png)
+![Class Relationships](/img/class_relationships.png)
 
 In switching our attention from the activities in the structure chart to the objects in the relationship diagram we have switched from a procedural description of the problem to an object-oriented description.
 
@@ -42,7 +42,7 @@ Learning to divide a complex problem into objects and to identify the relationsh
 
 Java, C, C++, Python and C# are currently the five most popular languages. Java, C, C++ and C# have much syntax in common: Java syntax is C-like, but not a superset of C, C++ contains almost all of C as a subset, C# syntax is C++-like but not a superset of C. Each is an imperative language; that is, a language that specifies every step necessary to reach a desired state.
 
-![Superset](https://lctoye.github.io/OOP244-Notes/pages/images/superset.png)
+![Superset](/img/superset.png)
 
 The distinguishing features of C, C++ and Java are:
 

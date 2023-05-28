@@ -195,7 +195,7 @@ A definition that appears more than once within the same translation unit genera
 
 The program listed below consists of three modules: `main`, `Transaction` and `iostream`.
 
-![Definition](https://lctoye.github.io/OOP244-Notes/pages/images/definition.png)
+![Definition](/img/definition.png)
 
 In the `main` module's implementation file we have introduced a new function called `add()`, which receives the address of a `double` and the address of a `Transaction` object. This function update the value stored in the first address:
 
@@ -271,7 +271,7 @@ void add(double*, const Transaction*);
 
 The `main.cpp` translation unit would contain TWO definitions of Transaction.
 
-![Two Definition](https://lctoye.github.io/OOP244-Notes/pages/images/twodefinition.png)
+![Two Definition](/img/twodefinition.png)
 
 Possible solutions include:
 

@@ -121,7 +121,7 @@ In designing a class with a resource, we expect the resource associated with one
 
 Implementing deep copying and assigning requires dynamic allocation and deallocation of memory. The copying process includes not only the non-resource instance variables but also the resource data itself.
 
-![Deep Copy](https://lctoye.github.io/OOP244-Notes/pages/images/deepCopy.png)
+![Deep Copy](/img/deepCopy.png)
 
 In each deep copy, we allocate memory for the underlying resource and copy the contents of the source resource into the destination memory. We shallow copy the instance variables that are NOT resource instance variables. For example, in our `Student` class, we shallow copy the student number and number of grades, but not the address stored in the `grade` pointer.
 

@@ -53,7 +53,7 @@ Student a, b, c, d, e;
 
 The compiler allocates five regions in static memory, each of which holds the data for one of the five objects. Each region stores the values of three data members - `no`, the array `grade` and `ng`. The compiler stores the member function instructions separately and only once for all objects of the class.
 
-![](https://lctoye.github.io/OOP244-Notes/pages/images/instance.png)
+![](/img/instance.png)
 
 ### Instance Variables
 
@@ -90,7 +90,7 @@ cout << endl;
 
 The memory allocated for member function code is shown on the left. The memory allocated for the instance variables is shown on the right:
 
-![memory](https://lctoye.github.io/OOP244-Notes/pages/images/class%20memory.png)
+![memory](/img/class_memory.png)
 
 ### Class Privacy
 
@@ -299,7 +299,7 @@ The compiler assembles an object in the following order:
 
 Since the constructor starts executing at instantiation, no normal member function is called before the constructor. Every normal member function is called after instantiation.
 
-![Constructor](https://lctoye.github.io/OOP244-Notes/pages/images/ctor.png)
+![Constructor](/img/ctor.png)
 
 #### Multiple Objects
 

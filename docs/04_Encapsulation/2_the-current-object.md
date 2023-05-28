@@ -16,13 +16,13 @@ Member functions receive information through parameters and return information t
 -   **Explicit:** Access the client code
 -   **Implicit:** Access the instance variables
 
-![Member Functions](https://lctoye.github.io/OOP244-Notes/pages/images/current%20object.png)
+![Member Functions](/img/current_object.png)
 
 Explicit parameters receive information from the client code and return information to the client code. We define them explicitly in the header of a member function. Their lifetime extends from entry to the function to exit from the function. They have function scope.
 
 Implicit parameters tie the member function to the current object.
 
-![implicit and explicit parameters](https://lctoye.github.io/OOP244-Notes/pages/images/implicit.png)
+![implicit and explicit parameters](/img/implicit.png)
 
 The syntax of a normal member function call reflects this two-part mechanism. The name of the object on which the client code invokes the function identifies the implicit parameters, while the arguments that the client code passes to the function initialize the explicit parameters.
 
@@ -90,7 +90,7 @@ We use the thi`s keyword within a member function to refer to the complete set o
 
 The figure below illustrates usage of the keyword. The top memory map shows two member function and three `Student` objects. The question mark indicates that the data on which the member function logic operates is unknown. The middle memory map identifies the data when the member functions are called on object `b`. The bottom memory map identifies the data when the member functions are called on object `a`.
 
-![Implicit and Explicit Parameters](https://lctoye.github.io/OOP244-Notes/pages/images/this.png)
+![Implicit and Explicit Parameters](/img/this.png)
 
 For example, for the `display()` member function to return a copy of its host object, we write:
 

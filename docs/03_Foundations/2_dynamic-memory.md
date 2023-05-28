@@ -18,7 +18,7 @@ The memory accessible by a C++ program throughout its execution consists of stat
 
 The memory that the operating system allocates for the application at load time is called _static memory_. Static memory includes the memory allocated for program instructions and program data. The compiler determines the amount of static memory that each translation unit requires. The linker determines the amount of static memory that the entire application requires.
 
-![Static Memory](https://lctoye.github.io/OOP244-Notes/pages/images/static%20memory.png)
+![Static Memory](/img/static_memory.png)
 
 The application's variables and objects share static memory amongst themselves. When a variable or object goes out of scope its memory becomes available for newly defined variables or objects. The lifetime of each local variable and object concludes at the closing brace of the code block within which it has been defined:
 
@@ -52,7 +52,7 @@ To keep track of an application's dynamic memory, we store the address of each a
 
 Consider allocating dynamic memory for an array of n elements. We store the array's address in a pointer, `p`, in static memory as illustrated below. We allocate memory for the elements of the array dynamically and store the data in those elements starting at address `p`.
 
-![Dynamic Memory](https://lctoye.github.io/OOP244-Notes/pages/images/dynamic%20memory.png)
+![Dynamic Memory](/img/dynamic_memory.png)
 
 ### Lifetime
 
@@ -199,7 +199,7 @@ harry = new Student;        // points to a Student in dynamic memory
 // we must deallocate harry later!
 ```
 
-![Single Instance](https://lctoye.github.io/OOP244-Notes/pages/images/single%20instance.png)
+![Single Instance](/img/single_instance.png)
 
 ### Deallocation
 

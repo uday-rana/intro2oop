@@ -8,7 +8,7 @@
 
 The relationships between classes that object-oriented languages support include compositions and associations. Both of these relationships are more loosely coupled than friendship. A composition is a relationship in which one class has another class, while an association is a relationship in which one class uses another class. In relationship diagrams, associations appear as open circles and compositions as filled circles. The diagram below shows that `Code` uses the `Calendar` (to determine availability), while each `Course` has a Course `Code` class.
 
-![Class Relationships](https://lctoye.github.io/OOP244-Notes/pages/images/class_relationships.png)
+![Class Relationships](/img/class_relationships.png)
 
 Associations are more loosely coupled than compositions. Typical examples of associations are relationships between the stream-based input and output library classes that support the C++ language and our own custom classes. To create these relationships, we overload the insertion and extraction operators as helper operators that take stream objects as their left operands and objects of our class type as their right operands.
 

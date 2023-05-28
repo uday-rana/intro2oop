@@ -17,7 +17,7 @@ Programming solutions to application problems consist of components. The process
 
 An object-oriented programming solution to an application problem consists of components called objects. The process of designing an object-oriented solution likewise involves abstraction. We distinguish the most important features of the object, identify them publicly and hide the less important details within the object itself.
 
-![Abstraction](https://lctoye.github.io/OOP244-Notes/pages/images/abstraction.png)
+![Abstraction](/img/abstraction.png)
 
 Each object has a crisp conceptual boundary and acts in ways appropriate to itself. Compare a book with a set of notes. A book has pages that are bound and can be flipped. The page order is fixed. A set of notes consists of loose pages that can be rearranged in any order. We represent the book as an object and the set of notes as another object; each object has a different structure.
 
@@ -27,13 +27,13 @@ The `cout` and `cin` objects introduced in the preceding chapter are examples. T
 
 We describe the structure of similar objects in terms of their class. Objects of the same class have the same structure, but possibly different states. The variable types that describe their states are identical, but generally have different values. For example, all of the books in the figure above have a title and an author, but each book has a different title and a different author.
 
-![](https://lctoye.github.io/OOP244-Notes/pages/images/classes.png)
+![Classes](/img/classes.png)
 
 ### UML
 
 The Unified Modelling Language (UML) is a general-purpose modeling language developed for describing systems of objects and relationships between their classes. This language defines standard symbols for classes and their relationships. The connectors shown in the relationship diagram below are UML connectors. We use these symbols in this text.
 
-![](https://lctoye.github.io/OOP244-Notes/pages/images/class_relationships.png)
+![Class Relationships](/img/class_relationships.png)
 
 ### The Class Diagram
 
@@ -73,7 +73,7 @@ Encapsulation is the primary concept of object-oriented programming. It refers t
 
 A class definition declares the variables and the function prototypes. The variables store each object's data and the functions contain the logic that operates on that data. Clients access objects through calls to these functions without knowledge of the data stored within the objects or the logic that manipulates that data.
 
-![Encapsulation](https://lctoye.github.io/OOP244-Notes/pages/images/encapsulation.png)
+![Encapsulation](/img/encapsulation.png)
 
 Encapsulation shields the complex details of a class' implementation from its interface; that is, its crisp external representation. Consider the following statement from the preceding chapter:
 
@@ -99,7 +99,7 @@ Two object-oriented concepts are prominent in our study of the relationships bet
 
 Inheritance relates classes that share the same structure. In the Figure below, the `Hybrid Course` class inherits the entire structure of the `Course` class and adds some further structure. We say that the hybrid course 'is-a-kind-of' `Course` and depict the inheritance relationship using an arrow drawn from the more specialized class to the more general class:
 
-![](https://lctoye.github.io/OOP244-Notes/pages/images/isahierarchy.png)
+![Is a Hierarchy](/img/isahierarchy.png)
 
 Inheriting one class from another allows us to utilize existing technology. We only provide the code that implements additional structure.
 
@@ -109,9 +109,9 @@ Polymorphism relates the implementation for an object based on its type. In the 
 
 A `mode()` query on a `Course` type reports a different result than a mode() query on a `HybridCourse` type. On the other hand, an `assessments()` query on a `Course` type reports the same result as on an `HybridCourse` type.
 
-![](https://lctoye.github.io/OOP244-Notes/pages/images/differentBehavior.png)
+![Different Behaviour](/img/differentBehavior.png)
 
-![](https://lctoye.github.io/OOP244-Notes/pages/images/identicalBehavior.png)
+![Identical Behaviour](/img/identicalBehavior.png)
 
 Polymorphic programming allows us to minimize the duplication of code amongst objects that belong to the same inheritance hierarchy.
 

@@ -14,7 +14,7 @@ This chapter describes the C++ syntax for declaring member functions in a class 
 
 The member functions of a class provide the communication links between client code and objects of the class. Client code calls the member functions to access an object's data and possibly to change that data.
 
-![Methods](https://lctoye.github.io/OOP244-Notes/pages/images/methods.png)
+![Methods](/img/methods.png)
 
 We classify member functions into three mutually exclusive categories:
 
@@ -22,7 +22,7 @@ We classify member functions into three mutually exclusive categories:
 -   **Modifiers:** Also called mutator methods - change the state of the object
 -   **Special:** Also called manager methods - create, assign and destroy an object
 
-![Communication](https://lctoye.github.io/OOP244-Notes/pages/images/communication.png)
+![Communication](/img/communication.png)
 
 Every member function has direct access to the members of its class. Each member function receives information from the client code through its parameters and passes information to the client code through its return value and possibly its parameters.
 
