@@ -63,7 +63,7 @@ const config = {
 			footer: {
 				style: "dark",
 				copyright: ` Copyright © ${new Date().getUTCFullYear()} Chris Szalwinski and Seneca College.`,
-				links: [{ title: "Introduction to Object Oriented Programming (C++)", items: [{ label: "GitHub", href: "https://github.com/Seneca-244200" }] }],
+				links: [{ title: "Introduction to Object Oriented Programming (C++)", items: [{ label: "GitHub", href: "https://github.com/Seneca-244200" }, {label: "Copyright Notice", href: "/copyright"}] }],
 			},
 			prism: {
 				theme: lightCodeTheme,
