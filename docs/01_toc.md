@@ -2,7 +2,7 @@
 slug: /
 ---
 
-# Table of Contents
+# Table of contents
 
 ## Introduction
 
