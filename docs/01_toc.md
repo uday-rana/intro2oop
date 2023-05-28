@@ -25,13 +25,14 @@ slug: /
 -   [Helper Functions](/Encapsulation/helper-functions)
 -   [Input and Output Operators](/Encapsulation/input-and-output-operators)
 
----
-# Coming Soon (Check back in a week!)
 
 ## Inheritance
 
 -   [Derived Classes](/Inheritance/derived-classes)
 -   [Functions in a Hierarchy](/Inheritance/functions-in-a-hierarchy)
+
+---
+# Coming Soon (Check back in a week!)
 
 ## Polymorphism
 
