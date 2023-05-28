@@ -51,7 +51,13 @@ const config = {
 
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-		({
+		({	
+			docs: {
+				sidebar: {
+					autoCollapseCategories: true,
+					hideable: true
+				}
+			},
 			tableOfContents: {
 				minHeadingLevel: 2,
 				maxHeadingLevel: 4,
@@ -63,7 +69,7 @@ const config = {
 			footer: {
 				style: "dark",
 				copyright: ` Copyright © ${new Date().getUTCFullYear()} Chris Szalwinski and Seneca College.`,
-				links: [{ title: "Introduction to Object Oriented Programming (C++)", items: [{ label: "GitHub", href: "https://github.com/Seneca-244200" }, {label: "Copyright Notice", href: "/copyright"}] }],
+				links: [{ title: "Introduction to Object Oriented Programming (C++)", items: [{ label: "GitHub", href: "https://github.com/Seneca-244200" }, {label: "Copyright License", href: "/copyright"}] }],
 			},
 			prism: {
 				theme: lightCodeTheme,
