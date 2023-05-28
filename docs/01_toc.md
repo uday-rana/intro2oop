@@ -32,7 +32,7 @@ slug: /
 -   [Functions in a Hierarchy](/Inheritance/functions-in-a-hierarchy)
 
 ---
-# Coming Soon (Check back in a week!)
+# Coming Soon
 
 ## Polymorphism
 
