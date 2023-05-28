@@ -25,6 +25,9 @@ slug: /
 -   [Helper Functions](/Encapsulation/helper-functions)
 -   [Input and Output Operators](/Encapsulation/input-and-output-operators)
 
+---
+# Coming Soon (Check back in a week!)
+
 ## Inheritance
 
 -   [Derived Classes](/Inheritance/derived-classes)
@@ -45,7 +48,7 @@ slug: /
 
 ## Appendices
 
--   [Standard Library Functions](//Appendices/standard-library-functions)
--   [ASCII Collating Sequence](//Appendices/ascii-collating-sequence)
--   [Operator Precedence](//Appendices/operator-precedence)
--   [Relation Between C++ and C](//Appendices/relation-between-cpp-and-c)
+-   [Standard Library Functions](/Appendices/standard-library-functions)
+-   [ASCII Collating Sequence](/Appendices/ascii-collating-sequence)
+-   [Operator Precedence](/Appendices/operator-precedence)
+-   [Relation Between C++ and C](/Appendices/relation-between-cpp-and-c)
