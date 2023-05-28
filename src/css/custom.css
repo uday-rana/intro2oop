@@ -6,25 +6,56 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #da291c;
+  --ifm-color-primary-dark: #c42519;
+  --ifm-color-primary-darker: #b92318;
+  --ifm-color-primary-darkest: #991d14;
+  --ifm-color-primary-light: #e4372b;
+  --ifm-color-primary-lighter: #e54236;
+  --ifm-color-primary-lightest: #e96056;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #f69993;
+  --ifm-color-primary-dark: #f3776f;
+  --ifm-color-primary-darker: #f1665d;
+  --ifm-color-primary-darkest: #ed3226;
+  --ifm-color-primary-light: #f9bbb7;
+  --ifm-color-primary-lighter: #fbccc9;
+  --ifm-color-primary-lightest: #ffffff;
+}
+
+td {
+  text-align: center;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.highlight {
+  background-color: rgb(255, 255, 224) !important;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+[data-theme='dark'] .highlight {
+  background-color: rgb(72, 77, 91) !important;
+}
+
+[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] p img {
+  background-color: rgb(255, 255, 255);
 }
