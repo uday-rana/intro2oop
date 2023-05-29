@@ -280,6 +280,6 @@ Parametric polymorphism eliminates duplicate logic across all types without gene
 
 ## Exercises
 
--   Read Wikipedia on [Typing](http://en.wikipedia.org/wiki/Type)
+-   Read Wikipedia on [Type system](https://en.wikipedia.org/wiki/Type_system)
 -   Read Wikipedia on [Type-Safety](http://en.wikipedia.org/wiki/Type-safety)
 -   Read Wikipedia on [Polymorphism](http://en.wikipedia.org/wiki/Polymorphism_in_object-oriented_programming)
