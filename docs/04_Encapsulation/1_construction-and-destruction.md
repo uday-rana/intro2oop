@@ -301,7 +301,7 @@ Since the constructor starts executing at instantiation, no normal member functi
 
 ![Constructor](/img/ctor.png)
 
-#### Multiple Objects
+### Multiple Objects
 
 The compiler creates multiple objects defined in a single declaration in the order specified by the declaration.
 
@@ -445,7 +445,7 @@ Object destruction proceeds in the following order:
 1. Execute the logic of the object's destructor
 2. Deallocate memory for each instance variable in opposite order to that listed in the class definition
 
-#### Multiple Objects
+### Multiple Objects
 
 The compiler destroys sets of objects in opposite order to that of their creation.
 

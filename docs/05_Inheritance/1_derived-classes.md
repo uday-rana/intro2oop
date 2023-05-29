@@ -28,7 +28,7 @@ Inheritance is not _commutative_. A Primate is an Animal, but an Animal is not n
 
 ### Terminology
 
-#### "is a kind of"
+### "is a kind of"
 
 The relative position of two classes in a hierarchy identifies their inheritance relationship. A class lower in the hierarchy _is a kind of_ the class that is higher in the hierarchy. For example, a dog _is a kind of_ canis, a fox _is a kind of_ vulpes and a human _is a kind of_ homo. In our course example from the first chapter, a `Hybrid Course` _is a kind of_ `Course`.
 
@@ -38,7 +38,7 @@ We depict an inheritance relationship by an arrow pointed to the inherited class
 
 The `Hybrid Course` class inherits the entire structure of the `Course` class.
 
-#### Derived and Base Classes
+### Derived and Base Classes
 
 We call the child in an is-a-kind-of relationship the _derived class_ and we call the parent in the relationship the _base class_; that is, the `Hybrid Course` class is a derived class of the `Course` base class. A derived class is lower in the hierarchy, while its base class is higher in the hierarchy. The derived class inherits the entire structure of its base class.
 
@@ -200,9 +200,9 @@ Note that the `main()` function refers to the `Student` type, without referring 
 
 The C++ language supports three modifiers for granting access to the members of class:
 
--   **`Private`**: Bars all access
--   **`Protected`:** Limits access to derived classes only
--   **`Public`:** Unlimited access
+-   `Private`: Bars all access
+-   `Protected`: Limits access to derived classes only
+-   `Public`: Unlimited access
 
 Since the data member of the `Person` class is `private`, the member functions of our `Student` class and the client code cannot access that data member. Since the member functions of the `Person` and `Student` classes are public, the `main()` function can access all of them.
 

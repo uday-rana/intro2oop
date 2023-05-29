@@ -69,10 +69,10 @@ The transaction module defines a structure and functions for a single transactio
 
 The related functions are global functions
 
--   **`enter()`:** Accepts transaction data from the standard input device
--   **`display()`:** Displays transaction data on the standard output device
+-   `enter()`: Accepts transaction data from the standard input device
+-   `display()`: Displays transaction data on the standard output device
 
-#### Transaction.h
+### Transaction.h
 
 The header file for our Transaction module defines our Transaction type and declares the prototypes for our two functions:
 
@@ -92,7 +92,7 @@ void display(const struct Transaction* tr);
 
 Note the UML naming convention and the extension on the name of the header file.
 
-#### Transaction.cpp
+### Transaction.cpp
 
 The implementation file for our `Transaction` module defines our two functions. This file includes the system header file for access to the `cout` and `cin` objects and the header file for access to the Transaction type.
 
@@ -130,7 +130,7 @@ Note the `.cpp` extension on the name of this implementation file.
 
 The main module defines a `Transaction` object and accepts input and displays data for each of three transactions.
 
-#### main.h
+### main.h
 
 The header file for our `Main` module `#define`s the number of transactions:
 
@@ -141,7 +141,7 @@ The header file for our `Main` module `#define`s the number of transactions:
 #define NO_TRANSACTIONS 3
 ```
 
-#### main.cpp
+### main.cpp
 
 The implementation file for our `Main` module defines the `main()` function. We `#include` the header file to provide the definition of the Transaction type:
 
@@ -401,7 +401,7 @@ Techniques for identifying semantic errors include:
 -   Interactive debugging using:
     -   **Visual Studio IDE:** Integrated debugger for Windows OSs
     -   **Eclipse IDE:** Integrated debugger for Linux OSs
-    -   **`gdb`:** GNU debugger for `gcc`
+    -   `gdb`: GNU debugger for `gcc`
 
 ### IDE Tracing Example
 

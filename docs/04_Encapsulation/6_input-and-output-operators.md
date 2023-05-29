@@ -38,7 +38,7 @@ int main() {
 
 ### Standard I/O and File I/O
 
-#### Standard I/O
+### Standard I/O
 
 The `iostream` system header file contains the definitions for streaming from and to standard devices.
 
@@ -48,19 +48,19 @@ The `iostream` system header file contains the definitions for streaming from an
 
 This header file includes the definitions of the
 
--   **`std::istream` Class:** For processing input from the standard input device
--   **`std::ostream` Class:** For processing output to the standard output devices
+-   `std::istream` Class: For processing input from the standard input device
+-   `std::ostream` Class: For processing output to the standard output devices
 -   This header file also predefines the standard input and output objects:
 
--   **`std::istream`**
-    -   **`std::cin`:** Standard input
--   **`std::ostream`**
-    -   **`std::cout`:** Standard output
-    -   **`std::cerr`:** Standard error
-    -   **`std::clog`:** Standard log
+-   `std::istream`
+    -   `std::cin`: Standard input
+-   `std::ostream`
+    -   `std::cout`: Standard output
+    -   `std::cerr`: Standard error
+    -   `std::clog`: Standard log
         We use these objects directly and don't need to redefine them.
 
-#### File I/O
+### File I/O
 
 The `fstream` system header file contains the definitions for streaming from and to files.
 

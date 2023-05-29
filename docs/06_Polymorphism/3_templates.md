@@ -26,9 +26,9 @@ The keyword `template` identifies the subsequent code block as a template. The l
 
 Each parameter declaration consists of a type and an identifier. `Type` may be any of
 
--   **`typename`:** To identify a type (fundamental or compound)
--   **`class`:** To identify a type (fundamental or compound)
--   **`int`, `long`, `short`, `char`:** To identify a non-floating-point fundamental type
+-   `typename`: To identify a type (fundamental or compound)
+-   `class`: To identify a type (fundamental or compound)
+-   `int`, `long`, `short`, `char`: To identify a non-floating-point fundamental type
 -   a template parameter
 
 The following examples are equivalent to one another:
@@ -260,11 +260,11 @@ int main( ) {
 }
 ```
 
-Few reinterpret casts are portable. Uses include
+Few reinterpret casts are portable. Uses include:
 
--   evaluating raw data
--   recovering data where types are unknown
--   quick and messy calculations
+-   Evaluating raw data
+-   Recovering data where types are unknown
+-   Quick and messy calculations
 
 ### Unmodifiable Types
 
@@ -403,7 +403,7 @@ Derived
 
 Note that here the `display()` member function is not `virtual`. If it were, both calls to it would produce the same result.
 
-Compile-Time Checking
+### Compile-Time Checking
 
 `dynamic_cast<Type>(expression)` performs some compile-time type checking. It rejects conversions from a base class pointer to a derived class pointer if the object is monomorphic; that is, if the base class is not a polymorphic type.
 

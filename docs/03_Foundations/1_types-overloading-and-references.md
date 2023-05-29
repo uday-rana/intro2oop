@@ -26,7 +26,7 @@ The fundamental types of C++ include:
     -   float
     -   double - long double
 
-#### bool
+### bool
 
 The bool type stores a logical value: true or false.
 
@@ -34,7 +34,7 @@ The `!` operator reverses that value: `!true` is false and `!false` is true.
 
 `!` is self-inverting on bool types, but not self-inverting on other types.
 
-#### bool to int
+### bool to int
 
 Conversions from `bool` type to any integral type and vice versa require care. `true` promotes to an `int` of value 1, while `false` promotes to an `int` of value 0. Applying the `!` operator to an `int` value other than 0 produces a value of 0, while applying the `!` operator to an int value of 0 produces a value of 1. Note that the following code snippet displays 1 (not 4):
 
@@ -242,7 +242,7 @@ void enter(Transaction* tr);
 void display(const Transaction* tr);
 ```
 
-#### Design Question
+### Design Question
 
 Into which header file should we insert the prototype for this add() function?
 
@@ -278,7 +278,7 @@ Possible solutions include:
 -   **Forward Declaration Solution:** Insert the prototype into main.h
 -   **Compact Solution:** Insert the prototype into Transaction.h
 
-#### Forward Declaration Solution
+### Forward Declaration Solution
 
 Inserting the prototype into `main.h` along with a forward declaration of `Transaction` informs the compiler that this identifier in the prototype is a valid type.
 
@@ -293,7 +293,7 @@ void add(double*, const Transaction*);
 
 This design provides the compiler with just enough information to accept the identifer, without exposing the type details.
 
-#### Compact Solution
+### Compact Solution
 
 Inserting the prototype into the `Transaction.h` header file is a more compact solution:
 
@@ -318,9 +318,9 @@ This design localizes all declarations related to the `Transaction` type within 
 
 To avoid contaminating system header files, we include header files in the following order:
 
--   **`#include < ... >`:** System header files
--   **`#include " ... "`:** Other system header files
--   **`#include " ... "`:** Your own header files
+-   `#include < ... >`: System header files
+-   `#include " ... "`: Other system header files
+-   `#include " ... "`: Your own header files
 
 We insert namespace declarations and directives after all header file inclusions.
 
@@ -404,7 +404,7 @@ The square brackets enclose optional information. The return type and the parame
 
 C++ compilers preserve identifier uniqueness by renaming each overloaded function using a combination of its identifier, its parameter types and the order of its parameter types. We refer to this renaming as _name mangling_.
 
-#### Example
+### Example
 
 Consider the following example of an overloaded function. To display data on the standard output device, we can define a display() function with different meanings:
 
@@ -446,7 +446,7 @@ A function prototype completes the function's signature by specifying the return
 
 A prototype without parameter types identifies an empty parameter list. The keyword `void`, which the C language uses to identify no parameters is redundant in C++. We omit this keyword in C++.
 
-#### Prototypes Required
+### Prototypes Required
 
 A programming language may require a function declaration before any function call for type safety. The declaration may be either a prototype or the function definition itself. The compiler uses the declaration to check the argument types in the call against the parameter types in the prototype or definition. The type safety features of C++ require a preceding declaration.
 
@@ -483,7 +483,7 @@ The assignment operator followed by a value identifies the default value for eac
 
 Specifying default values for function parameters reduces the need for multiple function definitions if the function logic is identical in every respect except for the values received by the parameters.
 
-#### Example
+### Example
 
 For example,
 

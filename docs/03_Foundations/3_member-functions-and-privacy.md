@@ -313,7 +313,7 @@ void Student::set(int sn, const float* g, int ng_) {
 
 This validation logic ensures that either the data stored in any `Student` object is valid data or the object is in an empty state.
 
-#### Design Tip
+### Design Tip
 
 Select one data member to hold the special value that identifies an empty state. Then, to determine if an object is in an empty state, we only need to interrogate that data member.
 
@@ -437,9 +437,9 @@ __abc__
 
 The `istream` type supports the following member functions:
 
--   **`ignore(...)`:** Ignores/discards character(s) from the input buffer
--   **`get(...)`:** Extracts a character or a string from the input buffer
--   **`getline(...)`:** Extracts a line of characters from the input buffer
+-   `ignore(...)`: Ignores/discards character(s) from the input buffer
+-   `get(...)`: Extracts a character or a string from the input buffer
+-   `getline(...)`: Extracts a line of characters from the input buffer
 
 For detailed descriptions of `get()` and `getline()`, see the chapter entitled [Input and Output Refinements](/Refinements/input-and-output-refinements).
 
@@ -513,11 +513,11 @@ We call such repeated use of the insertion operator _cascading_.
 
 The `ostream` type supports the following public member functions for formatting conversions:
 
--   **`width(int)`:** Sets the field width to the integer received
--   **`fill(char)`:** Sets the padding character to the character received
--   **`setf(...)`:** Sets a formatting flag to the flag received
--   **`unsetf(...)`:** Unsets a formatting flag for the flag received
--   **`precision(int)`:** Sets the decimal precision to the integer received
+-   `width(int)`: Sets the field width to the integer received
+-   `fill(char)`: Sets the padding character to the character received
+-   `setf(...)`: Sets a formatting flag to the flag received
+-   `unsetf(...)`: Unsets a formatting flag for the flag received
+-   `precision(int)`: Sets the decimal precision to the integer received
 
 ### width
 

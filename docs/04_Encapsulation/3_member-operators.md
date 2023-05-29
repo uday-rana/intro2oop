@@ -59,7 +59,7 @@ We prefer to declare operators that change the state of their left operand as me
 
 ### Overloading a Member Operator
 
-#### Signature
+### Signature
 
 The signature of an overloaded member operator consists of:
 
@@ -70,15 +70,15 @@ The signature of an overloaded member operator consists of:
 
 The compiler binds an expression to the member function with the signature that matches the operator symbol, the operand type and the `const` status.
 
-#### Promotion or Narrowing of Arguments
+### Promotion or Narrowing of Arguments
 
 If the compiler cannot find an exact match to an operation's signature, the compiler will attempt a rather complicated selection process to find an optimal fit, promoting or narrowing the operand value into a related type if necessary.
 
-#### Type of the Evaluated Expression
+### Type of the Evaluated Expression
 
 The return type of the member function declaration identifies the type of the evaluated expression.
 
-#### Good Design Practice
+### Good Design Practice
 
 Programmers expect an operator to perform its operation in a way similar if not identical to the way that the operator performs its operation on any fundamental type as defined by the core language. For instance, + implies addition of two values in a binary operation (not subtraction). In defining a member operator we code its logic to be consistent with operations on other types.
 
@@ -208,7 +208,7 @@ We overload the pre-fix increment/decrement operators to increment/decrement the
 Type& operator++()  or  Type& operator--()
 ```
 
-#### Example
+### Example
 
 Let us overload the pre-fix increment operator for our `Student` class so that a pre-fix expression increases all of the `Student`'s grades by one mark, if possible:
 
@@ -316,7 +316,7 @@ return_type operator++(int)  or  Type operator--(int)
 
 The `int` type in the header distinguishes the post-fix operators from their pre-fix counterparts.
 
-#### Example
+### Example
 
 Let us overload the incrementing post-fix operator for our `Student` class so that a post-fix expression increases all of the Stude`nt's grades by one mark, if possible:
 

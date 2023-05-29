@@ -289,7 +289,7 @@ In each case, the executable code binds at run time the version of `display()` t
 
 Note that if we pass the argument to the `show()` function by value instead of by reference, the `show()` function would still call the most derived version of `display()`, but that most derived version would be for the `Person` version, since the copied object would be a `Person` in all cases.
 
-#### Overriding Dynamic Dispatch
+### Overriding Dynamic Dispatch
 
 To override dynamic dispatch with early binding, we resolve the scope explicitly:
 
@@ -299,7 +299,7 @@ void show(const Person& p) {
 }
 ```
 
-#### Documentation
+### Documentation
 
 Some programmers include the qualifier `virtual` in derived class declarations as a form of documentation. This improves readability but has no syntactic effect.
 
