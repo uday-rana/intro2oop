@@ -97,7 +97,7 @@ Segmentation Fault (coredump)
 
 The prototype for foo() instructs the compiler to omit checking for argument/parameter type mismatches. The argument in the function call is an int of negative value (-25) and the type received in the parameter is the address of a char array. Since the parameter's value is an invalid address, printing from that address causes a segmentation fault at run-time, but no error at compile-time.
 
-We can fix this easily. If we include the parameter type in the prototype as shown below, the compiler will check for an argument/parameter type mismatch and issue an error message like that shown underneath:
+We can fix this easily. If we include the parameter type in the prototype as shown below, the compiler will check for an argument/parameter type mismatch and issue an error message like that shown below:
 
 ```cpp
 #include <stdio.h>

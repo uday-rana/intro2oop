@@ -337,7 +337,7 @@ Student operator+(float grade, const Student& student) {
                             //    Student&, float)
 }
 ```
-The following client code produces the results shown underneath:
+The following client code produces the results shown below:
 ```cpp
 // Helper Operator
 // helper-addition-operator.cpp

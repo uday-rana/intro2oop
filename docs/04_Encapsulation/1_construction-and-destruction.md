@@ -161,7 +161,7 @@ The `copyFrom(const Student& src)` member function copies the values of the priv
 
 Complete encapsulation requires a mechanism for initializing data members at creation-time. Without initialization at creation-time, an object's data members contain undefined values until client code calls a modifier that sets that data. Before any modifier call, client code can inadvertently 'break' the object by calling a member function that assumes valid data. For instance, client code could call `display()` before ever calling `set()`.
 
-The following code generates the spurious output underneath:
+The following code generates the spurious output below:
 
 ```cpp
 // Calling an Object with Uninitialized Data
@@ -305,7 +305,7 @@ Since the constructor starts executing at instantiation, no normal member functi
 
 The compiler creates multiple objects defined in a single declaration in the order specified by the declaration.
 
-For example, the following code generates the output underneath:
+For example, the following code generates the output below:
 
 ```cpp
 // Constructors
@@ -398,7 +398,7 @@ The compiler assembles `harry` and calls its constructor first and assembles `jo
 
 Initializing an object's instance variables in a constructor ensures that the object has a well-defined state from the _time of its creation_. In the above example, we say that `harry` and `josee` are in _safe empty states_ until the `set()` member function changes those states. If client code calls member functions on objects in safe empty states, the objects do not break and behave as expected.
 
-For example, the following client code produced the `no data available` message listed underneath:
+For example, the following client code produced the `no data available` message listed below:
 
 ```cpp
 // Safe Empty State
@@ -449,7 +449,7 @@ Object destruction proceeds in the following order:
 
 The compiler destroys sets of objects in opposite order to that of their creation.
 
-For example, the following code generates the output underneath:
+For example, the following code generates the output below:
 
 ```cpp
 // Constructors and Destructors
@@ -552,7 +552,7 @@ The order of construction and destruction of elements of an array of objects fol
 
 The compiler creates the elements of an array one at a time sequentially starting from the first element and ending with the last. Each object calls the default constructor at creation-time. When the array goes out of scope, the last element calls its destructor first and the first element calls its destructor last.
 
-For example, the following code generates the output underneath:
+For example, the following code generates the output below:
 
 ```cpp
 // Constructors, Destructors and Arrays

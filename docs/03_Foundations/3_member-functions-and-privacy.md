@@ -729,7 +729,7 @@ The precision setting applies to the output of all subsequent floating-point val
 
 ### Student Example
 
-The code snippet produces the output shown underneath:
+The code snippet produces the output shown below:
 
 ```cpp
 void Student::display() const {

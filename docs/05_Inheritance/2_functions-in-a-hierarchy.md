@@ -406,7 +406,7 @@ void Student::display(ostream& os) const {
 }
 ```
 
-The following client uses this implementation to produce the result shown underneath:
+The following client uses this implementation to produce the result shown below:
 
 ```cpp
 // Derived Class Constructors
@@ -780,7 +780,7 @@ void Student::display(ostream& os) const {
 }
 ```
 
-The following client uses this implementation to produce the output shown underneath:
+The following client uses this implementation to produce the output shown below:
 
 ```cpp
 // Derived Class Destructors

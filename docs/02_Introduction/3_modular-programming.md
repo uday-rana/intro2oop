@@ -313,7 +313,7 @@ return exp;
 }
 ```
 
-The following test main produces the results shown underneath:
+The following test main produces the results shown below:
 
 ```cpp
 // Test Main

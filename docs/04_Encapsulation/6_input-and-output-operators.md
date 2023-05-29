@@ -144,7 +144,7 @@ A header file may be included alongside other header files written by other deve
 -   Include system header files before custom header files
 -   Insert namespace directives after all header files
 -   Resolve the scope of any identifier in a header file at the identifier itself
--   The preferred method of coding header files is shown underneath:
+-   The preferred method of coding header files is shown below:
 
 ```cpp
 // Student.h
@@ -483,7 +483,7 @@ The standard input/output library overloads the extraction and insertion operato
 
 A file object reads from a file under format control using the extraction operator in the same way as the standard input object (`cin`) reads using the extraction operator.
 
-Consider a file with a single record: `12 34 45 abc` The output from the following program is shown underneath:
+Consider a file with a single record: `12 34 45 abc` The output from the following program is shown below:
 
 ```cpp
 // Reading a File
