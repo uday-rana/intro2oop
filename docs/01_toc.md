@@ -25,14 +25,10 @@ slug: /
 -   [Helper Functions](/Encapsulation/helper-functions)
 -   [Input and Output Operators](/Encapsulation/input-and-output-operators)
 
-
 ## Inheritance
 
 -   [Derived Classes](/Inheritance/derived-classes)
 -   [Functions in a Hierarchy](/Inheritance/functions-in-a-hierarchy)
-
----
-# Coming Soon
 
 ## Polymorphism
 
@@ -40,6 +36,10 @@ slug: /
 -   [Abstract Base Classes](/Polymorphism/abstract-base-classes)
 -   [Templates](/Polymorphism/templates)
 -   [Overview of Polymorphism](/Polymorphism/overview-of-polymorphism)
+
+---
+
+# Under Construction
 
 ## Refinements
 
