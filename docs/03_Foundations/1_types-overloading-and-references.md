@@ -669,7 +669,7 @@ Here, while the objects are of the same type, the processing of their data is do
 The 84 keywords of the C++11 standard are listed below. We cannot use any of these keywords as identifiers. Some of them are also C keywords. Some of them are alternative tokens for operators.
 
 | C++ Keyword | Also C Keyword? | Alternative Token For Operator? |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | alignas | ❌ | ❌ |
 | alignof | ❌ | ❌ |
 | and | ❌ | ✔ |
