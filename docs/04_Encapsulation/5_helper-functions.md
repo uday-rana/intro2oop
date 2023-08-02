@@ -4,7 +4,7 @@
 -   Describe the syntax for overloading operators that support a class
 -   Grant a global function access to the private members of a class
 
-> "Avoid membership fees: Where possible, prefer making functions nonmember non-friends" **(Sutter, Alexandrescu, 2005)**
+> "Avoid membership fees: Where possible, prefer making functions nonmember non-friends" **Sutter, Alexandrescu, 2005.**
 
 In object-oriented programming, not all instructions that support a class need to be included in the class definition. A well-encapsulated class can accept external support in the form of global functions containing additional logic. We call these functions helper functions. Helper functions access the objects of a class solely through their parameters, all of which are explicit. A typical helper function includes at least one parameter of the class type that it supports.
 

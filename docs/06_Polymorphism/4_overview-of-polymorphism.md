@@ -3,7 +3,7 @@
 -   Code a complete program using polymorphic objects to solve a systems or business problem
 -   Describe the four different categories of polymorphism
 
-> "A type provides a protective covering that hides the underlying representation and constrains the way objects may interact with other objects" **(Cardelli, Wegner, 1985)**
+> "A type provides a protective covering that hides the underlying representation and constrains the way objects may interact with other objects" **Cardelli, Wegner, 1985.**
 
 Polymorphism was perfected in object-oriented languages, but has roots in procedural languages. Polymorphism relies on a language's type system to distinguish different meanings for the same identifier. This ambiguity introduces flexibility and enables reusability of code.
 

@@ -4,7 +4,7 @@
 -   Introduce constructors and destructors as essential to encapsulation
 -   Overload constructors to enhance client communication
 
-> "A class is a cohesive package that ... describes the rules by which objects behave; these objects are referred to as instances of that class." **(Wikipedia, 2008)**
+> "A class is a cohesive package that ... describes the rules by which objects behave; these objects are referred to as instances of that class." **Wikipedia, 2008.**
 
 Object-oriented languages encapsulate the state and logic of a type using a class. A class describes the structure of the data that its objects hold and the rules under which its member functions access and change that data. The implementation of a well-encapsulated class has all details hidden within itself. Client code communicates with the objects of the class solely through its public member functions.
 

@@ -4,7 +4,7 @@
 -   Introduce manipulators to format data for input and output objects
 -   Describe the member functions that manage the state of streaming objects
 
-> "Designing and implementing a general input/output facility for a programming language is notoriously difficult. ... Nobody has come up with a solution that pleases everyone" **(Stroustrup, 1997).**
+> "Designing and implementing a general input/output facility for a programming language is notoriously difficult. ... Nobody has come up with a solution that pleases everyone" **Stroustrup, 1997.**
 
  The chapter entitled [Member Functions and Privacy](/Foundations/member-functions-and-privacy) covered the public member functions that format data passing through the standard library's `iostream` objects.  The chapter entitled [Input and Output Operators](/Encapsulation/input-and-output-operators) covered the design of custom input and output operators and introduced the standard library's `fstream` classes for processing file data.
 

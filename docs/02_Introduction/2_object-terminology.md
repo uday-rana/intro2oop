@@ -3,7 +3,7 @@
 -   Introduce objects and classes
 -   Introduce encapsulation, inheritance and polymorphism
 
-> "The span of absolute judgement and the span of immediate memory impose severe limitations on the amount of information that we are able to receive, process and remember. By organizing the stimulus input simultaneously into several dimensions and successively into a sequence of chunks, we manage to break this informational bottleneck" **(Miller, 1956).**
+> "The span of absolute judgement and the span of immediate memory impose severe limitations on the amount of information that we are able to receive, process and remember. By organizing the stimulus input simultaneously into several dimensions and successively into a sequence of chunks, we manage to break this informational bottleneck" **Miller, 1956.**
 
 Object-oriented programming reflects the way in which we manage day-to-day tasks. Professor Miller of Princeton University demonstrated that most of us can only comprehend about seven chunks of information at a time. As children, we learn to play with small sets of chunks at an early age. As we grow, we learn to break down the problems that we face into sets of manageable chunks.
 

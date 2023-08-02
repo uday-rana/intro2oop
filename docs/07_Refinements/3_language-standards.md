@@ -2,7 +2,7 @@
 
 - Introduce international standards and describe their evolution
 
-> "C++11 feels like a new language: The pieces just fit together better than they used to and I find a higher-level style of programming more natural than before and as efficient as ever." **(Stroustrup, 2013)**
+> "C++11 feels like a new language: The pieces just fit together better than they used to and I find a higher-level style of programming more natural than before and as efficient as ever." **Stroustrup, 2013**
 
 Object-oriented languages have evolved since the concept of objects was formally incorporated into the Simula language by Ole-Johan Dahl and Kristen Nygaard in the 1960s.  International standards have documented their evolution. The most recent standard for the C++ language is formally known as ISO/IEC 14882:2014 and extends over 1300 pages. ISO stands for the International Organization for Standardization. IEC stands for the International Electrotechnical Commission.
 

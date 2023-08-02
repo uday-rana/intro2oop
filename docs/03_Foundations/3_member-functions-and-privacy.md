@@ -4,7 +4,7 @@
 -   Control accessibility to the data members of a class
 -   Introduce the concept of an object's empty state
 
-> "Because different structures can have member functions with the same name, we must specify the structure name when defining a member function" **(Stroustrup, 1997)**
+> "Because different structures can have member functions with the same name, we must specify the structure name when defining a member function" **Stroustrup, 1997.**
 
 The primary concept of object-oriented programming is class encapsulation. Encapsulation incorporates within a class the structure of data that its objects store and the logic that operates on that data. In other words, encapsulation creates a clean interface between the class and its clients while hiding the implementation details from its clients. The C++ language describes this logic in the form of functions that are members of the class. The data members of a class hold the information about the state of its objects, while the member functions define the operations that query, modify and manage that state.
 

@@ -4,7 +4,7 @@
 -   Distinguish monomorphic and polymorphic objects
 -   Describe the difference between early binding and dynamic dispatch
 
-> "Respecting the inclusion relationship implies substitutability - operations that apply to entire sets should apply to any of their subsets as well." **(Sutter, Alexandrescu, 2005)**
+> "Respecting the inclusion relationship implies substitutability - operations that apply to entire sets should apply to any of their subsets as well." **Sutter, Alexandrescu, 2005.**
 
 Object-oriented languages support selection of behavior across related types through polymorphism. _Polymorphism_ is the third principal concept that these languages implement (alongside encapsulation and inheritance). Polymorphism refers to the multiplicity of meanings attached to a single identifier. Polymorphic stands for 'of many forms'. A polymorphic language selects an operation on an object based on the type associated with the object.
 

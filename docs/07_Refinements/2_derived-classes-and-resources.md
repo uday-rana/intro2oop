@@ -4,7 +4,7 @@
 - Define the copy constructor and assignment operator for a derived class with a resource
 - Identify the copy constructor and copy assignment operator defaults for a derived class
 
-> "If you use pointers, you have to think about resource management" **(Stroustrup, 1997)**
+> "If you use pointers, you have to think about resource management" **Stroustrup, 1997.**
 
 Inheritance hierarchies that access resources at multiple levels require intervention. Managing relationships between the special member functions in a hierarchy with multiple resources involves ensuring that the appropriate calls between these functions are made. The definitions of some copy constructors and copy assignment operators in the hierarchy may require explicit coding of the connections to their base class counterparts.
 

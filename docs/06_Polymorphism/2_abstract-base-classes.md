@@ -4,7 +4,7 @@
 -   Introduce pure virtual functions
 -   Demonstrate a unit test of an interface
 
-> "Program to an interface, not an implementation" **(Gamma, Helm, Johnson, Vlissides, 1994).**
+> "Program to an interface, not an implementation" **Gamma, Helm, Johnson, Vlissides, 1994.**
 
 Object-oriented languages use interfaces to define the single identifier to multiple meanings that polymorphism provides. Separating the interface from its various implementations promotes low coupling between the client code and an object's class hierarchy. The interface specifies what any object in the hierarchy offers to a client, while each implementation specifies how the interface provides what it has offered to its clients. This separation of concerns is central to software engineering. The interface effectively hides the hierarchy from its clients. We can upgrade the hierarchy by adding derived classes without having to change the client code. We can upgrade the client code without having to change the hierarchy.
 

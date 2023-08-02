@@ -4,7 +4,7 @@
 -   Describe the syntax for overloading operators that are members of a class
 -   Describe casting and conversion operations on instances of a class
 
-> "Programmers hate surprises: Overload operators only for good reason, and preserve natural semantics; if that's difficult, you might be misusing operator overloading" **(Sutter, Alexandrescu, 2005)**
+> "Programmers hate surprises: Overload operators only for good reason, and preserve natural semantics; if that's difficult, you might be misusing operator overloading" **Sutter, Alexandrescu, 2005.**
 
 An important feature of object-oriented programs is support for expressions composed of objects. An expression consists of an operator and a set of operands. The expression evaluates to a value of specific type. In languages like C++, all operators are built-in. The core language defines the logic for the operands of fundamental type. To support expressions with operands of class type, we need to overload the built-in operators for those operands. Overloading an operator entails declaring a corresponding function in the class definition and defining its logic in the implementation file.
 

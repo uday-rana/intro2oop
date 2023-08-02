@@ -3,7 +3,7 @@
 -   Design classes with dynamically allocated resources to model the components of a programming solution
 -   Define the copy constructor and assignment operator for a class with a resource
 
-> "Never allocate more than one resource in a single statement" **(Sutter, Alexandrescu, 2005)**
+> "Never allocate more than one resource in a single statement" **Sutter, Alexandrescu, 2005.**
 
 In object-oriented programming, we design classes to behave independently of their client applications. Wherever client code dictates the amount of memory that an object requires, the memory that needs to be allocated is unknown at compile-time. Only once the client has instantiated the object will the object know how much memory the client requires. To review run-time memory allocation and deallocation see the chapter entitled [Dynamic Memory](/Foundations/dynamic-memory).
 

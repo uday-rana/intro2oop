@@ -3,7 +3,7 @@
 -   Distinguish a member function's access to instance variables and client variables
 -   Access the current object from within a member function
 
-> "Each member function knows what object it was invoked for and can explicitly refer to it" **(Stroustrup, 1997)**
+> "Each member function knows what object it was invoked for and can explicitly refer to it" **Stroustrup, 1997.**
 
 Once client code calls a member function on an object of its class and before that function returns control to the client code, that member function may need to refer to its host object. We refer to the host object from within a member function as the current object for that function. In other words, the current object is the region of memory that contains the data on which a member function currently operates.
 

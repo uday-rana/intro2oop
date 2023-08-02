@@ -4,7 +4,7 @@
 -   Introduce function and class templates
 -   Introduce constrained casting to improve type safety
 
-> "Templates are of great utility to programmers in C++, especially when combined with multiple inheritance and operator overloading." **Wikipedia (2013).**
+> "Templates are of great utility to programmers in C++, especially when combined with multiple inheritance and operator overloading." **Wikipedia, 2013.**
 
 Polymorphism is not restricted to related types in object-oriented languages. Many languages also support selection across unrelated types. This polymorphism, which perfects the separation of interfaces from implementations, is called parametric or generic polymorphism. In parametric polymorphism the type and the logic executed on that type are independent of one another. Different clients can access the same logic using different totally unrelated types.
 

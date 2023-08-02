@@ -4,7 +4,7 @@
 -   Introduce association relationships between classes
 -   Overload the extraction and insertion operators as helper operators
 
-> "You don't need to modify istream or ostream to add new << and >> operators" **(Stroustrup, 1997)**
+> "You don't need to modify istream or ostream to add new << and >> operators" **Stroustrup, 1997.**
 
 The relationships between classes that object-oriented languages support include compositions and associations. Both of these relationships are more loosely coupled than friendship. A composition is a relationship in which one class has another class, while an association is a relationship in which one class uses another class. In relationship diagrams, associations appear as open circles and compositions as filled circles. The diagram below shows that `Code` uses the `Calendar` (to determine availability), while each `Course` has a Course `Code` class.
 

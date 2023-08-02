@@ -3,7 +3,7 @@
 -   Partition source code into modular solution
 -   Compile modules on Linux and Windows platforms
 
-> "Decide which modules you want; partition the program so that data is hidden within modules" **(Stroustrup, 1997)**
+> "Decide which modules you want; partition the program so that data is hidden within modules" **Stroustrup, 1997.**
 
 A modular design consists of a set of modules, which are developed and tested separately. Modular programming implements modular designs and is supported by both procedural and object-oriented languages. The C programming language supports modular design through library modules composed of functions. The `stdio` module provides input and output support, while hiding its implementation details; typically, the implementation for `scanf()` and `printf()` ships in binary form with the compiler. The `stdio.h` header file provides the interface, which is all that we need to complete our source code.
 

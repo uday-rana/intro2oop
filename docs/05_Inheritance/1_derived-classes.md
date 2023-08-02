@@ -4,7 +4,7 @@
 -   Introduce the terminology and syntax of derived classes
 -   Specify access to the protected members of a base class
 
-> "Public inheritance must always model 'is-a' ('works-like-a')" **(Liskov, 1988)**
+> "Public inheritance must always model 'is-a' ('works-like-a')" **Liskov, 1988.**
 >
 > "In correct inheritance, a derived class models a special case of a more general ... concept" **(Sutter, Alexandrescu, 2005)**
 

@@ -4,7 +4,7 @@
 -   Introduce overloading and function signatures
 -   Introduce pass by reference and compare it to pass by address
 
-> "Correctness, simplicity, and clarity comes first" **(Sutter, Alexandrescu, 2005)**
+> "Correctness, simplicity, and clarity comes first" **Sutter, Alexandrescu, 2005.**
 
 Object-oriented languages inherit from their non-object-oriented predecessors the concepts of variable declarations, data types, data structures, logic constructs, and modular programming. The C++ language inherits these features from the C language (see [Introduction to C](https://intro2c.sdds.ca/) for a detailed exposition).
 

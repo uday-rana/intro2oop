@@ -4,7 +4,7 @@
 -   Allocate and deallocate memory dynamically
 -   Identify common issues associated with dynamic memory
 
-> "Avoid allocating and deallocating in different modules" **(Sutter, Alexandrescu, 2005)**
+> "Avoid allocating and deallocating in different modules" **Sutter, Alexandrescu, 2005.**
 
 Various components of object-oriented programs can be reused by other applications. An important aspect of object designing is including flexibility in their memory requirements to enhance reusability. Objects are more reusable by different clients if they account for their own memory needs internally. These memory requirements may depend on problem size, which might not even be known approximately at compile-time. Programming languages address this aspect of reusability by supporting dynamic memory allocation.
 
