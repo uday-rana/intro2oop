@@ -26,7 +26,5 @@ The scope resolution operator `::` has the highest precedence. An expression con
 We can change the order of evaluation within a compound expression by enclosing a sub-expression in parentheses. That is, we use `(sub-expression)` to evaluate `sub-expression` before applying the rules of precedence to the entire expression. 
 
 For example,
-```cpp
-   2 + 3   * 5 evalues to 2 + 15 evalues to 17
- ( 2 + 3 ) * 5 evalues to 5 * 5  evalues to 25
-```
+ ` 2 + 3  * 5` evaluates to `2 + 15` which evaluates to `17`.
+ `(2 + 3) * 5` evaluates to `5 * 5 ` which evaluates to `25`.
