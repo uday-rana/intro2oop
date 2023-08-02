@@ -26,7 +26,7 @@ The fundamental types of C++ include:
     -   float
     -   double - long double
 
-### bool
+#### bool
 
 The bool type stores a logical value: true or false.
 
@@ -34,7 +34,7 @@ The `!` operator reverses that value: `!true` is false and `!false` is true.
 
 `!` is self-inverting on bool types, but not self-inverting on other types.
 
-### bool to int
+##### bool to int
 
 Conversions from `bool` type to any integral type and vice versa require care. `true` promotes to an `int` of value 1, while `false` promotes to an `int` of value 0. Applying the `!` operator to an `int` value other than 0 produces a value of 0, while applying the `!` operator to an int value of 0 produces a value of 1. Note that the following code snippet displays 1 (not 4):
 
