@@ -279,7 +279,7 @@ cout << harry.no; // ERROR .no IS PRIVATE!
 
 Hiding all data members from client code gives us control over which data to accept, which data to reject and which data to expose. We can validate information incoming from client code before storing it in an object. If the data is invalid, we can reject it and store default values that identify the object's state as an empty state.
 
-### Upgrading set()
+### Upgrading `set()`
 
 Let us upgrade our `set()` member function to validate incoming data only if:
 
@@ -317,7 +317,7 @@ This validation logic ensures that either the data stored in any `Student` objec
 
 Select one data member to hold the special value that identifies an empty state. Then, to determine if an object is in an empty state, we only need to interrogate that data member.
 
-### Upgrading display()
+### Upgrading `display()`
 
 To match this upgrade, we ensure that our `display()` member function executes gracefully if our object is in an empty state:
 
@@ -405,7 +405,7 @@ Outputs (Note: `_` denotes space):
 
 ```console
 Enter a string :
-__abc
+_abc
 |abc|
 ```
 
@@ -431,7 +431,7 @@ Outputs (Note: `_` denotes space):
 
 ```console
 Enter a string :
-__abc__
+_abc_
 |abc|
 ```
 
@@ -441,9 +441,9 @@ The `istream` type supports the following member functions:
 -   `get(...)`: Extracts a character or a string from the input buffer
 -   `getline(...)`: Extracts a line of characters from the input buffer
 
-For detailed descriptions of `get()` and `getline()`, see the chapter entitled [Input and Output Refinements](/Refinements/input-and-output-refinements).
+For detailed descriptions of `get()` and `getline()`, see the chapter entitled [Input and Output Refinements](/Refinements/input-and-output-refinements#member-functions).
 
-### `ignore`
+#### `ignore()`
 
 The `ignore()` member function extracts characters from the input buffer and discards them. `ignore()` does not skip leading whitespace. Two versions of `ignore()` are available:
 
@@ -454,7 +454,7 @@ cin.ignore(2000, '\n');
 
 The no-argument version discards a single character. The two-argument version removes and discards up to the specified number of characters or up to the specified delimiting character, whichever occurs first and discards the delimiting character. The default delimiter is end-of-file (not end-of-line).
 
-### cout
+### `cout`
 
 The `cout` object is an instance of the `ostream` type. An `ostream` object copies data from system memory into an output stream; in copying, it converts the data in system memory into a sequence of characters.
 
@@ -519,7 +519,7 @@ The `ostream` type supports the following public member functions for formatting
 -   `unsetf(...)`: Unsets a formatting flag for the flag received
 -   `precision(int)`: Sets the decimal precision to the integer received
 
-### width
+#### `width()`
 
 The `width(int)` member function specifies the minimum width of the **next** output field:
 
@@ -547,7 +547,7 @@ int main() {
 
 `width(int)` applies only to the next field. Note how the field width for the first display of `attendance` is 10, while the field width for the second display of `attendance` is just the minimum number of characters needed to display the value (2).
 
-### fill
+#### `fill()`
 
 The `fill(char)` member function defines the padding character. The output object inserts this character into the stream wherever text occupies less space than the specified field width. The default fill character is `' '` (space). To pad a field with `'*'`'s, we add:
 
@@ -574,20 +574,20 @@ int main() {
 
 The padding character remains unchanged, until we reset it.
 
-### setf, unsetf
+#### `setf()`, `unsetf()`
 
 The `setf()` and `unsetf()` member functions control formatting and alignment. Their control flags include:
 
 | Control Flag    | Result      |
-| --------------- | ----------- |
-| ios::fixed      | ddd.ddd     |
-| ios::scientific | d.ddddddEdd |
-| ios::left       | align left  |
-| ios::right      | align right |
+| :---------------: | :-----------: |
+| `ios::fixed`      | ddd.ddd     |
+| `ios::scientific` | d.ddddddEdd |
+| `ios::left`       | align left  |
+| `ios::right`      | align right |
 
 The scope resolution (`ios::`) on these flags identifies them as part of the `ios` class.
 
-### setf, unsetf - Formatting
+#### `setf()`, `unsetf()` - Formatting
 
 The default format in C++ is _general format_, which outputs data in the simplest, most succinct way possible (1.34, 1.345E10, 1.345E-20). To output a fixed number of decimal places, we select _fixed format_. To specify fixed format, we pass the `ios::fixed` flag to `setf()`:
 
@@ -663,7 +663,7 @@ int main() {
 
 To turn off scientific format, we pass the `ios::scientific` flag to the `unsetf()` member function.
 
-### setf, unsetf - Alignment
+#### `setf()`, `unsetf()` - Alignment
 
 The default alignment is right-justified.
 
@@ -697,7 +697,7 @@ To turn off left-justification, we pass the `ios::left` flag to the `unsetf()` m
 cout.unsetf(ios::left);
 ```
 
-### precision
+#### `precision()`
 
 The `precision()` member function sets the precision of subsequent floating-point fields. The default precision is `6` units. General, fixed, and scientific formats implement precision differently. General format counts the number of significant digits. Scientific and fixed formats count the number of digits following the decimal point.
 

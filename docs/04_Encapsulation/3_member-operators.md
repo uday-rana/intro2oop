@@ -440,7 +440,7 @@ if (harry)
     harry.display();
 ```
 
-### bool operator
+### `bool` operator
 
 Let us define a conversion operator that returns `true` if the `Student` object has valid data and `false` if the object is in a safe empty state.
 

@@ -19,16 +19,16 @@ The built-in types of the C++ language are called its fundamental types. The C++
 The fundamental types of C++ include:
 
 -   **Integral Types:** Store data exactly in equivalent binary form and can be signed or unsigned
-    -   bool - not available in C
-    -   char
-    -   int - short, long, long long
+    -   `bool` - not available in C
+    -   `char`
+    -   `int` - `short`, `long`, `long long`
 -   **Floating Point Types:** Store data to a specified precision - can store very small and very large values
-    -   float
-    -   double - long double
+    -   `float`
+    -   `double` - `long double`
 
-#### bool
+#### `bool`
 
-The bool type stores a logical value: true or false.
+The `bool` type stores a logical value: `true` or `false`.
 
 The `!` operator reverses that value: `!true` is false and `!false` is true.
 
@@ -177,13 +177,13 @@ for (int i = 0; i < n; i++)
     //...
 ```
 
-### One Definition Rule
+#### One Definition Rule
 
 In the C++ language, a definition may only appear once within its scope. This is called the one-definition rule.
 
 For example, we cannot define Transaction or display() more than once within the same code block or translation unit.
 
-### Declarations are not necessarily Definitions
+#### Declarations are not necessarily Definitions
 
 Forward declarations and function prototypes are declarations that are not definitions. They associate an identifier with a type, but do not attach any meaning to that identifier. We may repeat such declarations several times within the same code block or translation unit.
 
@@ -278,7 +278,7 @@ Possible solutions include:
 -   **Forward Declaration Solution:** Insert the prototype into main.h
 -   **Compact Solution:** Insert the prototype into Transaction.h
 
-### Forward Declaration Solution
+#### Forward Declaration Solution
 
 Inserting the prototype into `main.h` along with a forward declaration of `Transaction` informs the compiler that this identifier in the prototype is a valid type.
 
@@ -293,7 +293,7 @@ void add(double*, const Transaction*);
 
 This design provides the compiler with just enough information to accept the identifer, without exposing the type details.
 
-### Compact Solution
+#### Compact Solution
 
 Inserting the prototype into the `Transaction.h` header file is a more compact solution:
 
@@ -340,7 +340,7 @@ The scope of a non-global declaration begins at the declaration and ends at the 
 
 Once a declaration is out of its scope, the program has lost access to the declared variable or object. Identifying the precise point at which a variable's or object's declaration goes out of scope is important in memory management.
 
-### Iterations
+#### Iterations
 
 In the following code snippet, the counter `i`, declared within the `for` statement, goes out of scope immediately after the closing brace:
 

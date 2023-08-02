@@ -461,7 +461,7 @@ Derived( parameters ) : Base( arguments )
 
 where `Derived` is the name of the derived class and `Base` is the name of the base class. The single colon separates the header of the derived-class constructor from its call to the base class constructor. If we omit this call, the compiler inserts a call to the default base class constructor.
 
-### Example
+#### Example
 
 Let us replace the `set()` member function in the base class with a one-argument constructor and upgrade the `Student`'s three-argument constructor to receive the student's name. The header file declares a single-argument base class constructor and a four-argument derived class constructor:
 
@@ -598,7 +598,7 @@ using Base::Base;
 
 where `Base` is the name of the base class.
 
-### Example
+#### Example
 
 Let us derive an `Instructor` class from the `Person` base class and inherit all of the constructors of the base class. The header file overrides the no-inheritance default:
 

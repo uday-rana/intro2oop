@@ -203,7 +203,7 @@ The `istream` type supports the following member functions:
 - `get(...)`: Extracts a character or a string from the input buffer
 - `getline(...)`: Extracts a line of characters from the input buffer
 
-#### ignore()
+#### `ignore()`
 
 The `ignore()` member function extracts bytes from the input buffer and discards them without skipping whitespace. The `iostream` hierarchy defines two overloaded versions of `ignore()`:
 
@@ -214,7 +214,7 @@ cin.ignore(2000, '\n');
 
 The no-argument version discards a single byte. The two-argument version removes and discards up to the number of bytes specified by the first argument or up to the specified delimiting character, whichever occurs first and discards the delimiting character. The default delimiter is the end-of-file character (not the newline character).
 
-#### get()
+#### `get()`
 
 The `get()` member function extracts either a single character or a string from the input buffer. Three versions are available:
 
@@ -262,7 +262,7 @@ v = o
 
 `get()` does not skip leading whitespace. `get(,)` leaves the delimiting character in the input buffer. In using `get(,)` we need to remove the delimiting character, if there is one. Both string versions - `get(char*, int)` and `get(char*, int, char)` - append a null byte to the sequence of characters stored in memory.
 
-#### getline()
+#### `getline()`
 
 `getline()` behaves like `get()`, but extracts the delimiting character from the input buffer:
 
@@ -390,7 +390,7 @@ The `ostream` class supports the following public member functions for formattin
 - `unsetf(...)`: Unsets a formatting flag for the flag received
 - `precision(int)`: Sets the decimal precision to the integer received
 
-#### width()
+#### `width()`
 
 The `width(int)` member function specifies the minimum width of the _next_ output field:
 
@@ -420,7 +420,7 @@ Output:
 
 `width(int)` applies only to the next field. Note how the field width for the first display of `attendance` is 10, while the field width for the second display of `attendance` is just the minimum number of characters needed to display the value (2).
 
-#### fill()
+#### `fill()`
 
 The `fill(char)` member function defines the padding character. The output object inserts this character into the stream wherever text occupies less space than the specified field width. The default fill character is `' '` (space).  To pad a field with `'*'`s, we add:
 
@@ -449,9 +449,9 @@ Output:
 
 The padding character remains unchanged, until we reset it.
 
-#### setf(), unsetf() - Format control
+#### `setf()`, `unsetf()` - Format control
 
-The setf() and unsetf() member functions control formatting and alignment. Their control flags include:
+The `setf()` and `unsetf()` member functions control formatting and alignment. Their control flags include:
 
 | Control Flag | Result |
 | :---: | :---: |
@@ -541,7 +541,7 @@ Output:
 
 To turn off scientific format, we pass the `ios::scientific` flag to the `unsetf()` member function.
 
-#### setf(), unsetf() - Alignment
+#### `setf()`, `unsetf()` - Alignment
 
 The default alignment is right-justified. 
 
@@ -576,9 +576,9 @@ To switch off left-justification, we pass the `ios::left` flag to the `unsetf()`
 cout.unsetf(ios::left);
 ```
 
-#### precision()
+#### `precision()`
 
-The precision() member function sets the precision of subsequent floating-point fields.  The default precision is 6 units.  General, fixed, and scientific formats implement precision differently.  General format counts the number of significant digits.  Scientific and fixed formats count the number of digits following the decimal point. 
+The `precision()` member function sets the precision of subsequent floating-point fields.  The default precision is 6 units.  General, fixed, and scientific formats implement precision differently.  General format counts the number of significant digits.  Scientific and fixed formats count the number of digits following the decimal point. 
 
 For a precision of 2 under general format, we write
 
@@ -784,7 +784,7 @@ The following section provides a complete example.
 
 Robust validation enhances the friendliness of any application that processes input. The state functions of the `iostream` classes help us validate input robustly. Robust validation checks the input object's state after each extraction to ensure that the object has converted the sequence of bytes into a value and that that converted value is valid and within admissible bounds. Robust validation rejects invalid input and out-of-bound values, resetting any failed state and requesting fresh input as necessary from the user.
 
-### getPosInt()
+### `getPosInt()`
 
 To extract a positive `int` that is not greater than `max` from the standard input device, we write
 
