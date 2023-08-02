@@ -23,7 +23,7 @@ A type system introduces consistency into a programming language. It is the firs
 
 A strongly typed language enforces type consistency at compile-time and only postpones type-checking to run-time for polymorphic objects.
 
-The C++ language is a `strongly typed` language. It checks for type consistency on monomorphic objects at compile-time and on polymorphic objects at run-time.
+The C++ language is a _strongly typed_ language. It checks for type consistency on monomorphic objects at compile-time and on polymorphic objects at run-time.
 
 ### Role of Polymorphism
 
@@ -60,11 +60,11 @@ Inclusion polymorphism is specific to object-oriented languages.
 
 ### Ad-Hoc Polymorphism
 
-Ad-hoc polymorphism is `apparent` polymorphism. Its polymorphic character disappears at closer scrutiny.
+_Ad-hoc polymorphism_ is _apparent_ polymorphism. Its polymorphic character disappears at closer scrutiny.
 
 ### Coercion
 
-`Coercion` addresses differences between argument types in a function call and the parameter types in the function's definition. Coercion allows convertible changes in the argument's type to match the type of the corresponding function parameter. It is a semantic operation that avoids a type error.
+_Coercion_ addresses differences between argument types in a function call and the parameter types in the function's definition. Coercion allows convertible changes in the argument's type to match the type of the corresponding function parameter. It is a semantic operation that avoids a type error.
 
 If the compiler encounters a mismatch between the type of an argument in a function call and the type of the corresponding parameter, the language allows conversion from the type of the argument to the type of the corresponding parameter. The compiler inserts the code necessary to perform the coercion. The function definition itself only ever executes on one type - the type of its parameter.
 
@@ -155,7 +155,7 @@ Note that a procedural language like the C language does not admit overloading a
 
 ### Universal Polymorphism
 
-Universal polymorphism is _true_ polymorphism. Its polymorphic character survives at closer scrutiny.
+_Universal polymorphism_ is _true_ polymorphism. Its polymorphic character survives at closer scrutiny.
 
 Unlike ad-hoc polymorphism, universal polymorphism imposes no restriction on the admissible types. The same function (logic) applies to a potentially unlimited range of different types.
 
