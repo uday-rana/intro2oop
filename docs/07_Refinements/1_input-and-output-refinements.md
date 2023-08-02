@@ -452,12 +452,13 @@ The padding character remains unchanged, until we reset it.
 #### setf(), unsetf() - Format control
 
 The setf() and unsetf() member functions control formatting and alignment. Their control flags include:
+
 | Control Flag | Result |
 | :---: | :---: |
-| ios::fixed | ddd.ddd |
-| ios::scientific |d.ddddddEdd |
-| ios::left | Align left |
-| ios::right |Align right |
+| `ios::fixed` | ddd.ddd |
+| `ios::scientific` | d.ddddddEdd |
+| `ios::left` | Align left |
+| `ios::right` | Align right |
 
 The scope resolution (`ios::`) on these flags identifies them as part of the `ios` class.
 
@@ -614,11 +615,12 @@ The C++ language defines manipulators that are elegant alternatives to member fu
 ### Input Manipulators
 
 The manipulators of input objects are listed below:
+
 | Manipulator | Effect |
 | :---: | :---: |
-| skipws | Skip whitespace |
-| noskipws | Turn off skip whitespace |
-| setw(int) | Set the field width for next input (strings only) |
+| `skipws` | Skip whitespace |
+| `noskipws` | Turn off skip whitespace |
+| `setw(int)` | Set the field width for next input (strings only) |
 
 The argument to `setw()` should be one more than the maximum number of input bytes to be read.  Note that the `setw()` manipulator is an alternative to `get(char*, int)`, but `setw()` skips leading whitespace unless we turn off skipping.
 
@@ -656,6 +658,7 @@ Stored 'abcd' & 'e' & ' ' & 'fgh'
 ### Output Manipulators
 
 The manipulators of output objects are listed below:
+
 | Manipulator | Effect |
 | :---: | :---: |
 | `fixed` | Output floating-point numbers in fixed-point format |
