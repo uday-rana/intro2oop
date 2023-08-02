@@ -540,3 +540,224 @@ int main() {
     }
 }
 ```
+## String Class (Optional)
+
+The examples in these notes have been limited to input data that fits within pre-allocated memory. In the case of character string input, the user determines the number of characters to enter and pre-allocation of the required memory is not possible.  A user entering more characters than allocated memory can accept may cause a stream failure.
+
+### The Problem
+
+Consider the user inputting a comment on a student's transcript. Since we only know how much memory to allocate for the comment after receiving the complete text, we cannot allocate that memory at compile-time or run-time before accepting the comment.
+
+### The Solution
+
+The standard library's `string` class allocates the required amount of memory dynamically during the input process itself. A `std::string` object can accept as many characters as the user enters. The helper function `std::getline()` extracts the characters from the input stream.
+
+The prototype for this helper function is
+
+```cpp
+std::istream& getline(std::istream&, std::string&, char);
+```
+
+The first parameter receives a modifiable reference to the `std::istream` object, the second parameter receives a modifiable reference to the `std::string object` and the third parameter receives the character delimiter for terminating extraction (newline by default). 
+
+The `<string>` header file contains the class definition with this prototype.  The class definition includes two member functions for converting its internal data into a C-style null-terminated string:
+
+- `std::string::length()`: Returns the number of characters in the string
+- `std::string::c_str()`: Returns the address of the C-style null-terminated version of the string 
+
+### C-Style Example
+
+The following client code extracts an unknown number of characters from the standard input stream, stores them in a C-style null-terminated string and displays the character string on the standard output object in five steps:
+
+1. Define a `string` object to accept the input
+2. Extract the input using the `std::getline()` helper function
+3. Query the `string` object for the memory required
+4. Allocate dynamic memory for the requisite C-style null-terminated string
+5. Copy the data from the `string` object to the allocated memory
+6. Deallocate the allocated memory
+
+```cpp
+// String Class example
+// string.cpp
+
+#include <iostream>
+#include <string>
+
+int main( ) {
+    char* s;
+    std::string str;
+
+    std::cout << "Enter a string : ";
+    if (std::getline(std::cin, str)) {
+        s = new char [str.length() + 1];
+        std::strcpy(s, str.c_str());
+        std::cout << "The string entered is : >" << s << '<' << std::endl; 
+        delete [] s;
+    }
+}
+```
+
+### Student Class Example
+
+Let us upgrade our `Student` class to store a comment using a `string` object as a data member. 
+
+The header file for our `Student` class contains:
+```cpp
+// Student.h
+
+#include <iostream>
+#include <string>
+
+const int NG = 20;
+
+class Student {
+    int no;
+    float grade[NG];
+    int ng;
+    std::string comment;
+public:
+    Student();
+    Student(int);
+    Student(int, const float*, int, const std::string&);
+    void read(std::istream&);
+    void display(std::ostream&) const;
+};
+
+std::istream& operator>>(std::istream& is, Student& s);
+std::ostream& operator<<(std::ostream& os, const Student& s); 
+```
+
+The implementation file contains:
+```cpp
+// Student.cpp
+
+#include "Student.h"
+using namespace std;
+
+Student::Student() {
+    no = 0;
+    ng = 0;
+}
+
+Student::Student(int n) {
+    *this = Student(n, nullptr, 0, "");
+}
+
+Student::Student(int sn, const float* g, int ng_, const string& c) { 
+    bool valid = sn > 0 && g != nullptr && ng_ >= 0;
+    if (valid)
+        for (int i = 0; i < ng_ && valid; i++)
+            valid = g[i] >= 0.0f && g[i] <= 100.0f;
+
+    if (valid) {
+        // accept the client's data
+        no = sn;
+        ng = ng_ < NG ? ng_ : NG;
+        for (int i = 0; i < ng; i++)
+            grade[i] = g[i];
+        comment = c;
+    } else {
+        *this = Student();
+    }
+}
+
+void Student::read(std::istream& is) {
+    int no;          // will hold the student number
+    int ng;          // will hold the number of grades
+    float grade[NG]; // will hold the grades
+    string comment;  // will hold comments
+
+    cout << "Student Number : ";
+    is >> no;
+    cout << "Number of Grades : ";
+    is >> ng;
+    if (ng > NG) ng = NG;
+    for (int i = 0; i < ng; i++) {
+        cout << "Grade " << i + 1 << " : ";
+        is >> grade[i];
+    }
+    is.ignore(); // extract newline
+    cout << "Comments : ";
+    getline(is, comment, '\n');
+
+    // construct a temporary Student
+    Student temp(no, grade, ng, comment);
+    // if data is valid, the temporary object into the current object 
+    if (temp.no != 0)
+        *this = temp;
+}
+
+void Student::display(std::ostream& os) const {
+    if (no > 0) {
+        os << no << ":\n";
+        os.setf(ios::fixed);
+        os.precision(2);
+        for (int i = 0; i < ng; i++) { 
+            os.width(6);
+            os << grade[i] << endl;
+        }
+        os.unsetf(ios::fixed);
+        os.precision(6);
+        os << "Comments:\n" << comment << endl;
+    } else {
+        os << "no data available" << endl; 
+    }
+}
+
+std::ostream& operator<<(std::ostream& os, const Student& s) { 
+    s.display(os);
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Student& s) {
+    s.read(is);
+    return is;
+}
+```
+
+The client code below receives the input below it and produces the output listed further below:
+
+```cpp
+// String Class
+// string.cpp
+
+#include <iostream>
+#include "Student.h"
+
+int main ( ) {
+    Student harry;
+
+    std::cin >> harry;
+    std::cout << harry << std::endl; 
+}
+```
+
+Input:
+
+```console
+Student Number : 1234
+Number of Grades : 2
+Grade 1 : 56.7
+Grade 2 : 78.9
+Comments : See Coordinator 
+```
+
+Output:
+
+```console
+1234:
+ 56.70
+ 78.90
+Comments:
+See Coordinator
+```
+
+### Summary
+
+- We associate our own classes with the `iostream` classes by overloading the extraction and insertion operators as helpers to those classes
+- The first parameter in the declaration of each overloaded operator is a modifiable reference to the stream object
+- The return type of each overloaded operator is a modifiable reference to the stream object, which enables cascading
+- The standard library includes overloaded extraction and insertion operators for file objects as left operands and fundamental types as right operands
+- An input file object is an instance of an `ifstream` class
+- An output file object is an instance of an `ofstream` class
+- The `string` class of the standard library manages the memory requirements for storing a user-defined character string of any length
