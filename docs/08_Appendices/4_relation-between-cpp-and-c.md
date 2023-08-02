@@ -97,13 +97,13 @@ The recommended way to specify that a function has no parameters in C is to incl
 
 Applications written for pre-standard C++ compilers may include code that requires upgrading to meet the stricter requirements of Standard C++.  Common issues include:
 
-- for int scope
+- `for` `int` scope
 - original libraries
 - insufficient memory
 
 Some compilers can still create executable files from pre-standard C++ source code. A copy of the Borland Win 32 5.5 compiler can be downloaded [here](https://scs.senecac.on.ca/~chris.szalwinski/resources/borland.html). Many compilers have removed the deprecated pre-standard facilities and only conform to those features (or a majority of them) specified in C++11.
 
-### for int scope
+### `for` `int` scope
 
 In pre-standard C++, the scope of a variable defined in the `for` clause extends beyond the closing brace of the block that encloses the iteration.  In C++11, the scope of such a variable extends only to the end of the iteration block. 
 
