@@ -430,7 +430,7 @@ public:
 ```
 The keyword `delete` used in this context has no relation to deallocating dynamic memory.
 
-# Summary
+## Summary
 
 - A class with resources requires custom definitions of a copy constructor, copy assignment operator and destructor
 - The copy constructor copies data from an existing object to a newly created object

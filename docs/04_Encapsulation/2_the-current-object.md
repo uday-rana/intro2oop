@@ -82,7 +82,7 @@ The constructor for `harry` receives data in its explicit parameters and copies 
 
 The first client call to the `display()` member function accesses `harry` through its implicit parameters. The second client call accesses `josee` through its implicit parameters.
 
-# `this` Keyword
+## `this` Keyword
 
 The keyword `this` returns the address of the current object. That is, `this` holds the address of the region of memory that contains all of the data stored in the instance variables of current object. `*this` refers to the current object itself; that is, to the complete set of its instance variables.
 
@@ -146,7 +146,7 @@ To copy the values of the instance variables of one object into those of the cur
 *this = ...;
 ```
 
-## Example - Validated Input
+### Example - Validated Input
 
 Let us introduce a member function to our Student class called `read()` that:
 

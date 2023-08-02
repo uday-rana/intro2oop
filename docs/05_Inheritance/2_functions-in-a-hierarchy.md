@@ -148,7 +148,7 @@ Jane Doe
 
 By calling `Person::display()` within `Student::display()`, we hide the hierarchy from the client code. The `main()` function is hierarchy agnostic.
 
-## Exposing an Overloaded Member Function (Optional)
+### Exposing an Overloaded Member Function (Optional)
 
 The C++ language shadows member functions on their identifier and not on their signature. To expose an overloaded member function in the base class with the same identifier but a different signature we insert a `using` declaration into the definition of the derived class. A `using` declaration takes the form
 
@@ -158,7 +158,7 @@ using Base::identifier;
 
 where `Base` identifies the base class and `identifier` is the name of the shadowed function.
 
-### Example
+#### Example
 
 Let us overload the `display()` member function in the `Person` class to take two arguments: a modifiable reference to the output stream and the address of a C-style null-terminated character string containing a prefix message. We insert the `using` declaration in the definition of the derived class to expose this member function and any other with the same identifier for objects of the derived class.
 
@@ -1000,7 +1000,7 @@ Harry 1234
  45.50
 ```
 
-# Summary
+## Summary
 
 -   A member function of a derived class shadows an identically named member function of a base class
 -   A derived class does not inherit the destructor, assignment operators or helper functions of a base class
