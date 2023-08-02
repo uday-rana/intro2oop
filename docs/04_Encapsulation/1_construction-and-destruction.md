@@ -287,21 +287,22 @@ Student::Student() {
 
 Note that this default constructor leaves the instance variables uninitialized.
 
-## Understanding Order
+### Understanding Order
 
-### Construction
+#### Construction
 
 The compiler assembles an object in the following order:
 
 1. Allocates memory for each instance variable in the order listed in the class definition
 2. Executes the logic, if any, within the constructor's definition
-   Member Function Calls
+
+#### Member Function Calls
 
 Since the constructor starts executing at instantiation, no normal member function is called before the constructor. Every normal member function is called after instantiation.
 
 ![Constructor](/img/ctor.png)
 
-### Multiple Objects
+#### Multiple Objects
 
 The compiler creates multiple objects defined in a single declaration in the order specified by the declaration.
 
@@ -438,14 +439,82 @@ no data available
 
 The safe empty state is identical for all objects of the same class.
 
-### Destruction
+## Destructor
+
+Complete encapsulation also requires a mechanism for tidying up at the end of an object's lifetime.  An object with dynamically allocated memory needs to deallocate that memory before going out of scope.  An object that has written data to a file needs to flush the file's buffer and close the file before going out of scope.
+
+### Definition
+
+ The special member function that every object invokes before going out of scope is called its class' destructor.  We code all of the terminal logic in this special member function. 
+
+The destructor takes its name from the class itself, prefixing it with the tilde symbol (~). The prototype for a destructor takes the form
+
+```cpp
+~Type();
+```
+
+`Type` is the name of the class. Destructors have no parameters or return values. 
+
+An object's destructor:
+- is called automatically.
+- cannot be overloaded.
+- should not be called explicitly.
+
+
+### Example
+
+To define the destructor for our `Student` class, we declare its prototype in the class definition:
+
+```cpp
+const int NG = 20;
+
+class Student {
+    int no;
+    float grade[NG];
+    int ng;
+public:
+    Student();
+    ~Student();
+    void set(int, const float*, int); 
+    void display() const;
+};
+```
+
+We define the member function in the implementation file:
+
+```cpp
+Student::~Student() {
+    // insert our terminal code here 
+}
+```
+
+### Default Behaviour
+
+If we don't declare a destructor in the class definition, the compiler inserts a destructor with an empty body:
+
+```cpp
+Student::~Student() {
+}
+```
+
+### Understanding Order
+
+#### Destruction
 
 Object destruction proceeds in the following order:
 
 1. Execute the logic of the object's destructor
 2. Deallocate memory for each instance variable in opposite order to that listed in the class definition
 
-### Multiple Objects
+#### Member Function Calls
+
+An object's destructor starts executing only after every normal member function has completed its execution.
+
+![dtor](/img/dtor.png)
+
+Client code cannot call any member function on an object after the object has called its destructor and gone out of scope.
+
+#### Multiple Objects
 
 The compiler destroys sets of objects in opposite order to that of their creation.
 
