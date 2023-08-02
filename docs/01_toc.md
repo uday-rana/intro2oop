@@ -37,10 +37,6 @@ slug: /
 -   [Templates](/Polymorphism/templates)
 -   [Overview of Polymorphism](/Polymorphism/overview-of-polymorphism)
 
----
-
-# Under Construction
-
 ## Refinements
 
 -   [Input and Output Refinements](/Refinements/input-and-output-refinements)
