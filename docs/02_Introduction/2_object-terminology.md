@@ -1,7 +1,7 @@
 # Object Terminology
 
--   Introduce objects and classes
--   Introduce encapsulation, inheritance and polymorphism
+- Introduce objects and classes
+- Introduce encapsulation, inheritance and polymorphism
 
 > "The span of absolute judgement and the span of immediate memory impose severe limitations on the amount of information that we are able to receive, process and remember. By organizing the stimulus input simultaneously into several dimensions and successively into a sequence of chunks, we manage to break this informational bottleneck" **Miller, 1956.**
 
@@ -55,16 +55,16 @@ setTitle(const char*) : void
 
 The naming conventions include:
 
--   Begin each class name with an upper case letter
--   Begin each member name with a lower case letter
--   Use camel case throughout all names - capitalize the first letter of every word after the first word
+- Begin each class name with an upper case letter
+- Begin each member name with a lower case letter
+- Use camel case throughout all names - capitalize the first letter of every word after the first word
 
 ### Terminology
 
 UML uses the terms attributes and operations. Some object-oriented languages use different terms. Equivalent terms are:
 
--   **Attributes (UML):** Fields, data members, properties, member variables
--   **Operations (UML):** Methods (Java), procedures, messages, member functions
+- **Attributes (UML):** Fields, data members, properties, member variables
+- **Operations (UML):** Methods (Java), procedures, messages, member functions
     The C++ language standard uses the terms data members and member functions exclusively.
 
 ## Encapsulation
@@ -91,8 +91,8 @@ As long as the classes in a programming solution are well-encapsulated, any prog
 
 Two object-oriented concepts are prominent in our study of the relationships between classes:
 
--   **Inheritance:** One class inherits the structure of another class
--   **Polymorphism:** A single interface provides multiple implementations
+- **Inheritance:** One class inherits the structure of another class
+- **Polymorphism:** A single interface provides multiple implementations
     These are special cases of encapsulation in the sense of distinguishing interface and implementation to produce highly cohesive objects that support minimal coupling to their clients.
 
 ### Inheritance
@@ -121,14 +121,14 @@ Encapsulation, inheritance and polymorphism are the cornerstones of any object-o
 
 ## Summary
 
--   An object is a chunk of information with a crisp conceptual boundary and a well-defined structure.
--   Objects are abstractions of the most important chunks of information from a problem domain. They distinguish the different feature sets in the problem domain.
--   A class describes the structure common to a set of similar objects. Each object in the set is a single instance of its class.
--   Encapsulation hides the implementation details within a class - the internal data and internal logic are invisible to client applications that use objects of that class.
--   We can upgrade the structure of a well-encapsulated class without altering any client code.
--   The cornerstones of object-oriented programming are encapsulation, inheritance and polymorphism.
+- An object is a chunk of information with a crisp conceptual boundary and a well-defined structure.
+- Objects are abstractions of the most important chunks of information from a problem domain. They distinguish the different feature sets in the problem domain.
+- A class describes the structure common to a set of similar objects. Each object in the set is a single instance of its class.
+- Encapsulation hides the implementation details within a class - the internal data and internal logic are invisible to client applications that use objects of that class.
+- We can upgrade the structure of a well-encapsulated class without altering any client code.
+- The cornerstones of object-oriented programming are encapsulation, inheritance and polymorphism.
 
 ## Exercises
 
--   Read Wikipedia on [Encapsulation](http://en.wikipedia.org/wiki/Information_hiding)
--   Review the [Subject Outline](http://www.senecacollege.ca/ssos/findwithoutsemester/oop244/sict)
+- Read Wikipedia on [Encapsulation](http://en.wikipedia.org/wiki/Information_hiding)
+- Review the [Subject Outline](http://www.senecacollege.ca/ssos/findwithoutsemester/oop244/sict)

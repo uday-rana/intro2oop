@@ -1,7 +1,7 @@
 # The Current Object
 
--   Distinguish a member function's access to instance variables and client variables
--   Access the current object from within a member function
+- Distinguish a member function's access to instance variables and client variables
+- Access the current object from within a member function
 
 > "Each member function knows what object it was invoked for and can explicitly refer to it" **Stroustrup, 1997.**
 
@@ -13,8 +13,8 @@ This chapter describes the mechanism by which a member function accesses its cur
 
 Member functions receive information through parameters and return information through a return value and possibly some of their parameters. The parameters of any member function are of two distinct kinds:
 
--   **Explicit:** Access the client code
--   **Implicit:** Access the instance variables
+- **Explicit:** Access the client code
+- **Implicit:** Access the instance variables
 
 ![Member Functions](/img/current_object.png)
 
@@ -63,7 +63,7 @@ int main () {
 }
 ```
 
-```
+```console
 Entering 3-arg constructor
 Entering 3-arg constructor
 1234:
@@ -109,7 +109,7 @@ int main() {
 }
 ```
 
-```
+```console
 Entering 3-arg constructor
 1234:
  89.40
@@ -150,16 +150,16 @@ To copy the values of the instance variables of one object into those of the cur
 
 Let us introduce a member function to our Student class called `read()` that:
 
--   Extracts data from standard input
--   Stores that data in a temporary `Student` object
--   Copies the temporary object to the current object only if the temporary object is not empty
--   Leaves the current object unchanged if the temporary object is empty
+- Extracts data from standard input
+- Stores that data in a temporary `Student` object
+- Copies the temporary object to the current object only if the temporary object is not empty
+- Leaves the current object unchanged if the temporary object is empty
 
 To avoid duplicating validation logic, we:
 
--   Construct a local `Student` object passing the input data to the three-argument constructor
--   Let the internal logic determine whether to accept the data or place the object in a safe empty state
--   Assgin the local object to the current object if the temporary object accepted the data
+- Construct a local `Student` object passing the input data to the three-argument constructor
+- Let the internal logic determine whether to accept the data or place the object in a safe empty state
+- Assgin the local object to the current object if the temporary object accepted the data
 
 ```cpp
 void Student::read() {
@@ -191,10 +191,10 @@ Since the temporary object (`temp`) and the current object are instances of the 
 
 ## Summary
 
--   The current object is the current host object for the member function
+- The current object is the current host object for the member function
     a member function's parameters consist of implicit and explicit parameters
--   A member function's explicit parameters receive information from the client code
--   A member function's implicit parameters bind the function to the instance variables of current object
--   The keyword `this` holds the address of the current object
--   `*this` refers to the current object itself
--   The keyword `this` is meaningless outside a member function
+- A member function's explicit parameters receive information from the client code
+- A member function's implicit parameters bind the function to the instance variables of current object
+- The keyword `this` holds the address of the current object
+- `*this` refers to the current object itself
+- The keyword `this` is meaningless outside a member function

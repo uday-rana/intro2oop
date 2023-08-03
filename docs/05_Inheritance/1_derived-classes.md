@@ -1,8 +1,8 @@
 # Derived Classes
 
--   Relate classes using inheritance hierarchies to minimize the duplication of object code
--   Introduce the terminology and syntax of derived classes
--   Specify access to the protected members of a base class
+- Relate classes using inheritance hierarchies to minimize the duplication of object code
+- Introduce the terminology and syntax of derived classes
+- Specify access to the protected members of a base class
 
 > "Public inheritance must always model 'is-a' ('works-like-a')" **Liskov, 1988.**
 >
@@ -54,8 +54,8 @@ A derived class object contains the instance variables of the base class and tho
 
 The terms base class and derived class are C++ specific. Equivalent terms for these object-oriented concepts include:
 
--   **Base Class:** Super Class, Parent Class
--   **Derived Class:** Subclass, Heir Class, Child Class
+- **Base Class:** Super Class, Parent Class
+- **Derived Class:** Subclass, Heir Class, Child Class
 
 ### Inherited Structure
 
@@ -200,9 +200,9 @@ Note that the `main()` function refers to the `Student` type, without referring 
 
 The C++ language supports three modifiers for granting access to the members of class:
 
--   `Private`: Bars all access
--   `Protected`: Limits access to derived classes only
--   `Public`: Unlimited access
+- `Private`: Bars all access
+- `Protected`: Limits access to derived classes only
+- `Public`: Unlimited access
 
 Since the data member of the `Person` class is `private`, the member functions of our `Student` class and the client code cannot access that data member. Since the member functions of the `Person` and `Student` classes are public, the `main()` function can access all of them.
 
@@ -327,9 +327,10 @@ Harry 1234:
  67.80
  45.50
 ```
+
 ### Avoid Granting Protected Access to Data Members
 
-Granting data members protected access introduces a security hole.  If a derived class has protected access to any data member of its base class, any member function of the derived class can circumvent any validation procedure in the base class.  If the base class in the above example granted client code access to the `person` data member, we could change its contents from our `Student` class to a string of more than `NC` characters, which would probably break our `Student` object. 
+Granting data members protected access introduces a security hole.  If a derived class has protected access to any data member of its base class, any member function of the derived class can circumvent any validation procedure in the base class.  If the base class in the above example granted client code access to the `person` data member, we could change its contents from our `Student` class to a string of more than `NC` characters, which would probably break our `Student` object.
 
 ### Good Design Tip
 
@@ -337,7 +338,7 @@ Granting `protected` access to any data member exposes that member to potential 
 
 ## Summary
 
-- Inheritance is a hierarchical relationship between classes. 
+- Inheritance is a hierarchical relationship between classes.
 a derived class inherits the entire structure of its base class
 - The access modifier protected grants access to member functions of the derived class
 - Any member function of a derived class may access any protected or public member of its base class

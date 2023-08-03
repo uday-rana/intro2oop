@@ -1,8 +1,8 @@
 # Templates
 
--   Design polymorphic objects to amplify the reusability of code
--   Introduce function and class templates
--   Introduce constrained casting to improve type safety
+- Design polymorphic objects to amplify the reusability of code
+- Introduce function and class templates
+- Introduce constrained casting to improve type safety
 
 > "Templates are of great utility to programmers in C++, especially when combined with multiple inheritance and operator overloading." **Wikipedia, 2013.**
 
@@ -26,10 +26,10 @@ The keyword `template` identifies the subsequent code block as a template. The l
 
 Each parameter declaration consists of a type and an identifier. `Type` may be any of
 
--   `typename`: To identify a type (fundamental or compound)
--   `class`: To identify a type (fundamental or compound)
--   `int`, `long`, `short`, `char`: To identify a non-floating-point fundamental type
--   a template parameter
+- `typename`: To identify a type (fundamental or compound)
+- `class`: To identify a type (fundamental or compound)
+- `int`, `long`, `short`, `char`: To identify a non-floating-point fundamental type
+- a template parameter
 
 The following examples are equivalent to one another:
 
@@ -162,7 +162,7 @@ int main() {
 }
 ```
 
-```
+```console
 0 1 4 9 16
 ```
 
@@ -172,10 +172,10 @@ Constrained casts improve type safety. Type safety is an important feature of an
 
 C++ supports constrained type casting through template syntax using one of the following keywords:
 
--   `static_cast<Type>(expression)`
--   `reinterpret_cast<Type>(expression)`
--   `const_cast<Type>(expression)`
--   `dynamic_cast<Type>(expression)`
+- `static_cast<Type>(expression)`
+- `reinterpret_cast<Type>(expression)`
+- `const_cast<Type>(expression)`
+- `dynamic_cast<Type>(expression)`
 
 `Type` specifies the destination type. `expression` refers to the value to be cast to the destination type.
 
@@ -262,9 +262,9 @@ int main( ) {
 
 Few reinterpret casts are portable. Uses include:
 
--   Evaluating raw data
--   Recovering data where types are unknown
--   Quick and messy calculations
+- Evaluating raw data
+- Recovering data where types are unknown
+- Quick and messy calculations
 
 ### Unmodifiable Types
 
@@ -472,11 +472,11 @@ Note that if `display()` is declared virtual the output may be the same for both
 
 ## Summary
 
--   A template header consists of the keyword `template` followed by the template parameters
--   The compiler generates the template specialization based on the argument types in the function call
--   Avoid type casting that completely bypasses the language's type-checking facilities
--   If type casting is necessary, use one of the four type cast keywords (usually `static_cast`)
+- A template header consists of the keyword `template` followed by the template parameters
+- The compiler generates the template specialization based on the argument types in the function call
+- Avoid type casting that completely bypasses the language's type-checking facilities
+- If type casting is necessary, use one of the four type cast keywords (usually `static_cast`)
 
 ## Exercises
 
--   Read the Wikipedia article on [Templates](http://en.wikipedia.org/wiki/Template_%28programming%29)
+- Read the Wikipedia article on [Templates](http://en.wikipedia.org/wiki/Template_%28programming%29)

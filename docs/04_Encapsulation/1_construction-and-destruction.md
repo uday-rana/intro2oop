@@ -1,8 +1,8 @@
 # Construction and Destruction
 
--   Describe some basic features of a class
--   Introduce constructors and destructors as essential to encapsulation
--   Overload constructors to enhance client communication
+- Describe some basic features of a class
+- Introduce constructors and destructors as essential to encapsulation
+- Overload constructors to enhance client communication
 
 > "A class is a cohesive package that ... describes the rules by which objects behave; these objects are referred to as instances of that class." **Wikipedia, 2008.**
 
@@ -53,17 +53,17 @@ Student a, b, c, d, e;
 
 The compiler allocates five regions in static memory, each of which holds the data for one of the five objects. Each region stores the values of three data members - `no`, the array `grade` and `ng`. The compiler stores the member function instructions separately and only once for all objects of the class.
 
-![](/img/instance.png)
+![instance](/img/instance.png)
 
 ### Instance Variables
 
 We call the data members in the class definition the object's instance variables. Instance variables may be of:
 
--   Fundamental type (`int`, `double`, `char`, etc.)
--   Compound type
-    -   Class type (`struct` or `class`)
-    -   Pointer type (to instances of data types - fundamental or compound)
-    -   Reference type (to instances of data types - fundamental or compound)
+- Fundamental type (`int`, `double`, `char`, etc.)
+- Compound type
+  - Class type (`struct` or `class`)
+  - Pointer type (to instances of data types - fundamental or compound)
+  - Reference type (to instances of data types - fundamental or compound)
 
 ### Logic
 
@@ -224,7 +224,7 @@ int main() {
 }
 ```
 
-```
+```console
 12052848
 
 975:
@@ -380,7 +380,7 @@ int main () {
 }
 ```
 
-```
+```console
 In constructor
 In constructor
 1234:
@@ -445,7 +445,7 @@ Complete encapsulation also requires a mechanism for tidying up at the end of an
 
 ### Definition
 
- The special member function that every object invokes before going out of scope is called its class' destructor.  We code all of the terminal logic in this special member function. 
+ The special member function that every object invokes before going out of scope is called its class' destructor.  We code all of the terminal logic in this special member function.
 
 The destructor takes its name from the class itself, prefixing it with the tilde symbol (~). The prototype for a destructor takes the form
 
@@ -453,13 +453,13 @@ The destructor takes its name from the class itself, prefixing it with the tilde
 ~Type();
 ```
 
-`Type` is the name of the class. Destructors have no parameters or return values. 
+`Type` is the name of the class. Destructors have no parameters or return values.
 
 An object's destructor:
+
 - is called automatically.
 - cannot be overloaded.
 - should not be called explicitly.
-
 
 ### Example
 
@@ -598,7 +598,7 @@ int main () {
 }
 ```
 
-```
+```console
 In constructor
 In constructor
 1234:
@@ -701,7 +701,7 @@ int main () {
 }
 ```
 
-```
+```console
 In constructor
 In constructor
 In constructor
@@ -809,7 +809,7 @@ int main () {
 }
 ```
 
-```
+```console
 In 3-arg constructor
 In 3-arg constructor
 1234:
@@ -834,12 +834,12 @@ If we define a constructor with some parameters, we typically also define a no-a
 
 ## Summary
 
--   We refer to the data members of an object as its instance variables
--   Privacy operates at the class level, not at the object level
--   The constructor is a special member function that an object invokes at creation time
--   The name of the constructor is the name of the class
--   The destructor is a special member function that an object invokes at destruction time
--   The name of the destructor is the name of the class prefixed by a `~`
--   The constructor and destructor do not have return types
--   The compiler inserts an empty body constructor/destructor into any class definition that does not declare a constructor/destructor
--   The compiler does not insert an empty-body, no-argument constructor into a class definition that declares any form of constructor
+- We refer to the data members of an object as its instance variables
+- Privacy operates at the class level, not at the object level
+- The constructor is a special member function that an object invokes at creation time
+- The name of the constructor is the name of the class
+- The destructor is a special member function that an object invokes at destruction time
+- The name of the destructor is the name of the class prefixed by a `~`
+- The constructor and destructor do not have return types
+- The compiler inserts an empty body constructor/destructor into any class definition that does not declare a constructor/destructor
+- The compiler does not insert an empty-body, no-argument constructor into a class definition that declares any form of constructor

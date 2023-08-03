@@ -1,7 +1,7 @@
 # Overview of Polymorphism
 
--   Code a complete program using polymorphic objects to solve a systems or business problem
--   Describe the four different categories of polymorphism
+- Code a complete program using polymorphic objects to solve a systems or business problem
+- Describe the four different categories of polymorphism
 
 > "A type provides a protective covering that hides the underlying representation and constrains the way objects may interact with other objects" **Cardelli, Wegner, 1985.**
 
@@ -37,9 +37,9 @@ The polymorphic features that an object-oriented language supports can be classi
 
 Christopher Strachey (1967) introduced the concept of polymorphism informally into procedural programming languages by distinguishing functions that:
 
--   Work differently on different argument types
--   Work uniformly on a range of argument types
--   He defined the former as _ad-hoc_ polymorphism and the latter as parametric polymorphism:
+- Work differently on different argument types
+- Work uniformly on a range of argument types
+- He defined the former as _ad-hoc_ polymorphism and the latter as parametric polymorphism:
 
 > "Ad-Hoc polymorphism is obtained when a function works, or appears to work, on several different types (which may not exhibit a common structure) and may behave in unrelated ways for each type. Parametric polymorphism is obtained when a function works uniformly on a range of types; these types normally exhibit some common structure." **(Strachey, 1967)**
 
@@ -47,12 +47,12 @@ Christopher Strachey (1967) introduced the concept of polymorphism informally in
 
 Cardelli and Wegner (1985) expanded Strachey's distinction to accommodate object-oriented languages. They distinguished functions that:
 
--   Work on a finite set of different and potentially unrelated types
-    -   Coercion
-    -   Overloading
--   Work on a potentially infinite number of types across some common structure
-    -   Inclusion
-    -   Parametric
+- Work on a finite set of different and potentially unrelated types
+  - Coercion
+  - Overloading
+- Work on a potentially infinite number of types across some common structure
+  - Inclusion
+  - Parametric
 
 ![adhoc polymorphism](/img/cardelli_wegner.png)
 
@@ -70,8 +70,8 @@ If the compiler encounters a mismatch between the type of an argument in a funct
 
 Coercion has two possible variations:
 
--   Narrow the argument type (narrowing coercion)
--   Widen the argument type (promotion)
+- Narrow the argument type (narrowing coercion)
+- Widen the argument type (promotion)
     For example,
 
 ```cpp
@@ -269,17 +269,17 @@ Parametric polymorphism eliminates duplicate logic across all types without gene
 
 ## Summary
 
--   A polymorphic language allows type differences that a monomorphic type system would report as type errors.
--   Polymorphic features are classified into four distinct categories.
--   Ad-hoc polymorphism is only apparent - its polymorphic character disappears at closer scrutiny
--   Coercion modifies an argument's type to suit the parameter type in the function definition
--   Overloading associates the same function name with different and unrelated function definitions
--   Universal polymorphism is true polymorphism - its polymorphic character survives at closer scrutiny
--   Inclusion polymorphism selects a member function definition within an inheritance hierarchy based on an object's dynamic type
--   Parametric polymorphism generates identical logic to match any object's type
+- A polymorphic language allows type differences that a monomorphic type system would report as type errors.
+- Polymorphic features are classified into four distinct categories.
+- Ad-hoc polymorphism is only apparent - its polymorphic character disappears at closer scrutiny
+- Coercion modifies an argument's type to suit the parameter type in the function definition
+- Overloading associates the same function name with different and unrelated function definitions
+- Universal polymorphism is true polymorphism - its polymorphic character survives at closer scrutiny
+- Inclusion polymorphism selects a member function definition within an inheritance hierarchy based on an object's dynamic type
+- Parametric polymorphism generates identical logic to match any object's type
 
 ## Exercises
 
--   Read Wikipedia on [Types](https://en.wikipedia.org/wiki/Data_type)
--   Read Wikipedia on [Type-Safety](http://en.wikipedia.org/wiki/Type-safety)
--   Read Wikipedia on [Polymorphism](http://en.wikipedia.org/wiki/Polymorphism_in_object-oriented_programming)
+- Read Wikipedia on [Types](https://en.wikipedia.org/wiki/Data_type)
+- Read Wikipedia on [Type-Safety](http://en.wikipedia.org/wiki/Type-safety)
+- Read Wikipedia on [Polymorphism](http://en.wikipedia.org/wiki/Polymorphism_in_object-oriented_programming)

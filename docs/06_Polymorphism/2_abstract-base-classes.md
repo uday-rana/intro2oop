@@ -1,8 +1,8 @@
 # Abstract Base Classes
 
--   Design polymorphic objects to amplify the reusability of code
--   Introduce pure virtual functions
--   Demonstrate a unit test of an interface
+- Design polymorphic objects to amplify the reusability of code
+- Introduce pure virtual functions
+- Demonstrate a unit test of an interface
 
 > "Program to an interface, not an implementation" **Gamma, Helm, Johnson, Vlissides, 1994.**
 
@@ -514,7 +514,7 @@ Note that we do not need to change this test code if we derive another class fro
 
 ## Summary
 
--   A pure virtual function is a member function declaration without an implementation
--   An abstract base class contains or inherits at least one pure virtual function
--   An interface is an abstract base class with no data members
--   Good programming practice performs unit tests on an interface rather than any specific implementation
+- A pure virtual function is a member function declaration without an implementation
+- An abstract base class contains or inherits at least one pure virtual function
+- An interface is an abstract base class with no data members
+- Good programming practice performs unit tests on an interface rather than any specific implementation

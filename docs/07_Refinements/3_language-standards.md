@@ -16,7 +16,7 @@ C++ was originally designed as a synthesis of C and object-orientation Simula-st
 
 ### The ISO/IEC Standards
 
-At the time of printing, three standard definitions have been approved by the international programming community. 
+At the time of printing, three standard definitions have been approved by the international programming community.
 
 - C++98
 - C++11
@@ -48,13 +48,13 @@ The features that C++11 added to C++98 included (amongst others):
 - The `auto` keyword inferring the type of a left operand implicitly from the type of the right operand in an assignment expression
 - Inherited constructors
 - Features covered in the next volume of this series of notes
-	- Move constructors and assignment operators
-	- Lambda expressions (anonymous functions)
-	- Library support for multi-threading classes
-	- Range based for loops
-	- Strongly typed enumerations
-	- Uniformity amongst initializers
-	- Initializers for class members
+  - Move constructors and assignment operators
+  - Lambda expressions (anonymous functions)
+  - Library support for multi-threading classes
+  - Range based for loops
+  - Strongly typed enumerations
+  - Uniformity amongst initializers
+  - Initializers for class members
 
 #### C++14
 
@@ -68,7 +68,7 @@ The ISO/IEC 14882 standards committee is working on the next iteration scheduled
 
 ### Compiler Support Status
 
-A language standard is a specification for compiler writers. Different writers introduce different features adopted in a standard at different times. The support status for the features approved in C++11 and C++14 is tabulated at http://en.cppreference.com/w/cpp/compiler_support. Links to the individual compiler web sites are included there.
+A language standard is a specification for compiler writers. Different writers introduce different features adopted in a standard at different times. The support status for the features approved in C++11 and C++14 is tabulated at <http://en.cppreference.com/w/cpp/compiler_support>. Links to the individual compiler web sites are included there.
 
 ## Some Features That Have Changed
 
@@ -96,17 +96,17 @@ const int NG = 20;
 
 struct Student {
 private:
-	int no;
-	float grade[NG];
-	int ng;
+    int no;
+    float grade[NG];
+    int ng;
 public:
-	void set(int n, const char* g); 
-	const float* getGrades() const {
-		return grade;
-	}
+    void set(int n, const char* g); 
+    const float* getGrades() const {
+        return grade;
+    }
 };
 ```
-	
+
 ```cpp
 // Inline Functions - Separate
 // inline_2.h
@@ -115,18 +115,19 @@ const int NG = 20;
 
 struct Student {
 private:
-	int no;
-	float grade[NG];
-	int ng;
+    int no;
+    float grade[NG];
+    int ng;
 public:
-	void set(int n, const char* g); 
-	const float* getGrades() const;
+    void set(int n, const char* g); 
+    const float* getGrades() const;
 };
 inline const float* Student::getGrades() 
 const {
-	return grade;
+    return grade;
 }
 ```
+
 Note that we place the implementation of an inline function in the header file that includes the class definition.
 
 ### Function Deletion
@@ -139,16 +140,16 @@ Prior to C++11, one way to prohibit a client from copying or copy assigning an i
 
 ```cpp
 class Student {
-	int no;
-	float* grade;
-	int ng;
-	Student(const Student& source);
-	Student& operator=(const Student& source); 
+    int no;
+    float* grade;
+    int ng;
+    Student(const Student& source);
+    Student& operator=(const Student& source); 
 public:
-	Student();
-	Student(int, const float*);
-	~Student();
-	void display() const;
+    Student();
+    Student(int, const float*);
+    ~Student();
+    void display() const;
 };
 ```
 
@@ -166,7 +167,7 @@ int* p;
 p = (int*)(x); // MOST PROBABLY A TYPING ERROR (& missing)! 
 ```
 
-Nevertheless, in applications built from many thousands of lines of code, we expect the compiler's type-checking system to flag such code.  Errors that result from such casts are very difficult to find if they are embedded within many thousands of lines of code. 
+Nevertheless, in applications built from many thousands of lines of code, we expect the compiler's type-checking system to flag such code.  Errors that result from such casts are very difficult to find if they are embedded within many thousands of lines of code.
 
 C++ supports old-style casting in two distinct forms - plain C-style casts and C++-function-style casts:
 
@@ -193,12 +194,12 @@ To cast a value from one type to another using a plain C-style cast, we simply p
 #include <iostream>
 
 int main() {
-	double hours;
-	int minutes;
-	std::cout << "Enter minutes : ";
-	std::cin >> minutes;
-	hours = (double) minutes / 60;  // C-Style Cast 
-	std::cout << "In hours, this is " << hours;
+    double hours;
+    int minutes;
+    std::cout << "Enter minutes : ";
+    std::cin >> minutes;
+    hours = (double) minutes / 60;  // C-Style Cast 
+    std::cout << "In hours, this is " << hours;
 }
 ```
 
@@ -213,12 +214,12 @@ To cast a value from one type to another using a function-style cast, we enclose
 #include <iostream>
 
 int main() {
-	double hours;
-	int minutes;
-	std::cout << "Enter minutes : ";
-	std::cin >> minutes;
-	hours = double(minutes) / 60;  // Function-Style Cast 
-	std::cout << "In hours, this is " << hours;
+    double hours;
+    int minutes;
+    std::cout << "Enter minutes : ";
+    std::cin >> minutes;
+    hours = double(minutes) / 60;  // Function-Style Cast 
+    std::cout << "In hours, this is " << hours;
 }
 ```
 
@@ -236,7 +237,7 @@ A C-style cast can mean any of the following:
 
 The constrained casts distinguish the different categories and thereby improve the degree of type checking available from the compiler.
 
-For example, it is always safer type-wise to code a `static_cast` rather than a C-style cast. 
+For example, it is always safer type-wise to code a `static_cast` rather than a C-style cast.
 
 ### Freestore Management
 
@@ -244,7 +245,7 @@ C++98 introduced exception handling for dynamic memory allocation. By default, t
 
 #### The Legacy Way
 
-Prior to C++98, the `new` operator returned the null address if it encountered an error (for example, insufficient memory). 
+Prior to C++98, the `new` operator returned the null address if it encountered an error (for example, insufficient memory).
 
 The following legacy code checks for such an error:
 
@@ -254,15 +255,15 @@ The following legacy code checks for such an error:
 #include <iostream.h>
 
 int main() {
-	char* p;
-	int i = 0;
+    char* p;
+    int i = 0;
 
-	do {
-		p = new char[100001];
-		i++;
-	} while (p != NULL);
+    do {
+        p = new char[100001];
+        i++;
+    } while (p != NULL);
 
-	cout << "Out of space after " << i << " attempts!\n"; 
+    cout << "Out of space after " << i << " attempts!\n"; 
 }
 ```
 
@@ -277,19 +278,19 @@ Since C++98, we can instruct the new operator to return the null address by pass
 #include <iostream>
 
 int main() {
-	char* p;
-	int i = 0;
+    char* p;
+    int i = 0;
 
-	do {
-		p = new (std::nothrow) char[100001];
-		i++;
-	} while (p != NULL);
+    do {
+        p = new (std::nothrow) char[100001];
+        i++;
+    } while (p != NULL);
 
-	std::cout << "Out of space after " << i << " attempts!\n"; 
+    std::cout << "Out of space after " << i << " attempts!\n"; 
 }
 ```
 
-With C++11, we can improve type safety by replacing the macro NULL with the nullptr keyword: 
+With C++11, we can improve type safety by replacing the macro NULL with the nullptr keyword:
 
 ```cpp
 // After C++11 - Null Address Alternative
@@ -298,15 +299,15 @@ With C++11, we can improve type safety by replacing the macro NULL with the null
 #include <iostream>
 
 int main( ) {
-	char* p;
-	int i = 0;
+    char* p;
+    int i = 0;
 
-	do {
-		p = new (std::nothrow) char[100001];
-		i++;
-	} while (p != nullptr);
+    do {
+        p = new (std::nothrow) char[100001];
+        i++;
+    } while (p != nullptr);
 
-	std::cout << "Out of space after " << i << " attempts!\n"; 
+    std::cout << "Out of space after " << i << " attempts!\n"; 
 }
 ```
 

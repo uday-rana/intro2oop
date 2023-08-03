@@ -1,8 +1,8 @@
 # Input and Output Operators
 
--   Use stream objects to interact with users and access persistent data
--   Introduce association relationships between classes
--   Overload the extraction and insertion operators as helper operators
+- Use stream objects to interact with users and access persistent data
+- Introduce association relationships between classes
+- Overload the extraction and insertion operators as helper operators
 
 > "You don't need to modify istream or ostream to add new << and >> operators" **Stroustrup, 1997.**
 
@@ -18,9 +18,9 @@ This chapter describes the stream-based input/output library and shows how to ov
 
 The stream-based input/output library that supports the core C++ language overloads two operators for extracting values from an input stream and inserting values into an output stream:
 
--   `>>` (extract from an input stream)
--   `<<` (insert into an output stream)
--   The library embeds its class definitions in the standard namespace (`std`). To access those instances of these classes that the library predefines, we prefix their identifiers with the namespace identifier and the scope resolution operator (`std::`).
+- `>>` (extract from an input stream)
+- `<<` (insert into an output stream)
+- The library embeds its class definitions in the standard namespace (`std`). To access those instances of these classes that the library predefines, we prefix their identifiers with the namespace identifier and the scope resolution operator (`std::`).
 
 For example,
 
@@ -48,16 +48,16 @@ The `iostream` system header file contains the definitions for streaming from an
 
 This header file includes the definitions of the
 
--   `std::istream` Class: For processing input from the standard input device
--   `std::ostream` Class: For processing output to the standard output devices
--   This header file also predefines the standard input and output objects:
+- `std::istream` Class: For processing input from the standard input device
+- `std::ostream` Class: For processing output to the standard output devices
+- This header file also predefines the standard input and output objects:
 
--   `std::istream`
-    -   `std::cin`: Standard input
--   `std::ostream`
-    -   `std::cout`: Standard output
-    -   `std::cerr`: Standard error
-    -   `std::clog`: Standard log
+- `std::istream`
+  - `std::cin`: Standard input
+- `std::ostream`
+  - `std::cout`: Standard output
+  - `std::cerr`: Standard error
+  - `std::clog`: Standard log
         We use these objects directly and don't need to redefine them.
 
 ### File I/O
@@ -70,9 +70,9 @@ The `fstream` system header file contains the definitions for streaming from and
 
 This header file includes the definitions of the:
 
--   **`std::ifstream` Class:** For processing input from a file stream
--   **`std::ofstream` Class:** Processing output to a file stream
--   **`std::fstream` Class:** Processing input from and output to a file stream
+- **`std::ifstream` Class:** For processing input from a file stream
+- **`std::ofstream` Class:** Processing output to a file stream
+- **`std::fstream` Class:** Processing input from and output to a file stream
 
 These three classes manage communication between file streams containing 8-bit characters and system memory. They provide access to a file stream through separate input and output buffers.
 
@@ -141,10 +141,10 @@ With this upgrade the client code can choose the destination stream (`cout`, `ce
 
 A header file may be included alongside other header files written by other developers. To avoid conflicts between the header files included in an implementation file, we follow certain guidelines:
 
--   Include system header files before custom header files
--   Insert namespace directives after all header files
--   Resolve the scope of any identifier in a header file at the identifier itself
--   The preferred method of coding header files is shown below:
+- Include system header files before custom header files
+- Insert namespace directives after all header files
+- Resolve the scope of any identifier in a header file at the identifier itself
+- The preferred method of coding header files is shown below:
 
 ```cpp
 // Student.h
@@ -540,6 +540,7 @@ int main() {
     }
 }
 ```
+
 ## String Class (Optional)
 
 The examples in these notes have been limited to input data that fits within pre-allocated memory. In the case of character string input, the user determines the number of characters to enter and pre-allocation of the required memory is not possible.  A user entering more characters than allocated memory can accept may cause a stream failure.
@@ -558,12 +559,12 @@ The prototype for this helper function is
 std::istream& getline(std::istream&, std::string&, char);
 ```
 
-The first parameter receives a modifiable reference to the `std::istream` object, the second parameter receives a modifiable reference to the `std::string object` and the third parameter receives the character delimiter for terminating extraction (newline by default). 
+The first parameter receives a modifiable reference to the `std::istream` object, the second parameter receives a modifiable reference to the `std::string object` and the third parameter receives the character delimiter for terminating extraction (newline by default).
 
 The `<string>` header file contains the class definition with this prototype.  The class definition includes two member functions for converting its internal data into a C-style null-terminated string:
 
 - `std::string::length()`: Returns the number of characters in the string
-- `std::string::c_str()`: Returns the address of the C-style null-terminated version of the string 
+- `std::string::c_str()`: Returns the address of the C-style null-terminated version of the string
 
 ### C-Style Example
 
@@ -599,9 +600,10 @@ int main( ) {
 
 ### Student Class Example
 
-Let us upgrade our `Student` class to store a comment using a `string` object as a data member. 
+Let us upgrade our `Student` class to store a comment using a `string` object as a data member.
 
 The header file for our `Student` class contains:
+
 ```cpp
 // Student.h
 
@@ -628,6 +630,7 @@ std::ostream& operator<<(std::ostream& os, const Student& s);
 ```
 
 The implementation file contains:
+
 ```cpp
 // Student.cpp
 
