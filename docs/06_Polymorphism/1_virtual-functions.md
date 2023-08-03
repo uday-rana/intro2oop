@@ -1,8 +1,8 @@
 # Virtual Functions
 
--   Design polymorphic objects to amplify the reusability of code
--   Distinguish monomorphic and polymorphic objects
--   Describe the difference between early binding and dynamic dispatch
+- Design polymorphic objects to amplify the reusability of code
+- Distinguish monomorphic and polymorphic objects
+- Describe the difference between early binding and dynamic dispatch
 
 > "Respecting the inclusion relationship implies substitutability - operations that apply to entire sets should apply to any of their subsets as well." **Sutter, Alexandrescu, 2005.**
 
@@ -56,8 +56,8 @@ The compiler binds a function call to a function definition using an object's ty
 
 The binding of a member function can take either of two forms:
 
--   **Early Binding:** Based on the object's static type
--   **Dynamic Dispatch:** based on the object's dynamic type
+- **Early Binding:** Based on the object's static type
+- **Dynamic Dispatch:** based on the object's dynamic type
 
 ### Early Binding
 
@@ -282,8 +282,8 @@ Jane Doe
 
 Each call to `show()` passes a reference to an object of different dynamic type:
 
--   `show(harry)` passes an unmodifiable reference to a `Student`
--   `show(jane)` passes an unmodifiable reference to a `Person`
+- `show(harry)` passes an unmodifiable reference to a `Student`
+- `show(jane)` passes an unmodifiable reference to a `Person`
 
 In each case, the executable code binds at run time the version of `display()` that is the most derived version for the dynamic type referenced by the parameter in `show()`.
 
@@ -311,9 +311,9 @@ A polymorphic object is an object that can change its dynamic type throughout it
 
 We specify the static type of a polymorphic object through:
 
--   a pointer declaration
--   a receive-by-address parameter
--   a receive-by-reference parameter
+- a pointer declaration
+- a receive-by-address parameter
+- a receive-by-reference parameter
 
 For example, the highlighted code specifies the static type pointed to by `person`:
 
@@ -369,7 +369,7 @@ int main() {
 }
 ```
 
-```
+```console
 Jane Doe
 Harry 1234:
  89.40
@@ -379,10 +379,10 @@ Harry 1234:
 
 In the `main()` function:
 
--   `p` initially points to nothing (holds the null address). The object's dynamic type is undefined.
--   After the first allocation, `p` points to a `Student` type (dynamic type).
--   After the second allocation, `p` points to a `Person` type (the new dynamic type).
--   The static and dynamic types are related to one another through the hierarchy.
+- `p` initially points to nothing (holds the null address). The object's dynamic type is undefined.
+- After the first allocation, `p` points to a `Student` type (dynamic type).
+- After the second allocation, `p` points to a `Person` type (the new dynamic type).
+- The static and dynamic types are related to one another through the hierarchy.
 
 Note that we only need one `show()` function to display both dynamic types.
 
@@ -398,15 +398,15 @@ Good design codes the destructor in a base class as `virtual`, even if no class 
 
 ## Reusability and Flexibility
 
-Implementing inclusion polymorphism improves reusability and flexibility of code. 
+Implementing inclusion polymorphism improves reusability and flexibility of code.
 
-Virtual functions reduce code size considerably.  Our `show()` function works on references of any type within the `Person` hierarchy.  We only define member functions (`display()`) for those classes that require specialized processing. 
+Virtual functions reduce code size considerably.  Our `show()` function works on references of any type within the `Person` hierarchy.  We only define member functions (`display()`) for those classes that require specialized processing.
 
-Consider a client application that uses our hierarchy.  During the life cycle of the hierarchy, we may add several classes.  Our original client code, without any alteration, will selects the most derived version of the member function for each upgrade of the hierarchy.  We will only need to add client code to create objects of new derived classes. 
+Consider a client application that uses our hierarchy.  During the life cycle of the hierarchy, we may add several classes.  Our original client code, without any alteration, will selects the most derived version of the member function for each upgrade of the hierarchy.  We will only need to add client code to create objects of new derived classes.
 
 ## Summary
 
-- Polymorphism refers to the multiplicity of logic associated with the same name. 
+- Polymorphism refers to the multiplicity of logic associated with the same name.
 - Static type is the type of the object's hierarchy and is available at compile-time
 - Dynamic type is the type of the object referenced and may change with different calls to the same function
 - Early binding of a call to a member function's definition occurs at compile-time

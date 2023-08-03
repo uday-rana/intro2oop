@@ -1,8 +1,8 @@
 # Welcome to Object-Oriented
 
--   Introduce complexity and object-oriented programming
--   Introduce namespaces for grouping an application's identifiers
--   Write our first object-oriented program
+- Introduce complexity and object-oriented programming
+- Introduce namespaces for grouping an application's identifiers
+- Write our first object-oriented program
 
 > "The technique of mastering complexity has been known since ancient times: divide et impera (divide and rule)" **Dijkstra, 1979.**
 
@@ -16,9 +16,9 @@ Large applications are complex. We address their complexity by identifying the m
 
 Consider a course enrollment system for a program in a college or university. Each participant
 
--   enrolls in several face-to-face courses
--   enrolls in several hybrid courses
--   earns a grade in each course
+- enrolls in several face-to-face courses
+- enrolls in several hybrid courses
+- earns a grade in each course
 
 The following structure diagram identifies the activities.
 
@@ -46,26 +46,26 @@ Java, C, C++, Python and C# are currently the five most popular languages. Java,
 
 The distinguishing features of C, C++ and Java are:
 
--   C has no object-oriented support. C leaves us no choice but to design our programming solutions in terms of activity-oriented structures.
+- C has no object-oriented support. C leaves us no choice but to design our programming solutions in terms of activity-oriented structures.
 
--   C++ is **hybrid**. It augments C with object-oriented features. C++ lets us build our solutions partly from activities and partly from objects. The main function in any C++ program is a C function, which is not object-oriented. C++ stresses compile-time logic.
+- C++ is **hybrid**. It augments C with object-oriented features. C++ lets us build our solutions partly from activities and partly from objects. The main function in any C++ program is a C function, which is not object-oriented. C++ stresses compile-time logic.
 
--   Java is **purely object-oriented**. It excludes all non-object-oriented features. Java leaves us no choice but to design our solutions using an object-oriented structures.
+- Java is **purely object-oriented**. It excludes all non-object-oriented features. Java leaves us no choice but to design our solutions using an object-oriented structures.
 
 ### Features of C++
 
 Using C++ to learn object-oriented programming has several advantages for a student familiar with C. C++ is
 
--   nearly a perfect superset of C
--   a multi-paradigm language
-    -   procedural (can focus on distinct activities)
-    -   object-oriented (can focus on distinct objects)
--   realistic, efficient, and flexible enough for demanding projects
-    -   large applications
-    -   game programming
-    -   operating systems
--   clean enough for presenting basic concepts
--   comprehensive enough for presenting advanced programming concepts
+- nearly a perfect superset of C
+- a multi-paradigm language
+  - procedural (can focus on distinct activities)
+    - object-oriented (can focus on distinct objects)
+- realistic, efficient, and flexible enough for demanding projects
+  - large applications
+  - game programming
+  - operating systems
+- clean enough for presenting basic concepts
+- comprehensive enough for presenting advanced programming concepts
 
 ### Type Safety
 
@@ -198,8 +198,8 @@ Exposing a single identifier or a complete namespace simply adds the identifier(
 
 By far the most common use of namespaces is for classifying
 
--   struct-like types
--   function types
+- struct-like types
+- function types
 
 ## First Examples
 
@@ -335,9 +335,9 @@ You entered 65
 
 The object-oriented input statement includes:
 
--   The object `cin` represents the standard input device.
+- The object `cin` represents the standard input device.
 
--   The extraction operator `>>` extracts the data identified on its right side from the object on its left-hand side.
+- The extraction operator `>>` extracts the data identified on its right side from the object on its left-hand side.
     > Note the absence of a formatting string. The cin object handles the input formatting itself.
 
 That is, the complete statement `cin >> i;` extracts an integer value from the input stream and stores that value in the variable named `i`.
@@ -346,24 +346,24 @@ The type of the variable `i` defines the rule for converting the text characters
 
 ## Summary
 
--   Object-oriented languages are designed for solving large, complex problems
--   Object-oriented programming focuses on the objects in a problem domain
--   C++ is a hybrid language that can focus on activities as well as objects
--   C++ provides improved type safety relative to C
--   `cout` is the library object that represents the standard output device
--   `cin` is the library object that represents the standard input device
--   `<<` is the operator that inserts data into the object on its left-side operand
--   `>>` is the operator that extracts data from the object on its left-side operand
+- Object-oriented languages are designed for solving large, complex problems
+- Object-oriented programming focuses on the objects in a problem domain
+- C++ is a hybrid language that can focus on activities as well as objects
+- C++ provides improved type safety relative to C
+- `cout` is the library object that represents the standard output device
+- `cin` is the library object that represents the standard input device
+- `<<` is the operator that inserts data into the object on its left-side operand
+- `>>` is the operator that extracts data from the object on its left-side operand
 
 ## Exercises
 
--   Read Wikipedia on the [C++ Programming Language](http://en.wikipedia.org/wiki/C%2B%2B_%28programming_language%29)
--   Read this interview with [Bjarne Stroustrup](http://www.linuxjournal.com/article.php?sid=7099)
+- Read Wikipedia on the [C++ Programming Language](http://en.wikipedia.org/wiki/C%2B%2B_%28programming_language%29)
+- Read this interview with [Bjarne Stroustrup](http://www.linuxjournal.com/article.php?sid=7099)
 
 > Be adventurous in your experimentation and somewhat more cautious in your production code. On my home pages, I have a "Technical and Style FAQ" that gives many practical hints and examples. However, to really develop significant new skills, one must read articles and books. I think of C++ as a multi-paradigm programming language. That is, C++ is a language that supports several effective programming techniques, where the best solution to a real-world programming problem often involves a combination of these techniques. Thus, I encourage people to learn data abstraction (roughly, programming using abstract classes), object-oriented programming (roughly, programming using class hierarchies) and generic programming (roughly, programming using templates). Furthermore, I encourage people to look for combinations of these techniques rather than becoming fanatical about one of these paradigms because it happens to be a great solution to a few problems.
 >
 > It is important to remember that a programming language is only a tool. Once you master the basic concepts of a language, such as C++, it is far more important to gain a good understanding of an application area and of the problem you are trying to solve than it is to study the minute technical details of C++. Good luck, and have fun with C++! **Extract from the [Linux Journal](http://www.linuxjournal.com/article.php?sid=7099): Interview with Bjarne Stroustrup
 > Posted on Thursday, August 28, 2003 by Aleksey Dolya**
 
--   Install Visual Studio on your local computer
--   Ensure that your remote Linux account is operational
+- Install Visual Studio on your local computer
+- Ensure that your remote Linux account is operational

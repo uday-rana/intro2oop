@@ -1,8 +1,8 @@
 # Types, Overloading, and References
 
--   Review types, declarations, definitions and scoping
--   Introduce overloading and function signatures
--   Introduce pass by reference and compare it to pass by address
+- Review types, declarations, definitions and scoping
+- Introduce overloading and function signatures
+- Introduce pass by reference and compare it to pass by address
 
 > "Correctness, simplicity, and clarity comes first" **Sutter, Alexandrescu, 2005.**
 
@@ -18,13 +18,13 @@ The built-in types of the C++ language are called its fundamental types. The C++
 
 The fundamental types of C++ include:
 
--   **Integral Types:** Store data exactly in equivalent binary form and can be signed or unsigned
-    -   `bool` - not available in C
-    -   `char`
-    -   `int` - `short`, `long`, `long long`
--   **Floating Point Types:** Store data to a specified precision - can store very small and very large values
-    -   `float`
-    -   `double` - `long double`
+- **Integral Types:** Store data exactly in equivalent binary form and can be signed or unsigned
+  - `bool` - not available in C
+  - `char`
+  - `int` - `short`, `long`, `long long`
+- **Floating Point Types:** Store data to a specified precision - can store very small and very large values
+  - `float`
+  - `double` - `long double`
 
 #### `bool`
 
@@ -275,8 +275,8 @@ The `main.cpp` translation unit would contain TWO definitions of Transaction.
 
 Possible solutions include:
 
--   **Forward Declaration Solution:** Insert the prototype into main.h
--   **Compact Solution:** Insert the prototype into Transaction.h
+- **Forward Declaration Solution:** Insert the prototype into main.h
+- **Compact Solution:** Insert the prototype into Transaction.h
 
 #### Forward Declaration Solution
 
@@ -318,9 +318,9 @@ This design localizes all declarations related to the `Transaction` type within 
 
 To avoid contaminating system header files, we include header files in the following order:
 
--   `#include < ... >`: System header files
--   `#include " ... "`: Other system header files
--   `#include " ... "`: Your own header files
+- `#include < ... >`: System header files
+- `#include " ... "`: Other system header files
+- `#include " ... "`: Your own header files
 
 We insert namespace declarations and directives after all header file inclusions.
 
@@ -328,11 +328,11 @@ We insert namespace declarations and directives after all header file inclusions
 
 The _scope_ of a declaration is the portion of a program over which that declaration is visible. Scopes include
 
--   **Global Scope:** Visible to the entire program
--   **File Scope:** Visible to the source code within the file
--   **Function Scope:** Visible to the source code within the function
--   **Class Scope:** Visible to the member functions of the class
--   **Block Scope:** Visible to the code block
+- **Global Scope:** Visible to the entire program
+- **File Scope:** Visible to the source code within the file
+- **Function Scope:** Visible to the source code within the function
+- **Class Scope:** Visible to the member functions of the class
+- **Block Scope:** Visible to the code block
 
 The scope of a non-global declaration begins at the declaration and ends at the closing brace for that declaration. A non-global declaration is called a `local` declaration. We say that an identifier that has been locally declared is a `local` variable or object.
 
@@ -392,9 +392,9 @@ In object-oriented languages functions may have multiple meanings. Functions wit
 
 A function's signature identifies an overloaded function uniquely. Its signature consists of
 
--   the function identifier
--   the parameter types (ignoring `const` qualifiers or addresses of operators as described in references below)
--   the order of the parameter types
+- the function identifier
+- the parameter types (ignoring `const` qualifiers or addresses of operators as described in references below)
+- the order of the parameter types
 
 ```cpp
 type identifier (type identifier [, ... , type identifier])
@@ -683,7 +683,7 @@ The 84 keywords of the C++11 standard are listed below. We cannot use any of the
 | case | ✔ | ❌ |
 | catch | ❌ | ❌ |
 | char | ✔ | ❌ |
-| char_16t | ❌ | ❌ | 
+| char_16t | ❌ | ❌ |
 | char32_t | ❌ | ❌ |
 | class | ❌ | ❌ |
 | compl | ❌ | ✔ |
@@ -719,7 +719,7 @@ The 84 keywords of the C++11 standard are listed below. We cannot use any of the
 | noexcept | ❌ | ❌ |
 | nullptr | ❌ | ❌ |
 | operator | ❌ | ❌ |
-| or | ❌ | ✔ | 
+| or | ❌ | ✔ |
 | or_eq | ❌ | ✔ |
 | private | ❌ | ❌ |
 | protected | ❌ | ❌ |
@@ -759,17 +759,17 @@ C++ compilers will successfully compile any C program that does not use any of t
 
 ## Summary
 
--   A bool type can only hold a true value or a false value
--   C++ requires the `struct` or `class` keyword only in the definition of the class itself
--   A declaration associates an identifier with a type
--   A definition attaches meaning to an identifier and is an executable statement
--   A definition is a declaration, but a declaration is not necessarily a definition
--   The scope of a declaration is that part of the program throughout which the declaration is visible
--   We overload a function by changing its signature
--   A function's signature consists of its identifier, its parameter types, and the order of its parameter types
--   A C++ function prototype must include all of the parameter types and the return type
--   The `&` operator on a parameter type instructs the compiler to pass by reference
--   Pass by reference syntax simplifies the pass by address syntax in most cases
--   An array of pointers is a data structure that provides an efficient way for iterating through a set of objects based on their current type
+- A bool type can only hold a true value or a false value
+- C++ requires the `struct` or `class` keyword only in the definition of the class itself
+- A declaration associates an identifier with a type
+- A definition attaches meaning to an identifier and is an executable statement
+- A definition is a declaration, but a declaration is not necessarily a definition
+- The scope of a declaration is that part of the program throughout which the declaration is visible
+- We overload a function by changing its signature
+- A function's signature consists of its identifier, its parameter types, and the order of its parameter types
+- A C++ function prototype must include all of the parameter types and the return type
+- The `&` operator on a parameter type instructs the compiler to pass by reference
+- Pass by reference syntax simplifies the pass by address syntax in most cases
+- An array of pointers is a data structure that provides an efficient way for iterating through a set of objects based on their current type
 
 C++ compilers will successfully compile any C program that does not use any of these keywords as identifiers provided that that program satisfies C++'s type safety requirements. We call such a C program a clean C program.

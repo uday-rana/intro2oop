@@ -1,7 +1,7 @@
 # Classes and Resources
 
--   Design classes with dynamically allocated resources to model the components of a programming solution
--   Define the copy constructor and assignment operator for a class with a resource
+- Design classes with dynamically allocated resources to model the components of a programming solution
+- Define the copy constructor and assignment operator for a class with a resource
 
 > "Never allocate more than one resource in a single statement" **Sutter, Alexandrescu, 2005.**
 
@@ -19,8 +19,8 @@ A C++ object refers to a resource through a resource instance pointer. This poin
 
 Let us upgrade our `Student` class to accommodate a variable number of grades. The client code specifies the number at run-time. The array of grades is now a dynamically allocated resource. We allocate:
 
--   Static memory for the resource instance variable (grade)
--   Dynamic memory for the grade array itself
+- Static memory for the resource instance variable (grade)
+- Dynamic memory for the grade array itself
 
 In this section, we focus on the constructors and the destructor for our `Student` class. Let us assume that the client does not copy or assign objects of this class. We shall cover the copying and assignment logic in subsequent sections:
 
@@ -127,8 +127,8 @@ In each deep copy, we allocate memory for the underlying resource and copy the c
 
 Two special member functions manage allocations and deallocations associated with deep copying and deep copy assigning:
 
--   The copy constructor
--   The copy assignment operator
+- The copy constructor
+- The copy assignment operator
 
 If we do not declare a copy constructor, the compiler inserts code that implements a shallow copy. If we do not declare a copy assignment operator, the compiler inserts code that implements a shallow assignment.
 
@@ -293,8 +293,8 @@ To trap a self-assignment from the client code (`a = a`), we compare the address
 
 The code in our definition of the copy constructor is identical to most of the code in our definition of the assignment operator. To avoid such duplication and thereby improve maintainability we can localize the logic in a:
 
--   **Private member function:** Localize the common code in a private member function and call that member function from both the copy constructor and the copy assignment operator
--   **Direct call:** Call the assignment operator directly from the copy constructor
+- **Private member function:** Localize the common code in a private member function and call that member function from both the copy constructor and the copy assignment operator
+- **Direct call:** Call the assignment operator directly from the copy constructor
 
 ### Private Member Function
 
@@ -363,9 +363,10 @@ Assigning `grade` to `nullptr` in the copy constructor ensures that the assignme
 
 ### Assigning Temporary Objects
 
-Assigning a temporary object to the current object requires additional code if the object manages resources.  To prevent the assignment operator from releasing not-as-yet-acquired resources we initialize each resource instance variable to an empty value (`nullptr`). 
+Assigning a temporary object to the current object requires additional code if the object manages resources.  To prevent the assignment operator from releasing not-as-yet-acquired resources we initialize each resource instance variable to an empty value (`nullptr`).
 
 For example, in the constructors for our `Student` object, we add the highlighted code:
+
 ```cpp
 class Student {
     int no;
@@ -413,7 +414,9 @@ Student::Student(int sn, const float* g, int ng_) {
 ```
 
 ## Copies Prohibited
+
 Certain class designs require prohibiting client code from copying or copy assigning any instance of a class.  To prohibit copying and/or copy assigning, we declare the copy constructor and/or the copy assignment operator as deleted members of our class:
+
 ```cpp
 class Student {
     int no;
@@ -428,6 +431,7 @@ public:
     void display() const;
 };
 ```
+
 The keyword `delete` used in this context has no relation to deallocating dynamic memory.
 
 ## Summary

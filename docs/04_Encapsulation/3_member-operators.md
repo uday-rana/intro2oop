@@ -1,8 +1,8 @@
 # Member Operators
 
--   Overload operators to form expressions involving objects of a class
--   Describe the syntax for overloading operators that are members of a class
--   Describe casting and conversion operations on instances of a class
+- Overload operators to form expressions involving objects of a class
+- Describe the syntax for overloading operators that are members of a class
+- Describe casting and conversion operations on instances of a class
 
 > "Programmers hate surprises: Overload operators only for good reason, and preserve natural semantics; if that's difficult, you might be misusing operator overloading" **Sutter, Alexandrescu, 2005.**
 
@@ -24,19 +24,19 @@ Student& operator=(const Student&);
 
 C++ lets us overload the following operators (amongst others):
 
--   **Binary arithmetic:** `+` `-` `*` `/` `%`
--   **Assignment (simple and compound):** `=` `+=` `-=` `*=` `/=` `%=`
--   **Unary (pre-fix post-fix plus minus):** `++` `--` `+` `-`
--   **Relational:** `==` `<` `>` `<=` `>=` `!=`
--   **Logical:** `&&` `||` `!`
--   **Insertion, extraction:** `<<` `>>`
+- **Binary arithmetic:** `+` `-` `*` `/` `%`
+- **Assignment (simple and compound):** `=` `+=` `-=` `*=` `/=` `%=`
+- **Unary (pre-fix post-fix plus minus):** `++` `--` `+` `-`
+- **Relational:** `==` `<` `>` `<=` `>=` `!=`
+- **Logical:** `&&` `||` `!`
+- **Insertion, extraction:** `<<` `>>`
 
 C++ **DOES NOT ALLOW** overloading of the following operators (amongst others):
 
--   **The scope resolution operator:** `::`
--   **The member selection operator:** `.`
--   **The member selection through pointer to member operator:** `.*`
--   **The conditional operator:** `?:`
+- **The scope resolution operator:** `::`
+- **The member selection operator:** `.`
+- **The member selection through pointer to member operator:** `.*`
+- **The conditional operator:** `?:`
 
 C++ **DOES NOT** let us introduce or define new operators.
 
@@ -44,16 +44,16 @@ C++ **DOES NOT** let us introduce or define new operators.
 
 We classify operators by the number of operands that they take:
 
--   **Unary (one operand):** Post-fix increment/decrement, pre-fix increment/decrement, pre-fix plus, pre-fix minus
--   **Binary (two operand):** Assignment, compound assignment, arithmetic, relational, logical
--   **Ternary (three operands):** Conditional operator
+- **Unary (one operand):** Post-fix increment/decrement, pre-fix increment/decrement, pre-fix plus, pre-fix minus
+- **Binary (two operand):** Assignment, compound assignment, arithmetic, relational, logical
+- **Ternary (three operands):** Conditional operator
 
 ### Members and Helpers
 
 We overload operators in either of two ways, as:
 
--   **Member Operators:** Part of the class definition with direct access to the class representation
--   **Helper Operators:** Supporting the class, without direct access to its representation
+- **Member Operators:** Part of the class definition with direct access to the class representation
+- **Helper Operators:** Supporting the class, without direct access to its representation
 
 We prefer to declare operators that change the state of their left operand as member operators. Helper operators are described separately in the chapter entitled [Helper Functions](/Encapsulation/helper-functions).
 
@@ -63,10 +63,10 @@ We prefer to declare operators that change the state of their left operand as me
 
 The signature of an overloaded member operator consists of:
 
--   The `operator` keyword
--   The operation symbol
--   The type of its right operand, if any
--   The `const` status of the operation
+- The `operator` keyword
+- The operation symbol
+- The type of its right operand, if any
+- The `const` status of the operation
 
 The compiler binds an expression to the member function with the signature that matches the operator symbol, the operand type and the `const` status.
 
@@ -726,6 +726,7 @@ The three-argument constructor validates all data received from client code. If 
 Using temporary objects to avoid repeated logic is good programming practice. If we update the logic later, there is no chance that we will update the logic in one part of the source code and neglect to update identical logic in another part of the code.
 
 ## Summary
+
 - C++ allows overloading of most of the operators for operands of class type
 - We cannot define new operators or redefine operations on the fundamental types
 - The keyword operator followed by a symbol identifies an operation

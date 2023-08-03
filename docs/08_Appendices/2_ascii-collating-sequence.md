@@ -1,6 +1,6 @@
 # ASCII Collating Sequence
 
-**The character encoding sequence compatible with Unicode**
+The character encoding sequence compatible with Unicode:
 
 | Binary   | Hex. | Dec. | Symbol |     | Binary   | Hex. | Dec. | Symbol |     | Binary   | Hex. | Dec. | Symbol |     | Binary   | Hex. | Dec. | Symbol |
 | :--------: | :----: | :----: | :------: | :---: | :--------: | :----: | :----: | :------: | :---: | :--------: | :----: | :----: | :------: | :---: | :--------: | :----: | :----: | :------: |

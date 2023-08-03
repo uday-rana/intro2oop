@@ -1,8 +1,8 @@
 # Helper Functions
 
--   Support a class definition with global function definitions
--   Describe the syntax for overloading operators that support a class
--   Grant a global function access to the private members of a class
+- Support a class definition with global function definitions
+- Describe the syntax for overloading operators that support a class
+- Grant a global function access to the private members of a class
 
 > "Avoid membership fees: Where possible, prefer making functions nonmember non-friends" **Sutter, Alexandrescu, 2005.**
 
@@ -127,9 +127,10 @@ int main () {
 ```console
 are identical
 ```
+
 ### The Cost of Upgrading Freedom
 
-Free helper functions use public queries to access information that is otherwise inaccessible.  If we add a data member to the class, we may also need to add a query to access its value.  As we add data members, the class definition grows with new queries.  We call this growth class bloat. 
+Free helper functions use public queries to access information that is otherwise inaccessible.  If we add a data member to the class, we may also need to add a query to access its value.  As we add data members, the class definition grows with new queries.  We call this growth class bloat.
 
 One alternative to class bloat that admits upgradability is [friendship](/Encapsulation/helper-functions#friendship).
 
@@ -145,7 +146,8 @@ Helper operators are global functions that overload operators. Candidates for he
 
 ### Identity Comparison
 
-To improve readability, let us replace the `areIdentical()` function defined above with an overloaded `==` operator that takes two `Student` operands.  The header file for the `Student` class now contains: 
+To improve readability, let us replace the `areIdentical()` function defined above with an overloaded `==` operator that takes two `Student` operands.  The header file for the `Student` class now contains:
+
 ```cpp
 // Student.h
 
@@ -169,6 +171,7 @@ bool operator==(const Student&, const Student&);
 ```
 
 The implementation file contains defines this helper operator:
+
 ```cpp
 bool operator==(const Student& lhs, const Student& rhs) {
     bool same = lhs.getStudentNo() == rhs.getStudentNo() && 
@@ -178,7 +181,9 @@ bool operator==(const Student& lhs, const Student& rhs) {
     return same;
 }
 ```
+
 The following client code compares the two objects:
+
 ```cpp
 // Compare Objects
 // compare.cpp
@@ -196,15 +201,17 @@ int main () {
         cout << "are different" << endl;
 }
 ```
+
 ```console
 are identical
 ```
 
 ### Addition
 
-Consider an expression that adds a single grade to a `Student` object and evaluates to a copy of the updated object.  To implement this operation, let us overload the `+` operator for a `Student` object as the left operand and a `float` as the right operand. 
+Consider an expression that adds a single grade to a `Student` object and evaluates to a copy of the updated object.  To implement this operation, let us overload the `+` operator for a `Student` object as the left operand and a `float` as the right operand.
 
-As part of the class definition, we include the `+=` operator described in the preceding chapter on [Member Operators](/Encapsulation/member-operators).  The header file for the `Student` class now contains: 
+As part of the class definition, we include the `+=` operator described in the preceding chapter on [Member Operators](/Encapsulation/member-operators).  The header file for the `Student` class now contains:
+
 ```cpp
 // Student.h
 
@@ -228,7 +235,9 @@ public:
 bool operator==(const Student&, const Student&); 
 Student operator+(const Student&, float);
 ```
+
 We maintain loose coupling by initializing a new `Student` object to the left operand and calling the `+=` member operator on that object to add the single grade:
+
 ```cpp
 Student operator+(const Student& s, float grade) {
     Student copy = s; // makes a copy
@@ -236,8 +245,10 @@ Student operator+(const Student& s, float grade) {
     return copy;      // return updated copy
 }
 ```
+
 For symmetry, we overload the addition operator for identical operand types but in reverse order.  The complete header file contains:
-```
+
+```console
 // Student.h
 
 const int NG = 20;
@@ -261,7 +272,9 @@ bool operator==(const Student&, const Student&);
 Student operator+(const Student&, float);
 Student operator+(float, const Student&);
 ```
+
 Our implementation calls the first version with the arguments reversed:
+
 ```cpp
 // Student.cpp
 
@@ -337,7 +350,9 @@ Student operator+(float grade, const Student& student) {
                             //    Student&, float)
 }
 ```
+
 The following client code produces the results shown below:
+
 ```cpp
 // Helper Operator
 // helper-addition-operator.cpp
@@ -364,15 +379,18 @@ int main () {
 
 ## Friendship
 
-Friendship grants helper functions access to the private members of a class.  By granting friendship status, a class lets a helper function access to any of its private members: data members or member functions.  Friendship minimizes class bloat. 
+Friendship grants helper functions access to the private members of a class.  By granting friendship status, a class lets a helper function access to any of its private members: data members or member functions.  Friendship minimizes class bloat.
 
 To grant a helper function friendship status, we declare the function a friend and place its declaration inside the class definition.  A friendship declaration takes the form
+
 ```cpp
 friend Type identifier(type [, type, ...]);
 ```
-where `Type` is the return type of the function and `identifier` is the function's name. 
+
+where `Type` is the return type of the function and `identifier` is the function's name.
 
 For example:
+
 ```cpp
 // Student.h
 
@@ -394,7 +412,9 @@ public:
 Student operator+(const Student&, float);
 Student operator+(float, const Student&);
 ```
+
 Our implementation looks like:
+
 ```cpp
 // Student.cpp
 
@@ -469,9 +489,11 @@ bool operator==(const Student& lhs, const Student& rhs) {
     return same;
 }
 ```
-We have added the keyword `friend` to the declaration within the class definition.  We do not apply the keyword to the function definition. 
+
+We have added the keyword `friend` to the declaration within the class definition.  We do not apply the keyword to the function definition.
 
 The following client code compares the two objects:
+
 ```cpp
 // Friends
 // friends.cpp
@@ -494,23 +516,27 @@ int main () {
 ```console
 are different
 ```
+
 ### The Cost of Friendship
 
-A class definition that grants friendship to a helper function allows that function to alter the values of its private data members.  Granting friendship pierces encapsulation. 
+A class definition that grants friendship to a helper function allows that function to alter the values of its private data members.  Granting friendship pierces encapsulation.
 
-As a rule, we grant friendship judiciously only to helper functions that require both **read and write access** to the private data members.  Where read-only access is all that a helper function needs, using queries is probably more advisable. 
+As a rule, we grant friendship judiciously only to helper functions that require both **read and write access** to the private data members.  Where read-only access is all that a helper function needs, using queries is probably more advisable.
 
-Friendship is the strongest relationship that a class can grant an external entity. 
+Friendship is the strongest relationship that a class can grant an external entity.
 
 ### Friendly Classes (Optional)
 
 One class can grant another class access to its private members.  A class friendship declaration takes the form
+
 ```cpp
 friend class Identifier;
 ```
-where `Identifier` is the name of the class to which the host class grants friendship privileges. 
+
+where `Identifier` is the name of the class to which the host class grants friendship privileges.
 
 For example, an `Administrator` class needs access to all information held within each `Student` object.  To grant this access, we simply include a class friendship declaration within the `Student` class definition
+
 ```cpp
 // Student.h
 
@@ -529,11 +555,12 @@ public:
     friend class Administrator;
 };
 ```
+
 ### No Reciprocity, Transitivity or Exclusivity (Optional)
 
-Friendship is neither reciprocal, transitive nor exclusive.  Just because one class is a friend of another class does not mean that the latter is a friend of the former.  Just because a class is a friend of another class and that other class is a friend of yet another class does not mean that the latter class is a friend of either of them.  A friend of one class may be a friend of any other class. 
+Friendship is neither reciprocal, transitive nor exclusive.  Just because one class is a friend of another class does not mean that the latter is a friend of the former.  Just because a class is a friend of another class and that other class is a friend of yet another class does not mean that the latter class is a friend of either of them.  A friend of one class may be a friend of any other class.
 
-Consider three classes: a `Student`, an `Administrator` and an `Auditor`. 
+Consider three classes: a `Student`, an `Administrator` and an `Auditor`.
 
 - Let the `Auditor` be a friend of the `Administrator` and the `Administrator` be a friend of the Student
 - Just because the `Auditor` is a friend of any `Administrator` and the `Administrator` is a friend of any Student, the `Administrator` is not necessarily a friend of the `Auditor` and the Student is not necessarily a friend of the `Administrator` (lack of reciprocity)

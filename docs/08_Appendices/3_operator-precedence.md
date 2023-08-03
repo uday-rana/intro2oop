@@ -23,10 +23,11 @@ To ensure unique evaluation of all compound expressions, C++ defines rules of pr
 
 The scope resolution operator `::` has the highest precedence. An expression containing this operator is always evaluated first.
 
-We can change the order of evaluation within a compound expression by enclosing a sub-expression in parentheses. That is, we use `(sub-expression)` to evaluate `sub-expression` before applying the rules of precedence to the entire expression. 
+We can change the order of evaluation within a compound expression by enclosing a sub-expression in parentheses. That is, we use `(sub-expression)` to evaluate `sub-expression` before applying the rules of precedence to the entire expression.
 
 For example,
-```
+
+```console
   2 + 3  * 5 evaluates to 2 + 15 which evaluates to 17.
  (2 + 3) * 5 evaluates to 5 * 5  which evaluates to 25.
 ```

@@ -41,7 +41,6 @@ The prototypes for the some common functions in the C++ standard library are lis
 - `int isalpha(int c)`: Is `c` alphabetic?
 - `int isdigit(int c)`: Is `c` a numeric digit?
 
-
 ## Input Output Library
 
 ### `<iostream>` - Standard Input Output Objects

@@ -1,8 +1,8 @@
 # Member Functions and Privacy
 
--   Design member functions using logic constructs
--   Control accessibility to the data members of a class
--   Introduce the concept of an object's empty state
+- Design member functions using logic constructs
+- Control accessibility to the data members of a class
+- Introduce the concept of an object's empty state
 
 > "Because different structures can have member functions with the same name, we must specify the structure name when defining a member function" **Stroustrup, 1997.**
 
@@ -18,9 +18,9 @@ The member functions of a class provide the communication links between client c
 
 We classify member functions into three mutually exclusive categories:
 
--   **Queries:** Also called accessor methods - report the state of the object
--   **Modifiers:** Also called mutator methods - change the state of the object
--   **Special:** Also called manager methods - create, assign and destroy an object
+- **Queries:** Also called accessor methods - report the state of the object
+- **Modifiers:** Also called mutator methods - change the state of the object
+- **Special:** Also called manager methods - create, assign and destroy an object
 
 ![Communication](/img/communication.png)
 
@@ -76,10 +76,10 @@ void Student::display() const {
 
 The definition consists of four elements:
 
--   **The `Student::` prefix** on the function name identifies it as a member of our `Student` type
--   **The empty parameter list:** This function does not receive any values from the client code or return any values through the parameter list to the client code
--   **The `const` qualifier** identifies this function as a query - this function cannot change any of the values of the object's data members
--   **The data members:** The function accesses no and grade are defined outside the function's scope but within the class' scope, which encompasses the function's scope
+- **The `Student::` prefix** on the function name identifies it as a member of our `Student` type
+- **The empty parameter list:** This function does not receive any values from the client code or return any values through the parameter list to the client code
+- **The `const` qualifier** identifies this function as a query - this function cannot change any of the values of the object's data members
+- **The data members:** The function accesses no and grade are defined outside the function's scope but within the class' scope, which encompasses the function's scope
 
 ### Calling a Member Function
 
@@ -176,8 +176,8 @@ public:
 
 For example, in order to:
 
--   Hide the data members of each `Student` object
--   Expose the member function(s) of the `Student` type
+- Hide the data members of each `Student` object
+- Expose the member function(s) of the `Student` type
 
 We insert the accessibility keywords as follows
 
@@ -283,9 +283,9 @@ Hiding all data members from client code gives us control over which data to acc
 
 Let us upgrade our `set()` member function to validate incoming data only if:
 
--   The student number is positive-valued
--   The grades are between 0 and 100 inclusive
--   If any incoming data fails to meet one of these conditions, let us ignore all incoming data and store a value that places the object in an _empty state_. For instance, let us use a student number of 0 to identify an empty state:
+- The student number is positive-valued
+- The grades are between 0 and 100 inclusive
+- If any incoming data fails to meet one of these conditions, let us ignore all incoming data and store a value that places the object in an _empty state_. For instance, let us use a student number of 0 to identify an empty state:
 
 ```cpp
 void Student::set(int sn, const float* g, int ng_) {
@@ -437,9 +437,9 @@ _abc_
 
 The `istream` type supports the following member functions:
 
--   `ignore(...)`: Ignores/discards character(s) from the input buffer
--   `get(...)`: Extracts a character or a string from the input buffer
--   `getline(...)`: Extracts a line of characters from the input buffer
+- `ignore(...)`: Ignores/discards character(s) from the input buffer
+- `get(...)`: Extracts a character or a string from the input buffer
+- `getline(...)`: Extracts a line of characters from the input buffer
 
 For detailed descriptions of `get()` and `getline()`, see the chapter entitled [Input and Output Refinements](/Refinements/input-and-output-refinements#member-functions).
 
@@ -513,11 +513,11 @@ We call such repeated use of the insertion operator _cascading_.
 
 The `ostream` type supports the following public member functions for formatting conversions:
 
--   `width(int)`: Sets the field width to the integer received
--   `fill(char)`: Sets the padding character to the character received
--   `setf(...)`: Sets a formatting flag to the flag received
--   `unsetf(...)`: Unsets a formatting flag for the flag received
--   `precision(int)`: Sets the decimal precision to the integer received
+- `width(int)`: Sets the field width to the integer received
+- `fill(char)`: Sets the padding character to the character received
+- `setf(...)`: Sets a formatting flag to the flag received
+- `unsetf(...)`: Unsets a formatting flag for the flag received
+- `precision(int)`: Sets the decimal precision to the integer received
 
 #### `width()`
 
@@ -720,7 +720,7 @@ int main() {
 }
 ```
 
-```
+```console
 1234567890
       3.14
 ```
@@ -749,7 +749,7 @@ void Student::display() const {
 }
 ```
 
-```
+```console
 975:
   78.90
   69.40
@@ -757,14 +757,14 @@ void Student::display() const {
 
 ## Summary
 
--   Object-oriented classes may contain both data members and member functions
--   The keyword `private` identifies subsequent members as inaccessible to any client
--   The keyword `public` identifies subsequent members as accessible to any client
--   Data members hold the information about an object's state
--   Member functions describe the logic that an object performs on its data members
--   A query reports the state of an object without changing its state
--   A modifier changes the state of an object
--   An empty state is the set of data values that identifies the absence of valid data in an object
--   A field width setting only holds for the next field
--   All settings other than a field width setting persist until changed
--   Precision has different meanings under general, scientific, and fixed formats
+- Object-oriented classes may contain both data members and member functions
+- The keyword `private` identifies subsequent members as inaccessible to any client
+- The keyword `public` identifies subsequent members as accessible to any client
+- Data members hold the information about an object's state
+- Member functions describe the logic that an object performs on its data members
+- A query reports the state of an object without changing its state
+- A modifier changes the state of an object
+- An empty state is the set of data values that identifies the absence of valid data in an object
+- A field width setting only holds for the next field
+- All settings other than a field width setting persist until changed
+- Precision has different meanings under general, scientific, and fixed formats

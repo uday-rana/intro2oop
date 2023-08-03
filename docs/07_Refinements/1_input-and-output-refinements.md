@@ -1,8 +1,8 @@
 # Input and Output Refinements
 
--   Use stream objects to interact with users and access persistent data
--   Introduce manipulators to format data for input and output objects
--   Describe the member functions that manage the state of streaming objects
+- Use stream objects to interact with users and access persistent data
+- Introduce manipulators to format data for input and output objects
+- Describe the member functions that manage the state of streaming objects
 
 > "Designing and implementing a general input/output facility for a programming language is notoriously difficult. ... Nobody has come up with a solution that pleases everyone" **Stroustrup, 1997.**
 
@@ -48,15 +48,15 @@ char c;
 double x;
 char s[8];
 cout << "Enter an integer,\n"
-		"a character,\n"
-		"a floating-point number and\n"
-		"a string : " << flush;
+        "a character,\n"
+        "a floating-point number and\n"
+        "a string : " << flush;
 cin >> i;
 cin >> c;
 cin >> x;
 cin >> s;  // possible overflow
 cout << "Entered " << i << ' '
-	 << c << ' ' << x << ' ' << s << endl; 
+     << c << ' ' << x << ' ' << s << endl; 
 ```
 
 ```console
@@ -80,11 +80,11 @@ The `cin` object skips leading whitespace with numeric, string and character typ
 using namespace std;
 
 int main() {
-	char str[11];
+    char str[11];
 
-	cout << "Enter a string : " << endl;
-	cin >> str;
-	cout << "|" << str << "|" << endl; 
+    cout << "Enter a string : " << endl;
+    cin >> str;
+    cout << "|" << str << "|" << endl; 
 }
 ```
 
@@ -108,11 +108,11 @@ The input object treats whitespace in its input stream as a delimiter for numeri
 using namespace std;
 
 int main() {
-	char str[11];
+    char str[11];
 
-	cout << "Enter a string : " << endl;
-	cin >> str;
-	cout << "|" << str << "|" << endl; 
+    cout << "Enter a string : " << endl;
+    cin >> str;
+    cout << "|" << str << "|" << endl; 
 }
 ```
 
@@ -134,12 +134,12 @@ char c;
 double x;
 char s[8];
 cout << "Enter an integer,\n"
-		"a character,\n"
-		"a floating-point number and\n"
-		"a string : " << flush;
+        "a character,\n"
+        "a floating-point number and\n"
+        "a string : " << flush;
 cin >> i >> c >> x >> s;
 cout << "Entered " << i << ' '
-	<< c << ' ' << x << ' ' << s << endl; 
+    << c << ' ' << x << ' ' << s << endl; 
 ```
 
 ```console
@@ -167,18 +167,18 @@ In the above two examples, overflow may occur while filling `s`.  The extraction
 using namespace std;
 
 int main() {
-	int i;
-	char c;
-	double x;
-	char s[8];
-	cout << "Enter an integer,\n"
-		"a character,\n"
-		"a floating-point number and\n"
-		"a string : \n";
-	cin >> i >> c >> x >> s;
-	cout << "Entered " << endl;
-	cout << i << ' '
-		<< c << ' ' << x << ' ' << s << endl; 
+    int i;
+    char c;
+    double x;
+    char s[8];
+    cout << "Enter an integer,\n"
+        "a character,\n"
+        "a floating-point number and\n"
+        "a string : \n";
+    cin >> i >> c >> x >> s;
+    cout << "Entered " << endl;
+    cout << i << ' '
+        << c << ' ' << x << ' ' << s << endl; 
 }
 ```
 
@@ -226,23 +226,23 @@ The `get()` member function extracts either a single character or a string from 
 using namespace std;
 
 int main() {
-	char c, d, t[8], u[8], v;
+    char c, d, t[8], u[8], v;
 
-	c = cin.get();          // extracts a single character
-	cin.get(d);             // extracts a single character
-	cin.get(t, 8);          // newline delimiter - accepts up to 7 chars 
-							//    and adds a null byte
-	cin.ignore(2000, '\n'); // extracts the 'j' and the newline
-	cin.get(u, 8, '\t');    // tab delimiter - accepts up to 7 chars and
-							//    adds a null byte
-	cin.ignore();           // extracts the tab
-	cin.get(v);             // extracts a single character
+    c = cin.get();          // extracts a single character
+    cin.get(d);             // extracts a single character
+    cin.get(t, 8);          // newline delimiter - accepts up to 7 chars 
+                            //    and adds a null byte
+    cin.ignore(2000, '\n'); // extracts the 'j' and the newline
+    cin.get(u, 8, '\t');    // tab delimiter - accepts up to 7 chars and
+                            //    adds a null byte
+    cin.ignore();           // extracts the tab
+    cin.get(v);             // extracts a single character
 
-	cout << "c = " << c << endl;
-	cout << "d = " << d << endl;
-	cout << "t = " << t << endl;
-	cout << "u = " << u << endl;
-	cout << "v = " << v << endl;
+    cout << "c = " << c << endl;
+    cout << "d = " << d << endl;
+    cout << "t = " << t << endl;
+    cout << "u = " << u << endl;
+    cout << "v = " << v << endl;
 }
 ```
 
@@ -250,7 +250,7 @@ The above program produces the following results for the input shown (the charac
 
 ```console
 Input stream : abcdefghij
-			klmn_opqr
+            klmn_opqr
 Output:
 -------
 c = a
@@ -274,17 +274,17 @@ v = o
 using namespace std;
 
 int main() {
-	char t[8], u[8], v;
+    char t[8], u[8], v;
 
-	cin.getline(t, 8);       // newline delimiter - accepts up to 7 chars 
-							//    and adds a null byte
-	cin.getline(u, 8, '\t'); // tab delimiter - accepts up to 7 chars and
-							//    adds a null byte
-	cin.get(v);              // extracts a single character
+    cin.getline(t, 8);       // newline delimiter - accepts up to 7 chars 
+                             //    and adds a null byte
+    cin.getline(u, 8, '\t'); // tab delimiter - accepts up to 7 chars and
+                             //    adds a null byte
+    cin.get(v);              // extracts a single character
 
-	cout << "t = " << t << endl;
-	cout << "u = " << u << endl;
-	cout << "v = " << v << endl;
+    cout << "t = " << t << endl;
+    cout << "u = " << u << endl;
+    cout << "v = " << v << endl;
 }
 ```
 
@@ -292,7 +292,7 @@ The above program produces the following results for the input shown (the charac
 
 ```console
 Input stream : cdefghi
-			jklmn_opqr
+            jklmn_opqr
 Output:
 -------
 t = cdefghi
@@ -368,8 +368,9 @@ cout << i << c << x << c << s << endl;
 
 cerr << "Data has been written";
 ```
-	
+
 Input:
+
 ```console
 6 9.75 Harry
 ```
@@ -402,14 +403,14 @@ The `width(int)` member function specifies the minimum width of the _next_ outpu
 using namespace std;
 
 int main() {
-	int attendance = 27;
-	cout << "1234567890" << endl;
-	cout.width(10);
-	cout << attendance << endl;
-	cout << attendance << endl;
+    int attendance = 27;
+    cout << "1234567890" << endl;
+    cout.width(10);
+    cout << attendance << endl;
+    cout << attendance << endl;
 }
 ```
-	
+
 Output:
 
 ```console
@@ -432,14 +433,14 @@ The `fill(char)` member function defines the padding character. The output objec
 using namespace std;
 
 int main() {
-	int attendance = 27;
-	cout << "1234567890" << endl;
-	cout.fill('*');
-	cout.width(10);
-	cout << attendance << endl;
+    int attendance = 27;
+    cout << "1234567890" << endl;
+    cout.fill('*');
+    cout.width(10);
+    cout << attendance << endl;
 }
 ```
-	
+
 Output:
 
 ```console
@@ -472,11 +473,11 @@ The default format in C++ is _general format_, which outputs data in the simples
 using namespace std;
 
 int main() {
-	double pi = 3.141592653;
-	cout << "1234567890" << endl;
-	cout.width(10);
-	cout.setf(ios::fixed);
-	cout << pi << endl;
+    double pi = 3.141592653;
+    cout << "1234567890" << endl;
+    cout.width(10);
+    cout.setf(ios::fixed);
+    cout << pi << endl;
 }
 ```
 
@@ -486,6 +487,7 @@ Output:
 1234567890
   3.141593
 ```
+
 Format settings persist until we change them.  To unset fixed format, we pass the `ios::fixed` flag to the `unsetf()` member function:
 
 ```cpp
@@ -496,16 +498,16 @@ Format settings persist until we change them.  To unset fixed format, we pass th
 using namespace std;
 
 int main() {
-	double pi = 3.141592653;
-	cout << "1234567890" << endl;
-	cout.width(10);
-	cout.setf(ios::fixed);
-	cout << pi << endl;
-	cout.unsetf(ios::fixed);
-	cout << pi << endl;
+    double pi = 3.141592653;
+    cout << "1234567890" << endl;
+    cout.width(10);
+    cout.setf(ios::fixed);
+    cout << pi << endl;
+    cout.unsetf(ios::fixed);
+    cout << pi << endl;
 }
 ```
-	
+
 Output:
 
 ```console
@@ -524,14 +526,14 @@ To specify scientific format, we pass the `ios::scientific` flag to the `setf()`
 using namespace std;
 
 int main() {
-	double pi = 3.141592653;
-	cout << "12345678901234" << endl;
-	cout.width(14);
-	cout.setf(ios::scientific);
-	cout << pi << endl;
+    double pi = 3.141592653;
+    cout << "12345678901234" << endl;
+    cout.width(14);
+    cout.setf(ios::scientific);
+    cout << pi << endl;
 }
 ```
-	
+
 Output:
 
 ```console
@@ -543,7 +545,7 @@ To turn off scientific format, we pass the `ios::scientific` flag to the `unsetf
 
 #### `setf()`, `unsetf()` - Alignment
 
-The default alignment is right-justified. 
+The default alignment is right-justified.
 
 To switch to left-justification, we pass the `ios::left` flag to the `setf()` member function:
 
@@ -555,15 +557,15 @@ To switch to left-justification, we pass the `ios::left` flag to the `setf()` me
 using namespace std;
 
 int main() {
-	double pi = 3.141592653;
-	cout << "1234567890" << endl;
-	cout.width(10);
-	cout.fill('?');
-	cout.setf(ios::left);
-	cout << pi << endl;
+    double pi = 3.141592653;
+    cout << "1234567890" << endl;
+    cout.width(10);
+    cout.fill('?');
+    cout.setf(ios::left);
+    cout << pi << endl;
 }
 ```
-	
+
 Output:
 
 ```console
@@ -572,13 +574,14 @@ Output:
 ```
 
 To switch off left-justification, we pass the `ios::left` flag to the `unsetf()` member function:
+
 ```cpp
 cout.unsetf(ios::left);
 ```
 
 #### `precision()`
 
-The `precision()` member function sets the precision of subsequent floating-point fields.  The default precision is 6 units.  General, fixed, and scientific formats implement precision differently.  General format counts the number of significant digits.  Scientific and fixed formats count the number of digits following the decimal point. 
+The `precision()` member function sets the precision of subsequent floating-point fields.  The default precision is 6 units.  General, fixed, and scientific formats implement precision differently.  General format counts the number of significant digits.  Scientific and fixed formats count the number of digits following the decimal point.
 
 For a precision of 2 under general format, we write
 
@@ -590,15 +593,15 @@ For a precision of 2 under general format, we write
 using namespace std;
 
 int main() {
-	double pi = 3.141592653;
-	cout << "1234567890" << endl;
-	cout.setf(ios::fixed);
-	cout.width(10);
-	cout.precision(2);
-	cout << pi << endl;
+    double pi = 3.141592653;
+    cout << "1234567890" << endl;
+    cout.setf(ios::fixed);
+    cout.width(10);
+    cout.precision(2);
+    cout << pi << endl;
 }
 ```
-	
+
 Output:
 
 ```console
@@ -606,7 +609,7 @@ Output:
       3.14
 ```
 
-The precision setting applies to the output of all subsequent floating-point values until we change it. 
+The precision setting applies to the output of all subsequent floating-point values until we change it.
 
 ## Manipulators (Optional)
 
@@ -637,15 +640,15 @@ We may combine manipulators with input variables directly to form compound expre
 using namespace std;
 
 int main( ) {
-	char a[5], b[2], c, d[7];
-	cout << "Enter : ";
-	cin >> setw(5) >> a >>
-		setw(2) >> b >> noskipws >>
-		c >> skipws >> d;
-	cout << "Stored '" << a <<
-			"' & '" <<  b <<
-			"' & '" << c <<
-			"' & '" << d << "'" << endl; 
+    char a[5], b[2], c, d[7];
+    cout << "Enter : ";
+    cin >> setw(5) >> a >>
+        setw(2) >> b >> noskipws >>
+        c >> skipws >> d;
+    cout << "Stored '" << a <<
+            "' & '" <<  b <<
+            "' & '" << c <<
+            "' & '" << d << "'" << endl; 
 }
 ```
 
@@ -675,13 +678,14 @@ The manipulators of output objects are listed below:
 Manipulators (except for `setw(i)`, which only modifies the format setting for the next object) modify the format settings until we change them.
 
 For example,
+
 ```cpp
 cout << fixed << left << setw(5) <<
        setprecision(1) << 12.376 <<
        setprecision(5) << 12.376 <<
        endl;
 ```
-	
+
 ```console
 12.4 12.37600
 ```
@@ -689,42 +693,43 @@ cout << fixed << left << setw(5) <<
 ### Reference Example (Optional)
 
 The following program produces the output shown below:
+
 ```cpp
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
 int main( ) {
-	/* integers */
-	cout << "\n* ints *\n"
-	<< "1234567890\n"
-	<< "----------\n"
-	<< 4321 << '\n'
-	<< setw(7) << 4321 << '\n'
-	<< setw(7) << setfill('0') << 4321 << setfill(' ')<<'\n' 
-	<< setw(7) << left << 4321 << right << '\n';
-	/* floats */
-	cout << "\n* floats *\n"
-	<< "1234567890\n"
-	<< "----------\n"
-	<< 4321.9876546F << '\n';
-	/* doubles */
-	cout << "\n* doubles *\n"
-	<< "1234567890\n"
-	<< "----------\n"
-	<< fixed << 4.9876546 << '\n'
-	<< setw(7) << setprecision(3) << 4.9876546 << '\n'
-	<< setw(7) << setfill('0') << 4.9876546 << '\n'
-	<< setw(7) << left << 4.9876546 << right << '\n';
-	/* characters */
-	cout << "\n* chars *\n"
-	<< "1234567890\n"
-	<< "----------\n"
-	<< 'd' << '\n'
-	<< int('d') << '\n';
+    /* integers */
+    cout << "\n* ints *\n"
+    << "1234567890\n"
+    << "----------\n"
+    << 4321 << '\n'
+    << setw(7) << 4321 << '\n'
+    << setw(7) << setfill('0') << 4321 << setfill(' ')<<'\n' 
+    << setw(7) << left << 4321 << right << '\n';
+    /* floats */
+    cout << "\n* floats *\n"
+    << "1234567890\n"
+    << "----------\n"
+    << 4321.9876546F << '\n';
+    /* doubles */
+    cout << "\n* doubles *\n"
+    << "1234567890\n"
+    << "----------\n"
+    << fixed << 4.9876546 << '\n'
+    << setw(7) << setprecision(3) << 4.9876546 << '\n'
+    << setw(7) << setfill('0') << 4.9876546 << '\n'
+    << setw(7) << left << 4.9876546 << right << '\n';
+    /* characters */
+    cout << "\n* chars *\n"
+    << "1234567890\n"
+    << "----------\n"
+    << 'd' << '\n'
+    << int('d') << '\n';
 }
 ```
-	
+
 ```console
 * ints *
 1234567890
@@ -767,14 +772,14 @@ The `ios` base class defines public member functions that report or change the s
 - `bad()`: The data may be corrupted
 - `clear()`: Reset the state to good
 
-For user-friendly input processing, we should check the state of the input object every time it extracts a sequence of bytes from the input buffer.  If the object has encountered an invalid character, the object will fail and leave that invalid character in the input buffer and the `fail()` member function will return true. 
+For user-friendly input processing, we should check the state of the input object every time it extracts a sequence of bytes from the input buffer.  If the object has encountered an invalid character, the object will fail and leave that invalid character in the input buffer and the `fail()` member function will return true.
 
 Before a failed object can continue extracting data from the input buffer, we must clear the object of its failed state. The `clear()` function resets the state of the object to good:
 
 ```cpp
 if(cin.fail()) {            // checks if cin is in a failed state
-	cin.clear();            // clears state to allow further extraction 
-	cin.ignore(2000, '\n'); // clears the input buffer
+    cin.clear();            // clears state to allow further extraction 
+    cin.ignore(2000, '\n'); // clears the input buffer
 }
 ```
 
@@ -793,32 +798,32 @@ To extract a positive `int` that is not greater than `max` from the standard inp
 // from standard input and returns its value
 //
 int getPosInt(int max) {
-	int value;
-	int keepreading;
+    int value;
+    int keepreading;
 
-	keepreading = 1;
-	do {
-		cout << "Enter a positive integer (<= " << max << ") : "; 
-		cin  >> value;
+    keepreading = 1;
+    do {
+        cout << "Enter a positive integer (<= " << max << ") : "; 
+        cin  >> value;
 
-		if (cin.fail()) {   // check for invalid character
-			cerr << "Invalid character.  Try Again." << endl;
-			cin.clear();
-			cin.ignore(2000, '\n');
-		} else if (value <= 0 || value > max) {
-			cerr << value << " is outside the range [1," <<
-				max << ']' << endl;
-			cerr << "Invalid input.  Try Again." << endl;
-			cin.ignore(2000, '\n');
-		// you may choose to omit this branch
-		} else if (char(cin.get()) != '\n') {
-			cerr << "Trailing characters.  Try Again." << endl;
-			cin.ignore(2000, '\n');
-		} else
-			keepreading = 0;
-	} while(keepreading == 1);
+        if (cin.fail()) {   // check for invalid character
+            cerr << "Invalid character.  Try Again." << endl;
+            cin.clear();
+            cin.ignore(2000, '\n');
+        } else if (value <= 0 || value > max) {
+            cerr << value << " is outside the range [1," <<
+                max << ']' << endl;
+            cerr << "Invalid input.  Try Again." << endl;
+            cin.ignore(2000, '\n');
+        // you may choose to omit this branch
+        } else if (char(cin.get()) != '\n') {
+            cerr << "Trailing characters.  Try Again." << endl;
+            cin.ignore(2000, '\n');
+        } else
+            keepreading = 0;
+    } while(keepreading == 1);
 
-	return value;
+    return value;
 }
 ```
 
@@ -840,7 +845,7 @@ The `fstream` classes include:
 - `ofstream`: Processes output to a file stream
 - `fstream`: Processes input from and output to a file stream
 
-These classes access a file stream through separate input and output buffers. 
+These classes access a file stream through separate input and output buffers.
 
 ### Extraction and Insertion Operator Overloads
 
@@ -854,9 +859,9 @@ For fundamental types see the chapter entitled [Input and Output Operators](/Enc
 
 Typically, custom types require separate overloads of both extraction and insertion operators.
 
-While reading standard input involves prompting the suer, reading a file does not require any prompts. The extraction operator for file input objects excludes prompts. Since writing to a file matches the convention for subsequent reading from that file, the output to a file generally differs from the more decorated output to be read by the user. Moreover, since the insertion operator that takes an `ostream` object as its left operand class is a templated function and the `ofstream` class is a class derived from the `ostream` class, ambiguities arise with direct overloading of the operator for a custom type.  One way to avoid these ambiguities is to define a separate file class for the custom type and overload the insertion operator for that file class. 
+While reading standard input involves prompting the suer, reading a file does not require any prompts. The extraction operator for file input objects excludes prompts. Since writing to a file matches the convention for subsequent reading from that file, the output to a file generally differs from the more decorated output to be read by the user. Moreover, since the insertion operator that takes an `ostream` object as its left operand class is a templated function and the `ofstream` class is a class derived from the `ostream` class, ambiguities arise with direct overloading of the operator for a custom type.  One way to avoid these ambiguities is to define a separate file class for the custom type and overload the insertion operator for that file class.
 
-The file related additions are highlighted in the listings below. 
+The file related additions are highlighted in the listings below.
 
 The header file for the `Student` class includes the definition of a `StudentFile` class that overloads the insertion operators for an `ofstream` object that receives the `Student` class:
 
@@ -870,17 +875,17 @@ const int NG = 13;
 class StudentFile;
 
 class Student {
-	int no;
-	float grade[NG];
-	int ng;
+    int no;
+    float grade[NG];
+    int ng;
 public:
-	Student();
-	Student(int);
-	Student(int, const float*, int);
-	void read(std::istream&);
-	void read(std::ifstream&);
-	void display(std::ostream& os) const;
-	void display(StudentFile& os) const;
+    Student();
+    Student(int);
+    Student(int, const float*, int);
+    void read(std::istream&);
+    void read(std::ifstream&);
+    void display(std::ostream& os) const;
+    void display(StudentFile& os) const;
 };
 
 std::istream& operator>>(std::istream& is, Student& s);
@@ -889,12 +894,12 @@ std::ifstream& operator>>(std::ifstream& is, Student& s);
 
 class StudentFile {
 public:
-	std::ofstream f;
-	StudentFile(const char*);
-	StudentFile& operator<<(char);
-	StudentFile& operator<<(int);
-	StudentFile& operator<<(float);
-	void close();
+    std::ofstream f;
+    StudentFile(const char*);
+    StudentFile& operator<<(char);
+    StudentFile& operator<<(int);
+    StudentFile& operator<<(float);
+    void close();
 };
 
 StudentFile& operator<<(StudentFile& os, const Student& s);
@@ -908,138 +913,138 @@ The implementation file overloads the file extraction and insertion operators fo
 #include "Student.h"
 
 Student::Student() {
-	no = 0;
-	ng = 0;
+    no = 0;
+    ng = 0;
 }
 
 Student::Student(int n) {
-	*this = Student(n, nullptr, 0);
+    *this = Student(n, nullptr, 0);
 }
 
 Student::Student(int sn, const float* g, int ng_) {
-	bool valid = sn > 0 && g != nullptr && ng_ >= 0;
-	if (valid)
-		for (int i = 0; i < ng_ && valid; i++)
-			valid = g[i] >= 0.0f && g[i] <= 100.0f;
+    bool valid = sn > 0 && g != nullptr && ng_ >= 0;
+    if (valid)
+        for (int i = 0; i < ng_ && valid; i++)
+            valid = g[i] >= 0.0f && g[i] <= 100.0f;
 
-	if (valid) {
-		// accept the client's data
-		no = sn;
-		ng = ng_ < NG ? ng_ : NG;
-		for (int i = 0; i < ng; i++)
-			grade[i] = g[i];
-	} else {
-		*this = Student();
-	}
+    if (valid) {
+        // accept the client's data
+        no = sn;
+        ng = ng_ < NG ? ng_ : NG;
+        for (int i = 0; i < ng; i++)
+            grade[i] = g[i];
+    } else {
+        *this = Student();
+    }
 }
 
 void Student::read(std::istream& is) {
-	int no;          // will hold the student number
-	int ng;          // will hold the number of grades
-	float grade[NG]; // will hold the grades
+    int no;          // will hold the student number
+    int ng;          // will hold the number of grades
+    float grade[NG]; // will hold the grades
 
-	std::cout << "Student Number : ";
-	is >> no;
-	std::cout << "Number of Grades : ";
-	is >> ng;
-	if (ng > NG) ng = NG;
-	for (int i = 0; i < ng; i++) {
-		std::cout << "Grade " << i + 1 << " : ";
-		is >> grade[i];
-	}
+    std::cout << "Student Number : ";
+    is >> no;
+    std::cout << "Number of Grades : ";
+    is >> ng;
+    if (ng > NG) ng = NG;
+    for (int i = 0; i < ng; i++) {
+        std::cout << "Grade " << i + 1 << " : ";
+        is >> grade[i];
+    }
 
-	// construct a temporary Student
-	Student temp(no, grade, ng);
-	// if data is valid, copy temporary object into current object
-	if (temp.no != 0)
-		*this = temp;
+    // construct a temporary Student
+    Student temp(no, grade, ng);
+    // if data is valid, copy temporary object into current object
+    if (temp.no != 0)
+        *this = temp;
 }
 
 void Student::read(std::ifstream& is) {
-	int no;          // will hold the student number
-	int ng;          // will hold the number of grades
-	float grade[NG]; // will hold the grades
+    int no;          // will hold the student number
+    int ng;          // will hold the number of grades
+    float grade[NG]; // will hold the grades
 
-	is >> no;
-	is >> ng;
-	if (ng > NG) ng = NG;
-	for (int i = 0; i < ng; i++) {
-		is >> grade[i];
-	}
+    is >> no;
+    is >> ng;
+    if (ng > NG) ng = NG;
+    for (int i = 0; i < ng; i++) {
+        is >> grade[i];
+    }
 
-	// construct a temporary Student
-	Student temp(no, grade, ng);
-	// if data is valid, copy temporary object into current object 
-	if (temp.no != 0)
-		*this = temp;
+    // construct a temporary Student
+    Student temp(no, grade, ng);
+    // if data is valid, copy temporary object into current object 
+    if (temp.no != 0)
+        *this = temp;
 }
 
 void Student::display(std::ostream& os) const {
-	if (no > 0) {
-		os << no << ":\n";
-		os.setf(std::ios::fixed);
-		os.precision(2);
-		for (int i = 0; i < ng; i++) {
-			os.width(6);
-			os << grade[i] << std::endl;
-		}
-		os.unsetf(std::ios::fixed);
-		os.precision(6);
-	} else {
-		os << "no data available" << std::endl;
-	}
+    if (no > 0) {
+        os << no << ":\n";
+        os.setf(std::ios::fixed);
+        os.precision(2);
+        for (int i = 0; i < ng; i++) {
+            os.width(6);
+            os << grade[i] << std::endl;
+        }
+        os.unsetf(std::ios::fixed);
+        os.precision(6);
+    } else {
+        os << "no data available" << std::endl;
+    }
 }
 
 void Student::display(StudentFile& os) const {
-	os << no << '\n';
-	os << ng << '\n';
-	for (int i = 0; i < ng; i++)
-		os << grade[i] << '\n';
+    os << no << '\n';
+    os << ng << '\n';
+    for (int i = 0; i < ng; i++)
+        os << grade[i] << '\n';
 }
 
 std::ostream& operator<<(std::ostream& os, const Student& s) {
-	s.display(os);
-	return os;
+    s.display(os);
+    return os;
 }
 
 std::istream& operator>>(std::istream& is, Student& s) {
-	s.read(is);
-	return is;
+    s.read(is);
+    return is;
 }
 
 std::ifstream& operator>>(std::ifstream& is, Student& s) {
-	s.read(is);
-	return is;
+    s.read(is);
+    return is;
 }
 
 StudentFile& operator<<(StudentFile& f, const Student& s) {
-	s.display(f);
-	return f;
+    s.display(f);
+    return f;
 }
 
 StudentFile::StudentFile(const char* filename) : f(filename) {}
 
 StudentFile& StudentFile::operator<<(char c) {
-	f << c;
-	return *this;
+    f << c;
+    return *this;
 }
 
 StudentFile& StudentFile::operator<<(int i) {
-	f << i;
-	return *this;
+    f << i;
+    return *this;
 }
 
 StudentFile& StudentFile::operator<<(float v) {
-	f << v;
-	return *this;
+    f << v;
+    return *this;
 }
 
 void StudentFile::close() {
-	f.close();
+    f.close();
 }
 ```
 
-Note the definitions of the `read()` and `display()` member functions overloaded for file input and output respectively. 
+Note the definitions of the `read()` and `display()` member functions overloaded for file input and output respectively.
 
 The client file that uses this upgraded `Student` class creates the file objects, writes to them and reads from them:
 
@@ -1051,21 +1056,21 @@ The client file that uses this upgraded `Student` class creates the file objects
 #include "Student.h"
 
 int main ( ) {
-	Student harry;
+    Student harry;
 
-	std::cin >> harry;
-	std::cout << harry;
+    std::cin >> harry;
+    std::cout << harry;
 
-	StudentFile studentFile("Student.txt");
-	studentFile << harry;
-	studentFile.close();
+    StudentFile studentFile("Student.txt");
+    studentFile << harry;
+    studentFile.close();
 
-	std::ifstream inFile("Student.txt");
-	inFile >> harry;
-	std::cout << harry;
+    std::ifstream inFile("Student.txt");
+    inFile >> harry;
+    std::cout << harry;
 }
 ```
-	
+
 ```console
 Student Number : 1234 
 Number of Grades : 3
@@ -1083,6 +1088,7 @@ Grade 3 : 85.4
 ```
 
 The records written to the `Student.txt` file by this program are:
+
 ```console
 1234
  3
@@ -1095,7 +1101,7 @@ The records written to the `Student.txt` file by this program are:
 
 #### Open-Mode Flags
 
-To customize a file object's connection mode we use combinations of flags passed as an optional second argument to the object's constructor or its `open()` member function. 
+To customize a file object's connection mode we use combinations of flags passed as an optional second argument to the object's constructor or its `open()` member function.
 
 The flags defining the connection mode are:
 
@@ -1124,14 +1130,14 @@ The default combinations for no-argument and one-argument constructors are:
 
 #### The Logical Negation Operator
 
-The standard library overloads the logical negation operator (!) as an alternative to the `fail()` query.  This operator reports `true` if the latest operation has failed or if the stream has encountered a serious error. 
+The standard library overloads the logical negation operator (!) as an alternative to the `fail()` query.  This operator reports `true` if the latest operation has failed or if the stream has encountered a serious error.
 
 We can invoke this operator on any stream object to check the success of the most recent activity:
 
 ```cpp
 if (fin.fail()) {
-	std::cerr << "Read error";
-	fin.clear();
+    std::cerr << "Read error";
+    fin.clear();
 }
 ```
 
@@ -1139,10 +1145,11 @@ becomes
 
 ```cpp
 if (!fin) {
-	std::cerr << "Read error";
-	fin.clear();
+    std::cerr << "Read error";
+    fin.clear();
 }
 ```
+
 The operator applied directly to a file object returns the state of the connection:
 
 ```cpp
@@ -1150,13 +1157,13 @@ The operator applied directly to a file object returns the state of the connecti
 #include <fstream>
 
 int main() {
-	std::ofstream fout("output.txt");  // connects fout to output.txt 
-									// for writing
-	if (!fout) {
-		std::cerr << "File is not open" << std::endl;
-	} else {
-		std::cout << "File is open" << std::endl;
-	}
+    std::ofstream fout("output.txt");  // connects fout to output.txt 
+                                       // for writing
+    if (!fout) {
+        std::cerr << "File is not open" << std::endl;
+    } else {
+        std::cout << "File is open" << std::endl;
+    }
 }
 ```
 
@@ -1176,7 +1183,7 @@ To rewind an output stream we call:
 
 #### Premature Closing
 
-To close a file connection before the file object has gone out of scope, we call the `close()` member function on the object: 
+To close a file connection before the file object has gone out of scope, we call the `close()` member function on the object:
 
 ```cpp
 // Concatenate Two Files
@@ -1185,23 +1192,23 @@ To close a file connection before the file object has gone out of scope, we call
 #include <fstream>
 
 int main() {
-	std::ifstream in("src1.txt");    // open 1st source file
-	std::ofstream out("output.txt"); // open destination file 
+    std::ifstream in("src1.txt");    // open 1st source file
+    std::ofstream out("output.txt"); // open destination file 
 
-	if (in) {
-		while (!in.eof())
-			out << in.get();        // byte by byte copy
-		in.clear();
-		in.close();                 // close 1st source file
-	}
+    if (in) {
+        while (!in.eof())
+            out << in.get();        // byte by byte copy
+        in.clear();
+        in.close();                 // close 1st source file
+    }
 
-	in.open("src2.txt");            // open 2nd source file
+    in.open("src2.txt");            // open 2nd source file
 
-	if (in) {
-		while (!in.eof())
-			out << in.get();        // byte by byte copy
-		in.clear();
-	}
+    if (in) {
+        while (!in.eof())
+            out << in.get();        // byte by byte copy
+        in.clear();
+    }
 }
 ```
 
@@ -1210,6 +1217,7 @@ int main() {
 The `fstream` class supports both reading and writing operations. An instance of this class can write to a file and read from that same file.
 
 For example, the following program produces the output shown below
+
 ```cpp
 // File Objects - writing and reading
 // fstream.cpp
@@ -1219,26 +1227,26 @@ For example, the following program produces the output shown below
 
 int main() {
 
-	std::fstream f("file.txt",
-	std::ios::in|std::ios::out|std::ios::trunc);
-	f << "Line 1" << std::endl;   // record 1
-	f << "Line 2" << std::endl;   // record 2
-	f << "Line 3" << std::endl;   // record 3
-	f.seekp(0);                   // rewind output
-	f << "****";                  // overwrite
+    std::fstream f("file.txt",
+    std::ios::in|std::ios::out|std::ios::trunc);
+    f << "Line 1" << std::endl;   // record 1
+    f << "Line 2" << std::endl;   // record 2
+    f << "Line 3" << std::endl;   // record 3
+    f.seekp(0);                   // rewind output
+    f << "****";                  // overwrite
 
-	char c;
-	f.seekg(0);                   // rewind input
-	f << std::noskipws;           // don't skip whitespace
-	while (f.good()) {
-		f >> c;                   // read 1 char at a time
-		if (f.good())
-			std::cout << c;       // display the character
-	}
-	f.clear();                    // clear failed (eof) state 
+    char c;
+    f.seekg(0);                   // rewind input
+    f << std::noskipws;           // don't skip whitespace
+    while (f.good()) {
+        f >> c;                   // read 1 char at a time
+        if (f.good())
+            std::cout << c;       // display the character
+    }
+    f.clear();                    // clear failed (eof) state 
 }
 ```
-	
+
 ```console
 **** 1
 Line 2
@@ -1259,7 +1267,6 @@ Line 3
 - An input file object is an instance of an `ifstream` class
 - An output file object is an instance of an `ofstream` class
 - We may overload the extraction and insertion operators for file objects as left operands and our class types as right operands
-
 
 ## Exercises
 

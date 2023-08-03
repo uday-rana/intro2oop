@@ -1,8 +1,8 @@
 # Functions in a Hierarchy
 
--   Relate classes using inheritance hierarchies to minimize the duplication of object code
--   Shadow a base class function using a derived class function
--   Pass initialization data across the constructors of a class hierarchy
+- Relate classes using inheritance hierarchies to minimize the duplication of object code
+- Shadow a base class function using a derived class function
+- Pass initialization data across the constructors of a class hierarchy
 
 The logic that a derived class inherits from its base class is limited to the normal member functions of the base class. A derived class does not by default inherit the constructors, the destructor or the copy assignment operator - that is, the special member functions - of the base class. The special member functions in a class hierarchy define the logic for the creation, destruction and copying of different parts of an object and are necessarily different. A derived class' constructor automatically calls the base class' default constructor. A derived class' destructor automatically calls the base class' destructor. A derived class' copy assignment operator automatically calls the base class' copy assignment operator.
 
@@ -428,7 +428,7 @@ int main() {
 }
 ```
 
-```
+```console
 Person()
 Person()
 Student(int, const float*, int);
@@ -578,7 +578,7 @@ int main() {
 }
 ```
 
-```
+```console
 Harry 1234:
  89.40
  67.80
@@ -799,7 +799,7 @@ int main() {
 }
 ```
 
-```
+```console
 Harry 1234:
  89.40
  67.80
@@ -1002,8 +1002,8 @@ Harry 1234
 
 ## Summary
 
--   A member function of a derived class shadows an identically named member function of a base class
--   A derived class does not inherit the destructor, assignment operators or helper functions of a base class
--   A derived class does not by default inherit the constructor of a base class, but we may add syntax to allow inheritance where the derived class constructor does not contain logic to set its instance variables
--   Constructors in an inheritance hierarchy execute in order from the base class to the derived class
--   Destructors in an inheritance hierarchy execute in order from the derived class to the base class
+- A member function of a derived class shadows an identically named member function of a base class
+- A derived class does not inherit the destructor, assignment operators or helper functions of a base class
+- A derived class does not by default inherit the constructor of a base class, but we may add syntax to allow inheritance where the derived class constructor does not contain logic to set its instance variables
+- Constructors in an inheritance hierarchy execute in order from the base class to the derived class
+- Destructors in an inheritance hierarchy execute in order from the derived class to the base class

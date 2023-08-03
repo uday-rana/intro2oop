@@ -1,8 +1,8 @@
 # Dynamic Memory
 
--   Describe the two kinds of system memory available
--   Allocate and deallocate memory dynamically
--   Identify common issues associated with dynamic memory
+- Describe the two kinds of system memory available
+- Allocate and deallocate memory dynamically
+- Identify common issues associated with dynamic memory
 
 > "Avoid allocating and deallocating in different modules" **Sutter, Alexandrescu, 2005.**
 
@@ -160,15 +160,15 @@ int main( ) {
 
 Issues regarding dynamic memory allocation and deallocation include:
 
--   Memory leaks
--   Insufficient memory
+- Memory leaks
+- Insufficient memory
 
 ### Memory Leaks
 
 Memory leaks are one of the most important bugs in object-oriented programming. A memory leak occurs if an application loses the address of dynamically allocated memory before that memory has been deallocated. This may occur if:
 
--   The pointer to dynamic memory goes out of scope before the application deallocates that memory
--   The pointer to dynamic memory changes its value before the application deallocates the memory starting at the address stored in that pointer
+- The pointer to dynamic memory goes out of scope before the application deallocates that memory
+- The pointer to dynamic memory changes its value before the application deallocates the memory starting at the address stored in that pointer
 
 Memory leaks are difficult to find because they often do not halt execution immediately. We might only become aware of their existence indirectly through subsequently incorrect results or progressively slower execution.
 
@@ -222,11 +222,11 @@ For example, to deallocate the memory for `harry`, we write
 
 ## Summary
 
--   The memory available to an application at run-time consists of static memory and dynamic memory
--   Static memory lasts the lifetime of the application
--   The linker determines the amount of static memory used by the application
--   The operating system provides dynamic memory to an application at run-time upon request
--   The keyword `new[]` allocates a contiguous region of dynamic memory and returns its starting address
--   We store the address of dynamically allocated memory in static memory
--   `delete[]` deallocates contiguous memory starting at the specified address
--   Allocated memory must be deallocated within the scope of the pointer that holds its address
+- The memory available to an application at run-time consists of static memory and dynamic memory
+- Static memory lasts the lifetime of the application
+- The linker determines the amount of static memory used by the application
+- The operating system provides dynamic memory to an application at run-time upon request
+- The keyword `new[]` allocates a contiguous region of dynamic memory and returns its starting address
+- We store the address of dynamically allocated memory in static memory
+- `delete[]` deallocates contiguous memory starting at the specified address
+- Allocated memory must be deallocated within the scope of the pointer that holds its address

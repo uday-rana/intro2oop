@@ -1,7 +1,7 @@
 # Modular Programming
 
--   Partition source code into modular solution
--   Compile modules on Linux and Windows platforms
+- Partition source code into modular solution
+- Compile modules on Linux and Windows platforms
 
 > "Decide which modules you want; partition the program so that data is hidden within modules" **Stroustrup, 1997.**
 
@@ -19,8 +19,8 @@ Consider the schematic of the Transaction application shown below. The `main` mo
 
 To translate the source code of any module the compiler only needs certain external information. This information includes the names used within the module but defined outside the module. To enable this in C++, we store the source code for each module in two separate files:
 
--   **A header file:** Defines the class and declares the function prototypes
--   **An implementation file:** Defines the functions and contains all of the logic
+- **A header file:** Defines the class and declares the function prototypes
+- **An implementation file:** Defines the functions and contains all of the logic
 
 The file extension `.h` (or `.hpp`) identifies the header file. The file extension `.cpp` identifies the implementation file.
 
@@ -58,19 +58,19 @@ Consider a trivial accounting application that accepts journal transactions from
 
 The application design consists of two modules:
 
--   **Main:** Supervises the processing of each transaction
--   **Transaction:** Defines the input and output logic for a single transaction
+- **Main:** Supervises the processing of each transaction
+- **Transaction:** Defines the input and output logic for a single transaction
 
 ### Transaction Module
 
 The transaction module defines a structure and functions for a single transaction
 
--   **Transaction:** Holds the information for a single transaction in memory
+- **Transaction:** Holds the information for a single transaction in memory
 
 The related functions are global functions
 
--   `enter()`: Accepts transaction data from the standard input device
--   `display()`: Displays transaction data on the standard output device
+- `enter()`: Accepts transaction data from the standard input device
+- `display()`: Displays transaction data on the standard output device
 
 #### Transaction.h
 
@@ -214,23 +214,23 @@ Integrated Development Environments (IDEs) are software development applications
 
 The following steps build and execute a modular application in Visual Studio 2013 or newer:
 
--   Start Visual Studio
--   Select New Project
--   Select Visual C++ -> Win32 -> Console Application
--   Enter Transaction Example as the Project Name | Select OK
--   Press Next
--   Check Empty Project | Press Finish
--   Select Project -> Add New Item
--   Select Header .h file | Enter Transaction as File Name | Press OK
--   Select Project -> Add New Item
--   Select Implementation .cpp file | Enter Transaction as File Name | Press OK
--   Select Project -> Add New Item
--   Select Header .h file | Enter main as File Name | Press OK
--   Select Project -> Add New Item
--   Select Implementation .cpp file | Enter main as File Name | Press OK
--   Select Build | Build Solution
--   Select Debug | Start without Debugging
--   The input prompts and the results of execution appear in a Visual Studio command prompt window.
+- Start Visual Studio
+- Select New Project
+- Select Visual C++ -> Win32 -> Console Application
+- Enter Transaction Example as the Project Name | Select OK
+- Press Next
+- Check Empty Project | Press Finish
+- Select Project -> Add New Item
+- Select Header .h file | Enter Transaction as File Name | Press OK
+- Select Project -> Add New Item
+- Select Implementation .cpp file | Enter Transaction as File Name | Press OK
+- Select Project -> Add New Item
+- Select Header .h file | Enter main as File Name | Press OK
+- Select Project -> Add New Item
+- Select Implementation .cpp file | Enter main as File Name | Press OK
+- Select Build | Build Solution
+- Select Debug | Start without Debugging
+- The input prompts and the results of execution appear in a Visual Studio command prompt window.
 
 ## Unit Tests
 
@@ -351,86 +351,86 @@ It is good programming practice to write the suite of unit tests for the work un
 
 Programming errors that require debugging skills are of two kinds:
 
--   Syntactic
--   Semantic
+- Syntactic
+- Semantic
 
 ### Syntactic Errors
 
 Syntactic errors are errors that break the rules of the programming language. The most common syntactic errors in C++ language programs are:
 
--   Missing semi-colon after a struct or class definition
--   Unnecessary semi-colon terminator in a #define directive
--   Undeclared variable name or missing header file
--   Mismatched parentheses
--   Left-side of an assignment expression is not a defined memory location
--   Return statement is missing
+- Missing semi-colon after a struct or class definition
+- Unnecessary semi-colon terminator in a #define directive
+- Undeclared variable name or missing header file
+- Mismatched parentheses
+- Left-side of an assignment expression is not a defined memory location
+- Return statement is missing
 
 ### Semantic Errors
 
 Semantic errors are errors that fail to implement the intent and meaning of the program designer. The more common semantic errors are:
 
--   `=` instead of `==`
--   Iteration without a body (`for`/`while` followed by a semi-colon)
--   Uninitialized variable
--   Infinite iteration
--   Incorrect operator order in a compound expression
--   Dangling else
--   Off-by-one iteration
--   Integer division and truncation
--   Mismatched data types
--   `&` instead of `&&`
+- `=` instead of `==`
+- Iteration without a body (`for`/`while` followed by a semi-colon)
+- Uninitialized variable
+- Infinite iteration
+- Incorrect operator order in a compound expression
+- Dangling else
+- Off-by-one iteration
+- Integer division and truncation
+- Mismatched data types
+- `&` instead of `&&`
 
 ## Identifying Errors
 
-### Syntactic Errors
+### Identifying Syntactic Errors
 
 Techniques for identifying syntactic errors include
 
--   IDE intellisense
--   Compiler error messages (compiler output)
--   Comparing error messages from different compilers - some are more cryptic than others
--   Reading code statements (walkthroughs)
+- IDE intellisense
+- Compiler error messages (compiler output)
+- Comparing error messages from different compilers - some are more cryptic than others
+- Reading code statements (walkthroughs)
 
-### Semantic Errors
+### Identifying Semantic Errors
 
 Techniques for identifying semantic errors include:
 
--   **Vocalization:** Use your sense of hearing to identify the error (compound conditions)
--   **Intermediate output:** `cout` statements at critical stages
--   Walkthrough tables
--   Interactive debugging using:
-    -   **Visual Studio IDE:** Integrated debugger for Windows OSs
-    -   **Eclipse IDE:** Integrated debugger for Linux OSs
-    -   `gdb`: GNU debugger for `gcc`
+- **Vocalization:** Use your sense of hearing to identify the error (compound conditions)
+- **Intermediate output:** `cout` statements at critical stages
+- Walkthrough tables
+- Interactive debugging using:
+  - **Visual Studio IDE:** Integrated debugger for Windows OSs
+  - **Eclipse IDE:** Integrated debugger for Linux OSs
+  - `gdb`: GNU debugger for `gcc`
 
 ### IDE Tracing Example
 
 The following steps trace through the execution of our Transaction application using the Visual Studio IDE debugger.
 
--   Select the file named `main.cpp`
--   Move the cursor to the left-most column of the `for` statement in the `main()` function and left-click. This places a red dot in that column, which identifies a breakpoint
--   Move the cursor to the left-most column of the closing brace for the function and left-click. This places a red dot in the column, which identifies another breakpoint
--   Select Debug -> Start Debugging. Execution should pause at the first executable statement
--   Observe the values under the Locals tab in the Window below the source code
--   Press F10 and answer the three input prompts
--   Select the source code Window
--   Observe the values under the Locals tab in the Window below the source code
--   Press F10 3 times and note the value of `i`
--   Press F5, note where execution pauses and observe the value of `i`
--   Press F5 again to exit
+- Select the file named `main.cpp`
+- Move the cursor to the left-most column of the `for` statement in the `main()` function and left-click. This places a red dot in that column, which identifies a breakpoint
+- Move the cursor to the left-most column of the closing brace for the function and left-click. This places a red dot in the column, which identifies another breakpoint
+- Select Debug -> Start Debugging. Execution should pause at the first executable statement
+- Observe the values under the Locals tab in the Window below the source code
+- Press F10 and answer the three input prompts
+- Select the source code Window
+- Observe the values under the Locals tab in the Window below the source code
+- Press F10 3 times and note the value of `i`
+- Press F5, note where execution pauses and observe the value of `i`
+- Press F5 again to exit
 
 The keystrokes for the various debugging options are listed next to the sub-menu items under the Debug menu.
 
 ## Summary
 
--   A module consists of a header file and an implementation file
--   A module's header file declares the names that are exposed to client modules
--   A module's implementation file defines the module's logic
--   A module's implementation file needs the header files of those modules that define classes or functions used in the implementation file
--   The three stages of creating an executable are preprocessing, compiling, and linking
--   It is good practice to write the suite of unit tests for each module of an application before coding the module's implementation
+- A module consists of a header file and an implementation file
+- A module's header file declares the names that are exposed to client modules
+- A module's implementation file defines the module's logic
+- A module's implementation file needs the header files of those modules that define classes or functions used in the implementation file
+- The three stages of creating an executable are preprocessing, compiling, and linking
+- It is good practice to write the suite of unit tests for each module of an application before coding the module's implementation
 
 ## Exercises
 
--   Upgrade the Calculator module to pass all of the tests and add further tests to improve robustness
--   Read Wikipedia on [Modular Programming](http://en.wikipedia.org/wiki/Modular_programming)
+- Upgrade the Calculator module to pass all of the tests and add further tests to improve robustness
+- Read Wikipedia on [Modular Programming](http://en.wikipedia.org/wiki/Modular_programming)
